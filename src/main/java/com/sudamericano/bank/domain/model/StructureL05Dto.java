@@ -4,7 +4,7 @@ package com.sudamericano.bank.domain.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Nesl05Dto {
+public class StructureL05Dto {
     private Integer id;
     private Integer codigoTipoIdentificacion;
     private Integer codigoDepositario;

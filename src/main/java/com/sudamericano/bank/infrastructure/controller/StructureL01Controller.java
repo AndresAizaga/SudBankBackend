@@ -1,7 +1,7 @@
 package com.sudamericano.bank.infrastructure.controller;
 
-import com.sudamericano.bank.domain.ports.inputs.Nesl01UseCase;
-import com.sudamericano.bank.domain.model.Nesl01Dto;
+import com.sudamericano.bank.domain.model.StructureL01Dto;
+import com.sudamericano.bank.domain.ports.inputs.StructureL01UseCase;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,34 +11,34 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/structures/l01")
 public class StructureL01Controller {
-    private final Nesl01UseCase nesl01UseCase;
+    private final StructureL01UseCase structureL01UseCase;
 
-    public StructureL01Controller(Nesl01UseCase nesl01UseCase) {
-        this.nesl01UseCase = nesl01UseCase;
+    public StructureL01Controller(StructureL01UseCase structureL01UseCase) {
+        this.structureL01UseCase = structureL01UseCase;
     }
 
     @GetMapping
-    public List<Nesl01Dto> getAll() {
-        return nesl01UseCase.findAll();
+    public List<StructureL01Dto> getAll() {
+        return structureL01UseCase.findAll();
     }
 
     @GetMapping("/{id}")
-    public Nesl01Dto getById(@PathVariable Integer id) {
-        return nesl01UseCase.findById(id);
+    public StructureL01Dto getById(@PathVariable Integer id) {
+        return structureL01UseCase.findById(id);
     }
 
     @PostMapping
-    public Nesl01Dto create(@RequestBody Nesl01Dto dto) {
-        return nesl01UseCase.create(dto);
+    public StructureL01Dto create(@RequestBody StructureL01Dto dto) {
+        return structureL01UseCase.create(dto);
     }
 
     @PutMapping("/{id}")
-    public Nesl01Dto update(@PathVariable Integer id, @RequestBody Nesl01Dto dto) {
-        return nesl01UseCase.update(id, dto);
+    public StructureL01Dto update(@PathVariable Integer id, @RequestBody StructureL01Dto dto) {
+        return structureL01UseCase.update(id, dto);
     }
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
-        nesl01UseCase.delete(id);
+        structureL01UseCase.delete(id);
     }
 }

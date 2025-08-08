@@ -1,7 +1,7 @@
 package com.sudamericano.bank.infrastructure.adapter;
 
-import com.sudamericano.bank.domain.model.Nesl05Dto;
-import com.sudamericano.bank.domain.ports.outputs.Nesl05Port;
+import com.sudamericano.bank.domain.model.StructureL05Dto;
+import com.sudamericano.bank.domain.ports.outputs.StructureL05Port;
 import com.sudamericano.bank.infrastructure.mapper.PersistenceStructureL05Mapper;
 import com.sudamericano.bank.infrastructure.persistence.entity.StructureL05Entity;
 import com.sudamericano.bank.infrastructure.persistence.jpa.SpringDataStructureL05Repository;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class SqlStructureL05RepositoryAdapter implements Nesl05Port {
+public class SqlStructureL05RepositoryAdapter implements StructureL05Port {
 
     private final SpringDataStructureL05Repository repository;
     private final PersistenceStructureL05Mapper mapper;
@@ -22,24 +22,24 @@ public class SqlStructureL05RepositoryAdapter implements Nesl05Port {
     }
 
     @Override
-    public List<Nesl05Dto> findAll() {
+    public List<StructureL05Dto> findAll() {
         return mapper.toDtoList(repository.findAll());
     }
 
     @Override
-    public Nesl05Dto findById(Integer id) {
+    public StructureL05Dto findById(Integer id) {
         Optional<StructureL05Entity> entity = repository.findById(id);
         return entity.map(mapper::toDto).orElse(null);
     }
 
     @Override
-    public Nesl05Dto create(Nesl05Dto dto) {
+    public StructureL05Dto create(StructureL05Dto dto) {
         StructureL05Entity saved = repository.save(mapper.toEntity(dto));
         return mapper.toDto(saved);
     }
 
     @Override
-    public Nesl05Dto update(Integer id, Nesl05Dto dto) {
+    public StructureL05Dto update(Integer id, StructureL05Dto dto) {
         if (!repository.existsById(id)) {
             return null;
         }

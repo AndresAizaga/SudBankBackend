@@ -1,6 +1,6 @@
 package com.sudamericano.bank.domain.model;
 
-public class Nesl01Dto {
+public class StructureL01Dto {
     private Integer id;
     private Integer codigoTipoIdentificacion;
     private Integer codigoEmisor;
