@@ -1,9 +1,9 @@
-package com.sudamericano.bank.infrastructure.persistence;
+package com.sudamericano.bank.infrastructure.adapter;
 
 import com.sudamericano.bank.domain.model.CatalogT164;
 import com.sudamericano.bank.domain.ports.outputs.CatalogT164RepositoryPort;
 import com.sudamericano.bank.infrastructure.persistence.jpa.SpringDataCatalogT164Repository;
-import com.sudamericano.bank.infrastructure.persistence.mapper.PersistenceCatalogT164Mapper;
+import com.sudamericano.bank.infrastructure.mapper.PersistenceCatalogT164Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

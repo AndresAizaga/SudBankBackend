@@ -1,9 +1,9 @@
-package com.sudamericano.bank.infrastructure.persistence;
+package com.sudamericano.bank.infrastructure.adapter;
 
 import com.sudamericano.bank.domain.model.CatalogT4;
 import com.sudamericano.bank.domain.ports.outputs.CatalogT4RepositoryPort;
 import com.sudamericano.bank.infrastructure.persistence.jpa.SpringDataCatalogT4Repository;
-import com.sudamericano.bank.infrastructure.persistence.mapper.PersistenceCatalogT4Mapper;
+import com.sudamericano.bank.infrastructure.mapper.PersistenceCatalogT4Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

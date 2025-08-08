@@ -1,4 +1,4 @@
-package com.sudamericano.bank.infrastructure.persistence.mapper;
+package com.sudamericano.bank.infrastructure.mapper;
 
 import com.sudamericano.bank.domain.model.CatalogT4;
 import com.sudamericano.bank.infrastructure.persistence.entity.CatalogT4Entity;
