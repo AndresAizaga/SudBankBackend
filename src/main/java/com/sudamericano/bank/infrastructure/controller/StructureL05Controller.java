@@ -2,16 +2,18 @@ package com.sudamericano.bank.infrastructure.controller;
 
 import com.sudamericano.bank.domain.model.Nesl05Dto;
 import com.sudamericano.bank.domain.ports.inputs.Nesl05UseCase;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Structure L05", description = "Structure L05 management endpoints")
 @RestController
-@RequestMapping("/api/nesl05")
-public class Nesl05Controller {
+@RequestMapping("/api/structures/l05")
+public class StructureL05Controller {
     private final Nesl05UseCase nesl05UseCase;
 
-    public Nesl05Controller(Nesl05UseCase nesl05UseCase) {
+    public StructureL05Controller(Nesl05UseCase nesl05UseCase) {
         this.nesl05UseCase = nesl05UseCase;
     }
 

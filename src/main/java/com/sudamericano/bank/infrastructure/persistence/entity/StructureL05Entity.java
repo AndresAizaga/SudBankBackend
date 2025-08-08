@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "NESL05")
-public class Nesl05Entity {
+public class StructureL05Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

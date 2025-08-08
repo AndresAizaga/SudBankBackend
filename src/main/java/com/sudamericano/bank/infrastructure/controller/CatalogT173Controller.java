@@ -12,7 +12,7 @@ import java.util.List;
 
 @Tag(name = "Catalog T173", description = "Catalog T173 management endpoints")
 @RestController
-@RequestMapping("/api/catalogs/T173")
+@RequestMapping("/api/catalogs/t173")
 public class CatalogT173Controller {
     private final CatalogT173UseCase catalogT173UseCase;
 
