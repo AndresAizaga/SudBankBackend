@@ -1,10 +1,7 @@
 package com.sudamericano.bank.domain.services.catalog;
 
-import com.sudamericano.bank.domain.model.catalog.T172Dto;
 import com.sudamericano.bank.domain.model.catalog.T33Dto;
-import com.sudamericano.bank.domain.ports.inputs.catalog.T172UseCase;
 import com.sudamericano.bank.domain.ports.inputs.catalog.T33UseCase;
-import com.sudamericano.bank.domain.ports.outputs.catalog.T172RepositoryPort;
 import com.sudamericano.bank.domain.ports.outputs.catalog.T33RepositoryPort;
 import org.springframework.stereotype.Service;
 

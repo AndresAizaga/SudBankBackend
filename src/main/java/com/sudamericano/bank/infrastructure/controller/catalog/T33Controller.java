@@ -1,8 +1,6 @@
 package com.sudamericano.bank.infrastructure.controller.catalog;
 
-import com.sudamericano.bank.domain.model.catalog.T172Dto;
 import com.sudamericano.bank.domain.model.catalog.T33Dto;
-import com.sudamericano.bank.domain.ports.inputs.catalog.T172UseCase;
 import com.sudamericano.bank.domain.ports.inputs.catalog.T33UseCase;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.ResponseEntity;
