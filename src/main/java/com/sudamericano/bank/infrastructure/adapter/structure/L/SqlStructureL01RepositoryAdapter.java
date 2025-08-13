@@ -27,6 +27,12 @@ public class SqlStructureL01RepositoryAdapter implements StructureL01Port {
     }
 
     @Override
+    public List<StructureL01Dto> findByFilter(StructureL01Dto dto) {
+        return mapper.toDtoList(repository.findByFilter(dto.getCodigoTipoIdentificacion()
+                , dto.getCodigoClasificacionEmisor(), dto.getCodigoTipoEmisor()));
+    }
+
+    @Override
     public StructureL01Dto findById(Integer id) {
         Optional<StructureL01Entity> entity = repository.findById(id);
         return entity.map(mapper::toDto).orElse(null);

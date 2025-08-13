@@ -20,6 +20,10 @@ public class StructureL01Service implements StructureL01UseCase {
         return port.findAll();
     }
 
+    public List<StructureL01Dto> findByFilter(StructureL01Dto dto) {
+        return port.findByFilter(dto);
+    }
+
     public StructureL01Dto findById(Integer id) {
         return port.findById(id);
     }

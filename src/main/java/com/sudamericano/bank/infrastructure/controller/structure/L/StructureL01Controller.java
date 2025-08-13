@@ -22,6 +22,11 @@ public class StructureL01Controller {
         return structureL01UseCase.findAll();
     }
 
+    @PostMapping("/search")
+    public List<StructureL01Dto> search(@RequestBody StructureL01Dto filterRequest) {
+        return structureL01UseCase.findByFilter(filterRequest);
+    }
+
     @GetMapping("/{id}")
     public StructureL01Dto getById(@PathVariable Integer id) {
         return structureL01UseCase.findById(id);
