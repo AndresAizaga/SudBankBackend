@@ -22,6 +22,9 @@ public class StructureL01Entity {
     @Column(name = "CODIGO_TIPO_EMISOR")
     private Integer codigoTipoEmisor;
 
+    @Column(name = "IDENTIFICACION")
+    private String identificacion;
+
 	public Integer getId() {
 		return id;
 	}
@@ -61,4 +64,11 @@ public class StructureL01Entity {
 	public void setCodigoTipoEmisor(Integer codigoTipoEmisor) {
 		this.codigoTipoEmisor = codigoTipoEmisor;
 	}
+
+    public String getIdentificacion() {
+        return identificacion;
+    }
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
 }

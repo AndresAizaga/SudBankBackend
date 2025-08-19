@@ -6,6 +6,7 @@ public class StructureL01Dto {
     private Integer codigoEmisor;
     private Integer codigoClasificacionEmisor;
     private Integer codigoTipoEmisor;
+    private String identificacion;
 	public Integer getId() {
 		return id;
 	}
@@ -36,4 +37,11 @@ public class StructureL01Dto {
 	public void setCodigoTipoEmisor(Integer codigoTipoEmisor) {
 		this.codigoTipoEmisor = codigoTipoEmisor;
 	}
+
+    public String getIdentificacion() {
+        return identificacion;
+    }
+    public void setIdentificacion(String identificacion) {
+        this.identificacion = identificacion;
+    }
 }
