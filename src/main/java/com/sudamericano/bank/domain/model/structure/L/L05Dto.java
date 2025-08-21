@@ -4,7 +4,7 @@ package com.sudamericano.bank.domain.model.structure.L;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class StructureL05Dto {
+public class L05Dto {
     private Integer id;
     private Integer codigoTipoIdentificacion;
     private Integer codigoDepositario;
