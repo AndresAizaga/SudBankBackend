@@ -19,4 +19,9 @@ public class T172Service implements T172UseCase {
     public List<T172Dto> findAll() {
         return port.findAll();
     }
+
+    @Override
+    public T172Dto findById(Integer id) {
+        return port.findById(id);
+    }
 }

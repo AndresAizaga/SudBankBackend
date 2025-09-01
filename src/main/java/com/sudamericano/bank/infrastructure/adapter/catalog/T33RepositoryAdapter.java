@@ -26,4 +26,11 @@ public class T33RepositoryAdapter implements T33RepositoryPort {
                 .map(mapper::toDto)
                 .toList();
     }
+
+    @Override
+    public T33Dto findById(Integer id) {
+        return repository.findById(id)
+                .map(mapper::toDto)
+                .orElse(null);
+    }
 }
