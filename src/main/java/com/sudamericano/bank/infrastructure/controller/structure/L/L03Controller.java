@@ -1,6 +1,7 @@
 package com.sudamericano.bank.infrastructure.controller.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.L03Dto;
+import com.sudamericano.bank.domain.model.structure.L.L03ViewDto;
 import com.sudamericano.bank.domain.ports.inputs.structure.L.L03UseCase;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,11 @@ public class L03Controller {
     @GetMapping
     public List<L03Dto> getAll() {
         return useCase.findAll();
+    }
+
+    @GetMapping("/details")
+    public List<L03ViewDto> getAllWithDetails() {
+        return useCase.findAllResumenDatosL03();
     }
 
     @GetMapping("/{id}")

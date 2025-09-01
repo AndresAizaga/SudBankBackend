@@ -1,6 +1,7 @@
 package com.sudamericano.bank.domain.services.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.L03Dto;
+import com.sudamericano.bank.domain.model.structure.L.L03ViewDto;
 import com.sudamericano.bank.domain.ports.inputs.structure.L.L03UseCase;
 import com.sudamericano.bank.domain.ports.outputs.structure.L.L03Port;
 import org.springframework.stereotype.Service;
@@ -34,5 +35,9 @@ public class L03Service implements L03UseCase {
 
     public void delete(Long id) {
         port.delete(id);
+    }
+
+    public List<L03ViewDto> findAllResumenDatosL03() {
+        return port.findAllResumenDatosL03();
     }
 }

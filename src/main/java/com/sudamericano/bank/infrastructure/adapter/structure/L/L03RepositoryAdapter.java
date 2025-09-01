@@ -1,6 +1,7 @@
 package com.sudamericano.bank.infrastructure.adapter.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.L03Dto;
+import com.sudamericano.bank.domain.model.structure.L.L03ViewDto;
 import com.sudamericano.bank.domain.ports.outputs.structure.L.L03Port;
 import com.sudamericano.bank.infrastructure.mapper.structure.L.L03Mapper;
 import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L03Entity;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class L03RepositoryAdapter implements L03Port {
@@ -51,5 +53,12 @@ public class L03RepositoryAdapter implements L03Port {
     @Override
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public List<L03ViewDto> findAllResumenDatosL03() {
+        return repository.findAllResumenDatosL03().stream()
+                .map(mapper::mapToDto)
+                .collect(Collectors.toList());
     }
 }
