@@ -19,4 +19,9 @@ public class T33Service implements T33UseCase {
     public List<T33Dto> findAll() {
         return port.findAll();
     }
+
+    @Override
+    public T33Dto findById(Integer id) {
+        return port.findById(id);
+    }
 }

@@ -26,4 +26,11 @@ public class T172RepositoryAdapter implements T172RepositoryPort {
                 .map(mapper::toDto)
                 .toList();
     }
+
+    @Override
+    public T172Dto findById(Integer id) {
+        return repository.findById(id)
+                .map(mapper::toDto)
+                .orElse(null);
+    }
 }
