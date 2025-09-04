@@ -1,18 +1,18 @@
 package com.sudamericano.bank.domain.services.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.StructureL01Dto;
-import com.sudamericano.bank.domain.ports.inputs.structure.L.StructureL01UseCase;
-import com.sudamericano.bank.domain.ports.outputs.structure.L.StructureL01Port;
+import com.sudamericano.bank.domain.ports.inputs.structure.L.L01UseCase;
+import com.sudamericano.bank.domain.ports.outputs.structure.L.L01Port;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class StructureL01Service implements StructureL01UseCase {
+public class L01Service implements L01UseCase {
 
-    private final StructureL01Port port;
+    private final L01Port port;
 
-    public StructureL01Service(StructureL01Port port) {
+    public L01Service(L01Port port) {
         this.port = port;
     }
 

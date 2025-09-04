@@ -1,10 +1,10 @@
-package com.sudamericano.bank.domain.ports.inputs.structure.L;
+package com.sudamericano.bank.domain.ports.outputs.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.StructureL01Dto;
 
 import java.util.List;
 
-public interface StructureL01UseCase {
+public interface L01Port {
     List<StructureL01Dto> findAll();
     List<StructureL01Dto> findByFilter(StructureL01Dto dto);
     StructureL01Dto findById(Integer id);

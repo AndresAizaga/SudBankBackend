@@ -1,9 +1,9 @@
 package com.sudamericano.bank.infrastructure.adapter.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.StructureL01Dto;
-import com.sudamericano.bank.domain.ports.outputs.structure.L.StructureL01Port;
-import com.sudamericano.bank.infrastructure.mapper.structure.L.PersistenceStructureL01Mapper;
-import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.StructureL01Entity;
+import com.sudamericano.bank.domain.ports.outputs.structure.L.L01Port;
+import com.sudamericano.bank.infrastructure.mapper.structure.L.L01Mapper;
+import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L01Entity;
 import com.sudamericano.bank.infrastructure.persistence.jpa.structure.L.SpringDataStructureL01Repository;
 import org.springframework.stereotype.Component;
 
@@ -11,12 +11,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class SqlStructureL01RepositoryAdapter implements StructureL01Port {
+public class L01RepositoryAdapter implements L01Port {
 
     private final SpringDataStructureL01Repository repository;
-    private final PersistenceStructureL01Mapper mapper;
+    private final L01Mapper mapper;
 
-    public SqlStructureL01RepositoryAdapter(SpringDataStructureL01Repository repository, PersistenceStructureL01Mapper mapper) {
+    public L01RepositoryAdapter(SpringDataStructureL01Repository repository, L01Mapper mapper) {
         this.repository = repository;
         this.mapper = mapper;
     }
@@ -34,13 +34,13 @@ public class SqlStructureL01RepositoryAdapter implements StructureL01Port {
 
     @Override
     public StructureL01Dto findById(Integer id) {
-        Optional<StructureL01Entity> entity = repository.findById(id);
+        Optional<L01Entity> entity = repository.findById(id);
         return entity.map(mapper::toDto).orElse(null);
     }
 
     @Override
     public StructureL01Dto create(StructureL01Dto dto) {
-        StructureL01Entity saved = repository.save(mapper.toEntity(dto));
+        L01Entity saved = repository.save(mapper.toEntity(dto));
         return mapper.toDto(saved);
     }
 
@@ -49,7 +49,7 @@ public class SqlStructureL01RepositoryAdapter implements StructureL01Port {
         if (!repository.existsById(id)) {
             return null;
         }
-        StructureL01Entity entity = mapper.toEntity(dto);
+        L01Entity entity = mapper.toEntity(dto);
         entity.setId(id);
         return mapper.toDto(repository.save(entity));
     }
