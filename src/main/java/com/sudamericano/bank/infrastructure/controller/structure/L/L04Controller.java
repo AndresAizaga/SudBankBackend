@@ -81,6 +81,7 @@ public class L04Controller {
         return useCase.findById(id);
     }
 
+
     @PostMapping
     public L04Dto create(@RequestBody L04Dto dto) {
         return useCase.create(dto);
