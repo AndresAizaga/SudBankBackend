@@ -1,11 +1,13 @@
 package com.sudamericano.bank.domain.model.structure.R;
 
+import java.math.BigDecimal;
+
 public class R02Dto {
     private Integer id;
     private Integer codigoTipoIdentificacion;
     private String identificacionSujeto;
     private String numeroOperacion;
-    private String valorOperacion;
+    private BigDecimal valorOperacion;
 
     public Integer getId() {
         return id;
@@ -39,11 +41,11 @@ public class R02Dto {
         this.numeroOperacion = numeroOperacion;
     }
 
-    public String getValorOperacion() {
+    public BigDecimal getValorOperacion() {
         return valorOperacion;
     }
 
-    public void setValorOperacion(String valorOperacion) {
+    public void setValorOperacion(BigDecimal valorOperacion) {
         this.valorOperacion = valorOperacion;
     }
 }

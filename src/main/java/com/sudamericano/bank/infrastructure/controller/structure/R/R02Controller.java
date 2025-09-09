@@ -2,7 +2,10 @@ package com.sudamericano.bank.infrastructure.controller.structure.R;
 
 
 import com.sudamericano.bank.domain.model.structure.R.R02Dto;
+import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT4UseCase;
 import com.sudamericano.bank.domain.ports.inputs.structure.R.R02UseCase;
+import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
+import com.sudamericano.bank.infrastructure.outputs.structure.R02ResumenResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,14 +16,39 @@ import java.util.List;
 @RequestMapping("/api/structures/R02")
 public class R02Controller {
     private final R02UseCase r02useCase;
+    private final CatalogT4UseCase catalogT4UseCase;
 
-    public R02Controller(R02UseCase useCase) {
+    public R02Controller(R02UseCase useCase, CatalogT4UseCase catalogT4UseCase) {
         this.r02useCase = useCase;
+        this.catalogT4UseCase = catalogT4UseCase;
     }
 
     @GetMapping
     public List<R02Dto> getAll() {
         return r02useCase.findAll();
+    }
+
+    @GetMapping("/resume")
+    public List<R02ResumenResponse> getAllResume() {
+        List<R02ResumenResponse> resumes = new java.util.ArrayList<>(List.of());
+
+        for (R02Dto dto : r02useCase.findAll()) {
+            R02ResumenResponse resume = new R02ResumenResponse();
+            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
+                    .findFirst()
+                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
+                            new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
+                    ));
+
+            resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
+            resume.setNumeroOperacion(dto.getNumeroOperacion());
+            resume.setValorOperacion(dto.getValorOperacion());
+            resumes.add(resume);
+        }
+
+
+    return  resumes;
+
     }
 
     @GetMapping("/{id}")

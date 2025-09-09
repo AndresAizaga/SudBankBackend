@@ -2,6 +2,8 @@ package com.sudamericano.bank.infrastructure.persistence.entity.structure.R;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "NESR02")
 public class R02Entity {
@@ -16,8 +18,8 @@ public class R02Entity {
     private String identificacionSujeto;
     @Column(name = "NUMERO_OPERACION")
     private String numeroOperacion;
-    @Column(name = "VALOR_OPERACION")
-    private String valorOperacion;
+    @Column(name = "VALOR_OPERACION", precision = 15, scale = 2)
+    private BigDecimal valorOperacion;
 
     public Long getId() {
         return id;
@@ -51,11 +53,11 @@ public class R02Entity {
         this.numeroOperacion = numeroOperacion;
     }
 
-    public String getValorOperacion() {
+    public BigDecimal getValorOperacion() {
         return valorOperacion;
     }
 
-    public void setValorOperacion(String valorOperacion) {
+    public void setValorOperacion(BigDecimal valorOperacion) {
         this.valorOperacion = valorOperacion;
     }
 }
