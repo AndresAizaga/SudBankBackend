@@ -1,11 +1,9 @@
 package com.sudamericano.bank.infrastructure.persistence.jpa.structure.L;
 
 import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L03Entity;
-import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L01Entity;
 import com.sudamericano.bank.infrastructure.persistence.jpa.structure.L.projection.L03ViewProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
