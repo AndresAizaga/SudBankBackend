@@ -1,6 +1,7 @@
 package com.sudamericano.bank.domain.model.structure.R;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class R02Dto {
     private Integer id;
@@ -8,6 +9,10 @@ public class R02Dto {
     private String identificacionSujeto;
     private String numeroOperacion;
     private BigDecimal valorOperacion;
+    private BigDecimal tasaInteresNominal;
+    private BigDecimal tea;
+    private Integer codigoMoneda;
+    private LocalDate fechaConcesion;
 
     public Integer getId() {
         return id;
@@ -47,5 +52,37 @@ public class R02Dto {
 
     public void setValorOperacion(BigDecimal valorOperacion) {
         this.valorOperacion = valorOperacion;
+    }
+
+    public BigDecimal getTasaInteresNominal() {
+        return tasaInteresNominal;
+    }
+
+    public void setTasaInteresNominal(BigDecimal tasaInteresNominal) {
+        this.tasaInteresNominal = tasaInteresNominal;
+    }
+
+    public BigDecimal getTea() {
+        return tea;
+    }
+
+    public void setTea(BigDecimal tea) {
+        this.tea = tea;
+    }
+
+    public Integer getCodigoMoneda() {
+        return codigoMoneda;
+    }
+
+    public void setCodigoMoneda(Integer codigoMoneda) {
+        this.codigoMoneda = codigoMoneda;
+    }
+
+    public LocalDate getFechaConcesion() {
+        return fechaConcesion;
+    }
+
+    public void setFechaConcesion(LocalDate fechaConcesion) {
+        this.fechaConcesion = fechaConcesion;
     }
 }
