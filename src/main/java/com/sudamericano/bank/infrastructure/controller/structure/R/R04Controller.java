@@ -8,7 +8,7 @@ import com.sudamericano.bank.domain.model.catalog.CatalogT317;
 import com.sudamericano.bank.domain.model.structure.R.R04Dto;
 import com.sudamericano.bank.domain.ports.inputs.catalog.*;
 import com.sudamericano.bank.domain.ports.inputs.structure.R.R04UseCase;
-import com.sudamericano.bank.infrastructure.outputs.CatalogResponse;
+import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
 import com.sudamericano.bank.infrastructure.outputs.structure.R04ResumeResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
@@ -105,48 +105,48 @@ public class R04Controller {
             catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
                     .findFirst()
                     .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
-                            new CatalogResponse(catalogT4.getId(), catalogT4.getCodigo(), catalogT4.getDescripcion())
+                            new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
                     ));
 
             // T218 - Metodología de calificación
             catalogT218UseCase.getAllCatalogT218().stream().filter(x -> x.getId() == (dto.getCodigoMetodologiaCalificacion()))
                     .findFirst()
                     .ifPresent(metodologia -> resume.setMetodologiaCalificacion(
-                            new CatalogResponse(metodologia.getId(), metodologia.getCodigo(), metodologia.getDescripcion())
+                            new ResponseDTO(metodologia.getId(), metodologia.getDescripcion())
                     ));
 
             // T29 - Calificación propia
             catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionPropia()))
                     .findFirst()
                     .ifPresent(calificacionPropia -> resume.setCalificacionPropia(
-                            new CatalogResponse(calificacionPropia.getId(), calificacionPropia.getCodigo(), calificacionPropia.getDescripcion())
+                            new ResponseDTO(calificacionPropia.getId(), calificacionPropia.getDescripcion())
                     ));
 
             // T29 - Calificación homologada
             catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionHomologada()))
                     .findFirst()
                     .ifPresent(calificacionHomologada -> resume.setCalificacionHomologada(
-                            new CatalogResponse(calificacionHomologada.getId(), calificacionHomologada.getCodigo(), calificacionHomologada.getDescripcion())
+                            new ResponseDTO(calificacionHomologada.getId(), calificacionHomologada.getDescripcion())
                     ));
 
             // T35 - Tipo de operación
             catalogT35UseCase.getAllCatalogT35().stream().filter(x -> x.getId() == (dto.getCodigoTipoOperacion()))
                     .findFirst()
                     .ifPresent(tipoOperacion -> resume.setTipoOperacion(
-                            new CatalogResponse(tipoOperacion.getId(), tipoOperacion.getCodigo(), tipoOperacion.getDescripcion())
+                            new ResponseDTO(tipoOperacion.getId(), tipoOperacion.getDescripcion())
                     ));
 
             // T55 - Objeto del fideicomiso
             catalogT55UseCase.getAllCatalogT55().stream().filter(x -> x.getId() == (dto.getCodigoObjetoFideicomiso()))
                     .findFirst()
                     .ifPresent(objetoFideicomiso -> resume.setObjetoFideicomiso(
-                            new CatalogResponse(objetoFideicomiso.getId(), objetoFideicomiso.getCodigo(), objetoFideicomiso.getDescripcion())
+                            new ResponseDTO(objetoFideicomiso.getId(), objetoFideicomiso.getDescripcion())
                     ));
 
             catalogT317UseCase.getAllT317().stream().filter(x -> x.getId().equals(Long.valueOf(dto.getCodigoTipoSistemaAmortizacion())))
                     .findFirst()
                     .ifPresent(tipoSistemaAmortizacion -> resume.setTipoSistemaAmortizacion(
-                            new CatalogResponse(tipoSistemaAmortizacion.getId().intValue(), tipoSistemaAmortizacion.getCodigo(), tipoSistemaAmortizacion.getDescripcion())
+                            new ResponseDTO(tipoSistemaAmortizacion.getId().intValue(), tipoSistemaAmortizacion.getDescripcion())
                     ));
 
             resumes.add(resume);
