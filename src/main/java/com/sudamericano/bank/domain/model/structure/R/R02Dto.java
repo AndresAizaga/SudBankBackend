@@ -15,6 +15,15 @@ public class R02Dto {
     private LocalDate fechaConcesion;
     private LocalDate fechaVencimiento;
     private Integer codigoLineaCredito;
+    private Integer codigoPeriodicidadPago;
+    private BigDecimal frecuenciaRevision;
+    private Integer codigoOficinaConcesion;
+    private Integer codigoGaranteGarantias;
+    private Integer codigoIndicadorOperacionesExenta;
+    private Integer codigoTipoCredito;
+    private Integer codigoClaseCredito;
+    private Integer codigoEstadoOperacion;
+    private Integer codigoSituaOperacion;
 
     public Integer getId() {
         return id;
@@ -102,5 +111,77 @@ public class R02Dto {
 
     public void setCodigoLineaCredito(Integer codigoLineaCredito) {
         this.codigoLineaCredito = codigoLineaCredito;
+    }
+
+    public Integer getCodigoPeriodicidadPago() {
+        return codigoPeriodicidadPago;
+    }
+
+    public void setCodigoPeriodicidadPago(Integer codigoPeriodicidadPago) {
+        this.codigoPeriodicidadPago = codigoPeriodicidadPago;
+    }
+
+    public BigDecimal getFrecuenciaRevision() {
+        return frecuenciaRevision;
+    }
+
+    public void setFrecuenciaRevision(BigDecimal frecuenciaRevision) {
+        this.frecuenciaRevision = frecuenciaRevision;
+    }
+
+    public Integer getCodigoOficinaConcesion() {
+        return codigoOficinaConcesion;
+    }
+
+    public void setCodigoOficinaConcesion(Integer codigoOficinaConcesion) {
+        this.codigoOficinaConcesion = codigoOficinaConcesion;
+    }
+
+    public Integer getCodigoGaranteGarantias() {
+        return codigoGaranteGarantias;
+    }
+
+    public void setCodigoGaranteGarantias(Integer codigoGaranteGarantias) {
+        this.codigoGaranteGarantias = codigoGaranteGarantias;
+    }
+
+    public Integer getCodigoIndicadorOperacionesExenta() {
+        return codigoIndicadorOperacionesExenta;
+    }
+
+    public void setCodigoIndicadorOperacionesExenta(Integer codigoIndicadorOperacionesExenta) {
+        this.codigoIndicadorOperacionesExenta = codigoIndicadorOperacionesExenta;
+    }
+
+    public Integer getCodigoTipoCredito() {
+        return codigoTipoCredito;
+    }
+
+    public void setCodigoTipoCredito(Integer codigoTipoCredito) {
+        this.codigoTipoCredito = codigoTipoCredito;
+    }
+
+    public Integer getCodigoClaseCredito() {
+        return codigoClaseCredito;
+    }
+
+    public void setCodigoClaseCredito(Integer codigoClaseCredito) {
+        this.codigoClaseCredito = codigoClaseCredito;
+    }
+
+    public Integer getCodigoEstadoOperacion() {
+        return codigoEstadoOperacion;
+    }
+
+    public void setCodigoEstadoOperacion(Integer codigoEstadoOperacion) {
+        this.codigoEstadoOperacion = codigoEstadoOperacion;
+    }
+
+    public Integer getCodigoSituaOperacion() {
+        return codigoSituaOperacion;
+    }
+
+    public void setCodigoSituaOperacion(Integer codigoSituaOperacion) {
+        this.codigoSituaOperacion = codigoSituaOperacion;
     }
 }

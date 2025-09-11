@@ -43,6 +43,33 @@ public class R02Entity {
     @Column(name = "CODIGO_LINEA_CREDITO")
     private Integer codigoLineaCredito;
 
+    @Column(name = "CODIGO_PERIODICIDAD_PAGO")
+    private Integer codigoPeriodicidadPago;
+
+    @Column(name = "FRECUENCIA_REVISION")
+    private BigDecimal frecuenciaRevision;
+
+    @Column(name = "CODIGO_OFICINA_CONCESION")
+    private Integer codigoOficinaConcesion;
+
+    @Column(name = "CODIGO_GARANTE_GARANTIAS")
+    private Integer codigoGaranteGarantias;
+
+    @Column(name = "CODIGO_IND_OPER_EXENTA")
+    private Integer codigoIndicadorOperacionesExenta;
+
+    @Column(name = "CODIGO_TIPO_CREDITO")
+    private Integer codigoTipoCredito;
+
+    @Column(name = "CODIGO_CLASE_CREDITO")
+    private Integer codigoClaseCredito;
+
+    @Column(name = "CODIGO_ESTADO_OPERACION")
+    private Integer codigoEstadoOperacion;
+
+    @Column(name = "CODIGO_SITUA_OPERACION")
+    private Integer codigoSituaOperacion;
+
 
     public Long getId() {
         return id;
@@ -130,5 +157,77 @@ public class R02Entity {
 
     public void setCodigoLineaCredito(Integer codigoLineaCredito) {
         this.codigoLineaCredito = codigoLineaCredito;
+    }
+
+    public Integer getCodigoPeriodicidadPago() {
+        return codigoPeriodicidadPago;
+    }
+
+    public void setCodigoPeriodicidadPago(Integer codigoPeriodicidadPago) {
+        this.codigoPeriodicidadPago = codigoPeriodicidadPago;
+    }
+
+    public BigDecimal getFrecuenciaRevision() {
+        return frecuenciaRevision;
+    }
+
+    public void setFrecuenciaRevision(BigDecimal frecuenciaRevision) {
+        this.frecuenciaRevision = frecuenciaRevision;
+    }
+
+    public Integer getCodigoOficinaConcesion() {
+        return codigoOficinaConcesion;
+    }
+
+    public void setCodigoOficinaConcesion(Integer codigoOficinaConcesion) {
+        this.codigoOficinaConcesion = codigoOficinaConcesion;
+    }
+
+    public Integer getCodigoGaranteGarantias() {
+        return codigoGaranteGarantias;
+    }
+
+    public void setCodigoGaranteGarantias(Integer codigoGaranteGarantias) {
+        this.codigoGaranteGarantias = codigoGaranteGarantias;
+    }
+
+    public Integer getCodigoIndicadorOperacionesExenta() {
+        return codigoIndicadorOperacionesExenta;
+    }
+
+    public void setCodigoIndicadorOperacionesExenta(Integer codigoIndicadorOperacionesExenta) {
+        this.codigoIndicadorOperacionesExenta = codigoIndicadorOperacionesExenta;
+    }
+
+    public Integer getCodigoTipoCredito() {
+        return codigoTipoCredito;
+    }
+
+    public void setCodigoTipoCredito(Integer codigoTipoCredito) {
+        this.codigoTipoCredito = codigoTipoCredito;
+    }
+
+    public Integer getCodigoClaseCredito() {
+        return codigoClaseCredito;
+    }
+
+    public void setCodigoClaseCredito(Integer codigoClaseCredito) {
+        this.codigoClaseCredito = codigoClaseCredito;
+    }
+
+    public Integer getCodigoEstadoOperacion() {
+        return codigoEstadoOperacion;
+    }
+
+    public void setCodigoEstadoOperacion(Integer codigoEstadoOperacion) {
+        this.codigoEstadoOperacion = codigoEstadoOperacion;
+    }
+
+    public Integer getCodigoSituaOperacion() {
+        return codigoSituaOperacion;
+    }
+
+    public void setCodigoSituaOperacion(Integer codigoSituaOperacion) {
+        this.codigoSituaOperacion = codigoSituaOperacion;
     }
 }
