@@ -57,97 +57,97 @@ public class R04Controller {
             R04ResumeResponse resume = new R04ResumeResponse();
             
             // Mapeo manual de campos básicos
-            resume.setNumeroOperacion(dto.getNumeroOperacion());
-            resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
-            resume.setDiasMorosidad(dto.getDiasMorosidad());
-            resume.setTasaInteres(dto.getTasaInteres());
-            resume.setValorPorVencer1a30(dto.getValorPorVencer1a30());
-            resume.setValorPorVencer31a90(dto.getValorPorVencer31a90());
-            resume.setValorPorVencer91a180(dto.getValorPorVencer91a180());
-            resume.setValorPorVencer181a360(dto.getValorPorVencer181a360());
-            resume.setValorPorVencerMas360(dto.getValorPorVencerMas360());
-            resume.setValorNoDevenga1a30(dto.getValorNoDevenga1a30());
-            resume.setValorNoDevenga31a90(dto.getValorNoDevenga31a90());
-            resume.setValorNoDevenga91a180(dto.getValorNoDevenga91a180());
-            resume.setValorNoDevenga181a360(dto.getValorNoDevenga181a360());
-            resume.setValorNoDevengaMas360(dto.getValorNoDevengaMas360());
-            resume.setValorVencido1a30(dto.getValorVencido1a30());
-            resume.setValorVencido31a90(dto.getValorVencido31a90());
-            resume.setValorVencido91a180(dto.getValorVencido91a180());
-            resume.setValorVencido181a360(dto.getValorVencido181a360());
-            resume.setValorVencidoMas360(dto.getValorVencidoMas360());
-            resume.setValorVencido181a270(dto.getValorVencido181a270());
-            resume.setValorVencidoMas270(dto.getValorVencidoMas270());
-            resume.setValorVencido91a270(dto.getValorVencido91a270());
-            resume.setValorVencido271a360(dto.getValorVencido271a360());
-            resume.setValorVencido361a720(dto.getValorVencido361a720());
-            resume.setValorVencidoMas720(dto.getValorVencidoMas720());
-            resume.setGastosRecuperacion(dto.getGastosRecuperacion());
-            resume.setInteresOrdinario(dto.getInteresOrdinario());
-            resume.setInteresSobreMora(dto.getInteresSobreMora());
-            resume.setValorDemandaJudicial(dto.getValorDemandaJudicial());
-            resume.setCarteraCastigada(dto.getCarteraCastigada());
-            resume.setProvisionRequeridaOriginal(dto.getProvisionRequeridaOriginal());
-            resume.setProvisionRequeridaReducida(dto.getProvisionRequeridaReducida());
-            resume.setProvisionConstituida(dto.getProvisionConstituida());
-            resume.setPrimaDescuento(dto.getPrimaDescuento());
-            resume.setCuotaCredito(dto.getCuotaCredito());
-            resume.setValorInteresesCuota(dto.getValorInteresesCuota());
-            resume.setValorSeguro(dto.getValorSeguro());
-            resume.setSaldoCuotaCapitalDiferida(dto.getSaldoCuotaCapitalDiferida());
-            resume.setValorInteresCapitalDiferido(dto.getValorInteresCapitalDiferido());
-            resume.setFechaTransferenciaCuentasVencidas(dto.getFechaTransferenciaCuentasVencidas());
-            resume.setInteresesAcumuladosPorCobrar(dto.getInteresesAcumuladosPorCobrar());
-            resume.setInteresesReversados(dto.getInteresesReversados());
-            resume.setFechaExigibilidadCuota(dto.getFechaExigibilidadCuota());
+            resume.numeroOperacion = dto.getNumeroOperacion();
+            resume.identificacionSujeto = dto.getIdentificacionSujeto();
+            resume.diasMorosidad = dto.getDiasMorosidad();
+            resume.tasaInteres = dto.getTasaInteres();
+            resume.valorPorVencer1a30 = dto.getValorPorVencer1a30();
+            resume.valorPorVencer31a90 = dto.getValorPorVencer31a90();
+            resume.valorPorVencer91a180 = dto.getValorPorVencer91a180();
+            resume.valorPorVencer181a360 = dto.getValorPorVencer181a360();
+            resume.valorPorVencerMas360 = dto.getValorPorVencerMas360();
+            resume.valorNoDevenga1a30 = dto.getValorNoDevenga1a30();
+            resume.valorNoDevenga31a90 = dto.getValorNoDevenga31a90();
+            resume.valorNoDevenga91a180 = dto.getValorNoDevenga91a180();
+            resume.valorNoDevenga181a360 = dto.getValorNoDevenga181a360();
+            resume.valorNoDevengaMas360 = dto.getValorNoDevengaMas360();
+            resume.valorVencido1a30 = dto.getValorVencido1a30();
+            resume.valorVencido31a90 = dto.getValorVencido31a90();
+            resume.valorVencido91a180 = dto.getValorVencido91a180();
+            resume.valorVencido181a360 = dto.getValorVencido181a360();
+            resume.valorVencidoMas360 = dto.getValorVencidoMas360();
+            resume.valorVencido181a270 = dto.getValorVencido181a270();
+            resume.valorVencidoMas270 = dto.getValorVencidoMas270();
+            resume.valorVencido91a270 = dto.getValorVencido91a270();
+            resume.valorVencido271a360 = dto.getValorVencido271a360();
+            resume.valorVencido361a720 = dto.getValorVencido361a720();
+            resume.valorVencidoMas720 = dto.getValorVencidoMas720();
+            resume.gastosRecuperacion = dto.getGastosRecuperacion();
+            resume.interesOrdinario = dto.getInteresOrdinario();
+            resume.interesSobreMora = dto.getInteresSobreMora();
+            resume.valorDemandaJudicial = dto.getValorDemandaJudicial();
+            resume.carteraCastigada = dto.getCarteraCastigada();
+            resume.provisionRequeridaOriginal = dto.getProvisionRequeridaOriginal();
+            resume.provisionRequeridaReducida = dto.getProvisionRequeridaReducida();
+            resume.provisionConstituida = dto.getProvisionConstituida();
+            resume.primaDescuento = dto.getPrimaDescuento();
+            resume.cuotaCredito = dto.getCuotaCredito();
+            resume.valorInteresesCuota = dto.getValorInteresesCuota();
+            resume.valorSeguro = dto.getValorSeguro();
+            resume.saldoCuotaCapitalDiferida = dto.getSaldoCuotaCapitalDiferida();
+            resume.valorInteresCapitalDiferido = dto.getValorInteresCapitalDiferido();
+            resume.fechaTransferenciaCuentasVencidas = dto.getFechaTransferenciaCuentasVencidas();
+            resume.interesesAcumuladosPorCobrar = dto.getInteresesAcumuladosPorCobrar();
+            resume.interesesReversados = dto.getInteresesReversados();
+            resume.fechaExigibilidadCuota = dto.getFechaExigibilidadCuota();
 
             // Mapeo de catálogos
             catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
                     .findFirst()
-                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
+                    .ifPresent(catalogT4 -> resume.tipoIdentificacion = 
                             new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
-                    ));
+                    );
 
             // T218 - Metodología de calificación
             catalogT218UseCase.getAllCatalogT218().stream().filter(x -> x.getId() == (dto.getCodigoMetodologiaCalificacion()))
                     .findFirst()
-                    .ifPresent(metodologia -> resume.setMetodologiaCalificacion(
+                    .ifPresent(metodologia -> resume.metodologiaCalificacion = 
                             new ResponseDTO(metodologia.getId(), metodologia.getDescripcion())
-                    ));
+                    );
 
             // T29 - Calificación propia
             catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionPropia()))
                     .findFirst()
-                    .ifPresent(calificacionPropia -> resume.setCalificacionPropia(
+                    .ifPresent(calificacionPropia -> resume.calificacionPropia = 
                             new ResponseDTO(calificacionPropia.getId(), calificacionPropia.getDescripcion())
-                    ));
+                    );
 
             // T29 - Calificación homologada
             catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionHomologada()))
                     .findFirst()
-                    .ifPresent(calificacionHomologada -> resume.setCalificacionHomologada(
+                    .ifPresent(calificacionHomologada -> resume.calificacionHomologada = 
                             new ResponseDTO(calificacionHomologada.getId(), calificacionHomologada.getDescripcion())
-                    ));
+                    );
 
             // T35 - Tipo de operación
             catalogT35UseCase.getAllCatalogT35().stream().filter(x -> x.getId() == (dto.getCodigoTipoOperacion()))
                     .findFirst()
-                    .ifPresent(tipoOperacion -> resume.setTipoOperacion(
+                    .ifPresent(tipoOperacion -> resume.tipoOperacion = 
                             new ResponseDTO(tipoOperacion.getId(), tipoOperacion.getDescripcion())
-                    ));
+                    );
 
             // T55 - Objeto del fideicomiso
             catalogT55UseCase.getAllCatalogT55().stream().filter(x -> x.getId() == (dto.getCodigoObjetoFideicomiso()))
                     .findFirst()
-                    .ifPresent(objetoFideicomiso -> resume.setObjetoFideicomiso(
+                    .ifPresent(objetoFideicomiso -> resume.objetoFideicomiso = 
                             new ResponseDTO(objetoFideicomiso.getId(), objetoFideicomiso.getDescripcion())
-                    ));
+                    );
 
             catalogT317UseCase.getAllT317().stream().filter(x -> x.getId().equals(Long.valueOf(dto.getCodigoTipoSistemaAmortizacion())))
                     .findFirst()
-                    .ifPresent(tipoSistemaAmortizacion -> resume.setTipoSistemaAmortizacion(
+                    .ifPresent(tipoSistemaAmortizacion -> resume.tipoSistemaAmortizacion = 
                             new ResponseDTO(tipoSistemaAmortizacion.getId().intValue(), tipoSistemaAmortizacion.getDescripcion())
-                    ));
+                    );
 
             resumes.add(resume);
         }
@@ -168,7 +168,7 @@ public class R04Controller {
     public R04Dto update(@PathVariable Long id, @RequestBody R04Dto dto) {
         return useCase.update(id, dto);
     }
-
+    
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         useCase.delete(id);
