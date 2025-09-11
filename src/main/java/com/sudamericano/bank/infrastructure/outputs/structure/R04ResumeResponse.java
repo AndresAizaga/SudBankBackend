@@ -1,6 +1,6 @@
 package com.sudamericano.bank.infrastructure.outputs.structure;
 
-import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
+import com.sudamericano.bank.infrastructure.outputs.CatalogResponse;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,15 +11,15 @@ import java.time.LocalDate;
 @Setter
 public class R04ResumeResponse {
     // Campos básicos (1-4)
-    public ResponseDTO tipoIdentificacion;  // 1. Tipo de identificación - Tabla 4
+    public CatalogResponse tipoIdentificacion;  // 1. Tipo de identificación - Tabla 4
     public String identificacionSujeto;     // 2. Identificación del sujeto
     public String numeroOperacion;          // 3. Número de operación
     public Integer diasMorosidad;           // 4. Días de morosidad
     
     // Campos de calificación (5-7)
-    public ResponseDTO metodologiaCalificacion;  // 5. Metodología de calificación - Tabla 218
-    public ResponseDTO calificacionPropia;       // 6. Calificación propia - Tabla 29
-    public ResponseDTO calificacionHomologada;   // 7. Calificación homologada - Tabla 29
+    public CatalogResponse metodologiaCalificacion;  // 5. Metodología de calificación - Tabla 218
+    public CatalogResponse calificacionPropia;       // 6. Calificación propia - Tabla 29
+    public CatalogResponse calificacionHomologada;   // 7. Calificación homologada - Tabla 29
     
     // Campo de interés (8)
     public BigDecimal tasaInteres;          // 8. Tasa de interés
@@ -62,8 +62,8 @@ public class R04ResumeResponse {
     public BigDecimal provisionConstituida; // 37. Provisión constituida
     
     // Campos de operación (38-39)
-    public ResponseDTO tipoOperacion;       // 38. Tipo de operación - Tabla 35
-    public ResponseDTO objetoFideicomiso;   // 39. Objeto del fideicomiso - Tabla 55
+    public CatalogResponse tipoOperacion;       // 38. Tipo de operación - Tabla 35
+    public CatalogResponse objetoFideicomiso;   // 39. Objeto del fideicomiso - Tabla 55
     
     // Campos financieros (40-45)
     public BigDecimal primaDescuento;       // 40. Prima o descuento
@@ -80,6 +80,6 @@ public class R04ResumeResponse {
     
     // Campos adicionales (49-50)
     public LocalDate fechaExigibilidadCuota; // 49. Fecha de exigibilidad de la cuota
-    public ResponseDTO tipoSistemaAmortizacion; // 50. Tipo de sistema de amortización - Tabla 317
+    public CatalogResponse tipoSistemaAmortizacion; // 50. Tipo de sistema de amortización - Tabla 317
 }
 
