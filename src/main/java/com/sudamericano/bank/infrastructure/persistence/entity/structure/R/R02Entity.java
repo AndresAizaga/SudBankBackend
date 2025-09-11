@@ -37,6 +37,12 @@ public class R02Entity {
     @Column(name = "FECH_CONCESION")
     private LocalDate fechaConcesion;
 
+    @Column(name = "FECH_VENCIMIENTO")
+    private LocalDate fechaVencimiento;
+
+    @Column(name = "CODIGO_LINEA_CREDITO")
+    private Integer codigoLineaCredito;
+
 
     public Long getId() {
         return id;
@@ -108,5 +114,21 @@ public class R02Entity {
 
     public void setFechaConcesion(LocalDate fechaConcesion) {
         this.fechaConcesion = fechaConcesion;
+    }
+
+    public LocalDate getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(LocalDate fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
+
+    public Integer getCodigoLineaCredito() {
+        return codigoLineaCredito;
+    }
+
+    public void setCodigoLineaCredito(Integer codigoLineaCredito) {
+        this.codigoLineaCredito = codigoLineaCredito;
     }
 }

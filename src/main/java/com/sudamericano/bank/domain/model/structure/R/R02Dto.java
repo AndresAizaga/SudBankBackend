@@ -13,6 +13,8 @@ public class R02Dto {
     private BigDecimal tea;
     private Integer codigoMoneda;
     private LocalDate fechaConcesion;
+    private LocalDate fechaVencimiento;
+    private Integer codigoLineaCredito;
 
     public Integer getId() {
         return id;
@@ -84,5 +86,21 @@ public class R02Dto {
 
     public void setFechaConcesion(LocalDate fechaConcesion) {
         this.fechaConcesion = fechaConcesion;
+    }
+
+    public LocalDate getFechaVencimiento() {
+        return fechaVencimiento;
+    }
+
+    public void setFechaVencimiento(LocalDate fechaVencimiento) {
+        this.fechaVencimiento = fechaVencimiento;
+    }
+
+    public Integer getCodigoLineaCredito() {
+        return codigoLineaCredito;
+    }
+
+    public void setCodigoLineaCredito(Integer codigoLineaCredito) {
+        this.codigoLineaCredito = codigoLineaCredito;
     }
 }
