@@ -3,7 +3,6 @@ package com.sudamericano.bank.infrastructure.mapper.structure.R;
 import com.sudamericano.bank.domain.model.structure.R.R02Dto;
 import com.sudamericano.bank.infrastructure.persistence.entity.structure.R.R02Entity;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 import java.util.List;
 
