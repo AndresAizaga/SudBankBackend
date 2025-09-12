@@ -104,50 +104,50 @@ public class R04Controller {
             // Mapeo de catálogos
             catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
                     .findFirst()
-                    .ifPresent(catalogT4 -> resume.tipoIdentificacion = 
+                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
                             new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
-                    );
+                    ));
 
             // T218 - Metodología de calificación
             catalogT218UseCase.getAllCatalogT218().stream().filter(x -> x.getId() == (dto.getCodigoMetodologiaCalificacion()))
                     .findFirst()
-                    .ifPresent(metodologia -> resume.metodologiaCalificacion = 
+                    .ifPresent(metodologia -> resume.setMetodologiaCalificacion(
                             new ResponseDTO(metodologia.getId(), metodologia.getDescripcion())
-                    );
+                    ));
 
             // T29 - Calificación propia
             catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionPropia()))
                     .findFirst()
-                    .ifPresent(calificacionPropia -> resume.calificacionPropia = 
+                    .ifPresent(calificacionPropia -> resume.setCalificacionPropia(
                             new ResponseDTO(calificacionPropia.getId(), calificacionPropia.getDescripcion())
-                    );
+                    ));
 
             // T29 - Calificación homologada
             catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionHomologada()))
                     .findFirst()
-                    .ifPresent(calificacionHomologada -> resume.calificacionHomologada = 
+                    .ifPresent(calificacionHomologada -> resume.setCalificacionHomologada(
                             new ResponseDTO(calificacionHomologada.getId(), calificacionHomologada.getDescripcion())
-                    );
+                    ));
 
             // T35 - Tipo de operación
             catalogT35UseCase.getAllCatalogT35().stream().filter(x -> x.getId() == (dto.getCodigoTipoOperacion()))
                     .findFirst()
-                    .ifPresent(tipoOperacion -> resume.tipoOperacion = 
+                    .ifPresent(tipoOperacion -> resume.setTipoOperacion(
                             new ResponseDTO(tipoOperacion.getId(), tipoOperacion.getDescripcion())
-                    );
+                    ));
 
             // T55 - Objeto del fideicomiso
             catalogT55UseCase.getAllCatalogT55().stream().filter(x -> x.getId() == (dto.getCodigoObjetoFideicomiso()))
                     .findFirst()
-                    .ifPresent(objetoFideicomiso -> resume.objetoFideicomiso = 
+                    .ifPresent(objetoFideicomiso -> resume.setObjetoFideicomiso(
                             new ResponseDTO(objetoFideicomiso.getId(), objetoFideicomiso.getDescripcion())
-                    );
+                    ));
 
             catalogT317UseCase.getAllT317().stream().filter(x -> x.getId().equals(Long.valueOf(dto.getCodigoTipoSistemaAmortizacion())))
                     .findFirst()
-                    .ifPresent(tipoSistemaAmortizacion -> resume.tipoSistemaAmortizacion = 
+                    .ifPresent(tipoSistemaAmortizacion -> resume.setTipoSistemaAmortizacion(
                             new ResponseDTO(tipoSistemaAmortizacion.getId().intValue(), tipoSistemaAmortizacion.getDescripcion())
-                    );
+                    ));
 
             resumes.add(resume);
         }
