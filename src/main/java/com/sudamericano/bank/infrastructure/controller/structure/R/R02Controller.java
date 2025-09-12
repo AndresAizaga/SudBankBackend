@@ -43,6 +43,10 @@ public class R02Controller {
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroOperacion(dto.getNumeroOperacion());
             resume.setValorOperacion(dto.getValorOperacion());
+            resume.setTasaInteresNominal(dto.getTasaInteresNominal());
+            resume.setTea(dto.getTea());
+            resume.setCodigoMoneda(dto.getCodigoMoneda());
+            resume.setFechaConcesion(dto.getFechaConcesion());
             resumes.add(resume);
         }
 

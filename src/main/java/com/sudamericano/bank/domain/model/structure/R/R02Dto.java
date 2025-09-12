@@ -27,6 +27,7 @@ public class R02Dto {
     private Integer codigoTipoOperacion;
     private Integer codigoDestFinOperacion;
     private Integer codigoActividadEconoReceptora;
+    private Integer codigoDestinoGeograficaPais;
     private Integer codigoDestinoGeograficaProvincia;
     private Integer codigoDestinoGeograficaCanton;
     private Integer codigoDestinoGeograficaParroquia;
@@ -227,6 +228,14 @@ public class R02Dto {
 
     public void setCodigoActividadEconoReceptora(Integer codigoActividadEconoReceptora) {
         this.codigoActividadEconoReceptora = codigoActividadEconoReceptora;
+    }
+
+    public Integer getCodigoDestinoGeograficaPais() {
+        return codigoDestinoGeograficaPais;
+    }
+
+    public void setCodigoDestinoGeograficaPais(Integer codigoDestinoGeograficaPais) {
+        this.codigoDestinoGeograficaPais = codigoDestinoGeograficaPais;
     }
 
     public Integer getCodigoDestinoGeograficaProvincia() {

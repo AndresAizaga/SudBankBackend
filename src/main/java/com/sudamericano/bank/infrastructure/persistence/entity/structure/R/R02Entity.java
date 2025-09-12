@@ -79,6 +79,9 @@ public class R02Entity {
     @Column(name = "CODIGO_ACTIV_ECONO_RECPETORA")
     private Integer codigoActividadEconoReceptora;
 
+    @Column(name = "CODIGO_DESTINO_GEOGRAF_PAIS")
+    private Integer codigoDestinoGeograficaPais;
+
     @Column(name = "CODIGO_DESTINO_GEOGRAF_PROVINCIA")
     private Integer codigoDestinoGeograficaProvincia;
 
@@ -312,6 +315,14 @@ public class R02Entity {
 
     public void setCodigoActividadEconoReceptora(Integer codigoActividadEconoReceptora) {
         this.codigoActividadEconoReceptora = codigoActividadEconoReceptora;
+    }
+
+    public Integer getCodigoDestinoGeograficaPais() {
+        return codigoDestinoGeograficaPais;
+    }
+
+    public void setCodigoDestinoGeograficaPais(Integer codigoDestinoGeograficaPais) {
+        this.codigoDestinoGeograficaPais = codigoDestinoGeograficaPais;
     }
 
     public Integer getCodigoDestinoGeograficaProvincia() {
