@@ -24,6 +24,26 @@ public class R02Dto {
     private Integer codigoClaseCredito;
     private Integer codigoEstadoOperacion;
     private Integer codigoSituaOperacion;
+    private Integer codigoTipoOperacion;
+    private Integer codigoDestFinOperacion;
+    private Integer codigoActividadEconoReceptora;
+    private Integer codigoDestinoGeograficaProvincia;
+    private Integer codigoDestinoGeograficaCanton;
+    private Integer codigoDestinoGeograficaParroquia;
+    private BigDecimal totalIngreso;
+    private BigDecimal totalEgreso;
+    private Integer codigoNivEstudioEsperado;
+    private Integer numEmpleadosMant;
+    private Integer numEmpleadosIncrement;
+    private BigDecimal produccionActual;
+    private BigDecimal incrementActualEspe;
+    private BigDecimal contribucFbk;
+    private BigDecimal contribucionIntCancer;
+    private String destiCredInmuebles;
+    private BigDecimal valorComercial;
+    private BigDecimal metrosCuadrados;
+    private Integer numeroTotalPersonaAportan;
+
 
     public Integer getId() {
         return id;
@@ -183,5 +203,157 @@ public class R02Dto {
 
     public void setCodigoSituaOperacion(Integer codigoSituaOperacion) {
         this.codigoSituaOperacion = codigoSituaOperacion;
+    }
+
+    public Integer getCodigoTipoOperacion() {
+        return codigoTipoOperacion;
+    }
+
+    public void setCodigoTipoOperacion(Integer codigoTipoOperacion) {
+        this.codigoTipoOperacion = codigoTipoOperacion;
+    }
+
+    public Integer getCodigoDestFinOperacion() {
+        return codigoDestFinOperacion;
+    }
+
+    public void setCodigoDestFinOperacion(Integer codigoDestFinOperacion) {
+        this.codigoDestFinOperacion = codigoDestFinOperacion;
+    }
+
+    public Integer getCodigoActividadEconoReceptora() {
+        return codigoActividadEconoReceptora;
+    }
+
+    public void setCodigoActividadEconoReceptora(Integer codigoActividadEconoReceptora) {
+        this.codigoActividadEconoReceptora = codigoActividadEconoReceptora;
+    }
+
+    public Integer getCodigoDestinoGeograficaProvincia() {
+        return codigoDestinoGeograficaProvincia;
+    }
+
+    public void setCodigoDestinoGeograficaProvincia(Integer codigoDestinoGeograficaProvincia) {
+        this.codigoDestinoGeograficaProvincia = codigoDestinoGeograficaProvincia;
+    }
+
+    public Integer getCodigoDestinoGeograficaCanton() {
+        return codigoDestinoGeograficaCanton;
+    }
+
+    public void setCodigoDestinoGeograficaCanton(Integer codigoDestinoGeograficaCanton) {
+        this.codigoDestinoGeograficaCanton = codigoDestinoGeograficaCanton;
+    }
+
+    public Integer getCodigoDestinoGeograficaParroquia() {
+        return codigoDestinoGeograficaParroquia;
+    }
+
+    public void setCodigoDestinoGeograficaParroquia(Integer codigoDestinoGeograficaParroquia) {
+        this.codigoDestinoGeograficaParroquia = codigoDestinoGeograficaParroquia;
+    }
+
+    public BigDecimal getTotalIngreso() {
+        return totalIngreso;
+    }
+
+    public void setTotalIngreso(BigDecimal totalIngreso) {
+        this.totalIngreso = totalIngreso;
+    }
+
+    public BigDecimal getTotalEgreso() {
+        return totalEgreso;
+    }
+
+    public void setTotalEgreso(BigDecimal totalEgreso) {
+        this.totalEgreso = totalEgreso;
+    }
+
+    public Integer getCodigoNivEstudioEsperado() {
+        return codigoNivEstudioEsperado;
+    }
+
+    public void setCodigoNivEstudioEsperado(Integer codigoNivEstudioEsperado) {
+        this.codigoNivEstudioEsperado = codigoNivEstudioEsperado;
+    }
+
+    public Integer getNumEmpleadosMant() {
+        return numEmpleadosMant;
+    }
+
+    public void setNumEmpleadosMant(Integer numEmpleadosMant) {
+        this.numEmpleadosMant = numEmpleadosMant;
+    }
+
+    public Integer getNumEmpleadosIncrement() {
+        return numEmpleadosIncrement;
+    }
+
+    public void setNumEmpleadosIncrement(Integer numEmpleadosIncrement) {
+        this.numEmpleadosIncrement = numEmpleadosIncrement;
+    }
+
+    public BigDecimal getProduccionActual() {
+        return produccionActual;
+    }
+
+    public void setProduccionActual(BigDecimal produccionActual) {
+        this.produccionActual = produccionActual;
+    }
+
+    public BigDecimal getIncrementActualEspe() {
+        return incrementActualEspe;
+    }
+
+    public void setIncrementActualEspe(BigDecimal incrementActualEspe) {
+        this.incrementActualEspe = incrementActualEspe;
+    }
+
+    public BigDecimal getContribucFbk() {
+        return contribucFbk;
+    }
+
+    public void setContribucFbk(BigDecimal contribucFbk) {
+        this.contribucFbk = contribucFbk;
+    }
+
+    public BigDecimal getContribucionIntCancer() {
+        return contribucionIntCancer;
+    }
+
+    public void setContribucionIntCancer(BigDecimal contribucionIntCancer) {
+        this.contribucionIntCancer = contribucionIntCancer;
+    }
+
+    public String getDestiCredInmuebles() {
+        return destiCredInmuebles;
+    }
+
+    public void setDestiCredInmuebles(String destiCredInmuebles) {
+        this.destiCredInmuebles = destiCredInmuebles;
+    }
+
+    public BigDecimal getValorComercial() {
+        return valorComercial;
+    }
+
+    public void setValorComercial(BigDecimal valorComercial) {
+        this.valorComercial = valorComercial;
+    }
+
+    public BigDecimal getMetrosCuadrados() {
+        return metrosCuadrados;
+    }
+
+    public void setMetrosCuadrados(BigDecimal metrosCuadrados) {
+        this.metrosCuadrados = metrosCuadrados;
+    }
+
+    public Integer getNumeroTotalPersonaAportan() {
+        return numeroTotalPersonaAportan;
+    }
+
+    public void setNumeroTotalPersonaAportan(Integer numeroTotalPersonaAportan) {
+        this.numeroTotalPersonaAportan = numeroTotalPersonaAportan;
     }
 }

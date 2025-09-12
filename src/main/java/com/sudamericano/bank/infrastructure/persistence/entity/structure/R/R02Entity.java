@@ -70,6 +70,65 @@ public class R02Entity {
     @Column(name = "CODIGO_SITUA_OPERACION")
     private Integer codigoSituaOperacion;
 
+    @Column(name = "CODIGO_TIPO_OPERACION")
+    private Integer codigoTipoOperacion;
+
+    @Column(name = "CODIGO_DEST_FIN_OPERACION")
+    private Integer codigoDestFinOperacion;
+
+    @Column(name = "CODIGO_ACTIVIDAD_ECONO_RECPETORA")
+    private Integer codigoActividadEconoReceptora;
+
+    @Column(name = "CODIGO_DESTINO_GEOGRAF_PROVINCIA")
+    private Integer codigoDestinoGeograficaProvincia;
+
+    @Column(name = "CODIGO_DESTINO_GEOGRAF_CANTON")
+    private Integer codigoDestinoGeograficaCanton;
+
+    @Column(name = "CODIGO_DESTINO_GEOGRAF_PARROQUIA")
+    private Integer codigoDestinoGeograficaParroquia;
+
+    @Column(name = "TOTAL_INGRESO", precision = 15, scale = 2)
+    private BigDecimal totalIngreso;
+
+    @Column(name = "TOTAL_EGRESO", precision = 15, scale = 2)
+    private BigDecimal totalEgreso;
+
+    @Column(name = "CODIGO_NIV_ESTUDIO_ESPERADO")
+    private Integer codigoNivEstudioEsperado;
+
+    @Column(name = "NUM_EMPLEADOS_MANT", precision = 5, scale = 0)
+    private Integer numEmpleadosMant;
+
+    @Column(name = "NUM_EMPLEADOS_INCREMENT",precision = 5, scale = 0)
+    private Integer numEmpleadosIncrement;
+
+    @Column(name = "PRODUCCION_ACTUAL", precision = 15, scale = 2)
+    private BigDecimal produccionActual;
+
+    @Column(name = "INCREMENT_ACTUAL_ESPE", precision = 15, scale = 2)
+    private BigDecimal incrementActualEspe;
+
+    @Column(name = "CONTRIBUC_FBK", precision = 15, scale = 2)
+    private BigDecimal contribucFbk;
+
+    @Column(name = "CONTRIBUCION-INT_CANCER", precision = 15, scale = 2)
+    private BigDecimal contribucionIntCancer;
+
+    @Column(name = "DESTI_CRED_INMUEBLES")
+    private String destiCredInmuebles;
+
+    @Column(name = "VALOR_COMERCIAL", precision = 15, scale = 2)
+    private BigDecimal valorComercial;
+
+    @Column(name = "METROS_CUADRADOS", precision = 15, scale = 2)
+    private BigDecimal metrosCuadrados;
+
+    @Column(name = "NUMERO_TOTAL_PERSONA_APORTAN", precision = 4, scale = 0)
+    private Integer numeroTotalPersonaAportan;
+
+
+
 
     public Long getId() {
         return id;
@@ -229,5 +288,157 @@ public class R02Entity {
 
     public void setCodigoSituaOperacion(Integer codigoSituaOperacion) {
         this.codigoSituaOperacion = codigoSituaOperacion;
+    }
+
+    public Integer getCodigoTipoOperacion() {
+        return codigoTipoOperacion;
+    }
+
+    public void setCodigoTipoOperacion(Integer codigoTipoOperacion) {
+        this.codigoTipoOperacion = codigoTipoOperacion;
+    }
+
+    public Integer getCodigoDestFinOperacion() {
+        return codigoDestFinOperacion;
+    }
+
+    public void setCodigoDestFinOperacion(Integer codigoDestFinOperacion) {
+        this.codigoDestFinOperacion = codigoDestFinOperacion;
+    }
+
+    public Integer getCodigoActividadEconoReceptora() {
+        return codigoActividadEconoReceptora;
+    }
+
+    public void setCodigoActividadEconoReceptora(Integer codigoActividadEconoReceptora) {
+        this.codigoActividadEconoReceptora = codigoActividadEconoReceptora;
+    }
+
+    public Integer getCodigoDestinoGeograficaProvincia() {
+        return codigoDestinoGeograficaProvincia;
+    }
+
+    public void setCodigoDestinoGeograficaProvincia(Integer codigoDestinoGeograficaProvincia) {
+        this.codigoDestinoGeograficaProvincia = codigoDestinoGeograficaProvincia;
+    }
+
+    public Integer getCodigoDestinoGeograficaCanton() {
+        return codigoDestinoGeograficaCanton;
+    }
+
+    public void setCodigoDestinoGeograficaCanton(Integer codigoDestinoGeograficaCanton) {
+        this.codigoDestinoGeograficaCanton = codigoDestinoGeograficaCanton;
+    }
+
+    public Integer getCodigoDestinoGeograficaParroquia() {
+        return codigoDestinoGeograficaParroquia;
+    }
+
+    public void setCodigoDestinoGeograficaParroquia(Integer codigoDestinoGeograficaParroquia) {
+        this.codigoDestinoGeograficaParroquia = codigoDestinoGeograficaParroquia;
+    }
+
+    public BigDecimal getTotalIngreso() {
+        return totalIngreso;
+    }
+
+    public void setTotalIngreso(BigDecimal totalIngreso) {
+        this.totalIngreso = totalIngreso;
+    }
+
+    public BigDecimal getTotalEgreso() {
+        return totalEgreso;
+    }
+
+    public void setTotalEgreso(BigDecimal totalEgreso) {
+        this.totalEgreso = totalEgreso;
+    }
+
+    public Integer getCodigoNivEstudioEsperado() {
+        return codigoNivEstudioEsperado;
+    }
+
+    public void setCodigoNivEstudioEsperado(Integer codigoNivEstudioEsperado) {
+        this.codigoNivEstudioEsperado = codigoNivEstudioEsperado;
+    }
+
+    public Integer getNumEmpleadosMant() {
+        return numEmpleadosMant;
+    }
+
+    public void setNumEmpleadosMant(Integer numEmpleadosMant) {
+        this.numEmpleadosMant = numEmpleadosMant;
+    }
+
+    public Integer getNumEmpleadosIncrement() {
+        return numEmpleadosIncrement;
+    }
+
+    public void setNumEmpleadosIncrement(Integer numEmpleadosIncrement) {
+        this.numEmpleadosIncrement = numEmpleadosIncrement;
+    }
+
+    public BigDecimal getProduccionActual() {
+        return produccionActual;
+    }
+
+    public void setProduccionActual(BigDecimal produccionActual) {
+        this.produccionActual = produccionActual;
+    }
+
+    public BigDecimal getIncrementActualEspe() {
+        return incrementActualEspe;
+    }
+
+    public void setIncrementActualEspe(BigDecimal incrementActualEspe) {
+        this.incrementActualEspe = incrementActualEspe;
+    }
+
+    public BigDecimal getContribucFbk() {
+        return contribucFbk;
+    }
+
+    public void setContribucFbk(BigDecimal contribucFbk) {
+        this.contribucFbk = contribucFbk;
+    }
+
+    public BigDecimal getContribucionIntCancer() {
+        return contribucionIntCancer;
+    }
+
+    public void setContribucionIntCancer(BigDecimal contribucionIntCancer) {
+        this.contribucionIntCancer = contribucionIntCancer;
+    }
+
+    public String getDestiCredInmuebles() {
+        return destiCredInmuebles;
+    }
+
+    public void setDestiCredInmuebles(String destiCredInmuebles) {
+        this.destiCredInmuebles = destiCredInmuebles;
+    }
+
+    public BigDecimal getValorComercial() {
+        return valorComercial;
+    }
+
+    public void setValorComercial(BigDecimal valorComercial) {
+        this.valorComercial = valorComercial;
+    }
+
+    public BigDecimal getMetrosCuadrados() {
+        return metrosCuadrados;
+    }
+
+    public void setMetrosCuadrados(BigDecimal metrosCuadrados) {
+        this.metrosCuadrados = metrosCuadrados;
+    }
+
+    public Integer getNumeroTotalPersonaAportan() {
+        return numeroTotalPersonaAportan;
+    }
+
+    public void setNumeroTotalPersonaAportan(Integer numeroTotalPersonaAportan) {
+        this.numeroTotalPersonaAportan = numeroTotalPersonaAportan;
     }
 }
