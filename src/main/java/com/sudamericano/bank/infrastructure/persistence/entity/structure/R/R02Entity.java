@@ -76,7 +76,7 @@ public class R02Entity {
     @Column(name = "CODIGO_DEST_FIN_OPERACION")
     private Integer codigoDestFinOperacion;
 
-    @Column(name = "CODIGO_ACTIVIDAD_ECONO_RECPETORA")
+    @Column(name = "CODIGO_ACTIV_ECONO_RECPETORA")
     private Integer codigoActividadEconoReceptora;
 
     @Column(name = "CODIGO_DESTINO_GEOGRAF_PROVINCIA")
@@ -118,8 +118,8 @@ public class R02Entity {
     @Column(name = "DESTI_CRED_INMUEBLES")
     private String destiCredInmuebles;
 
-    @Column(name = "VALOR_COMERCIAL", precision = 15, scale = 2)
-    private BigDecimal valorComercial;
+    @Column(name = "VALOR_COMERCIAL_INM", precision = 15, scale = 2)
+    private BigDecimal valorComercialInm;
 
     @Column(name = "METROS_CUADRADOS", precision = 15, scale = 2)
     private BigDecimal metrosCuadrados;
@@ -418,12 +418,12 @@ public class R02Entity {
         this.destiCredInmuebles = destiCredInmuebles;
     }
 
-    public BigDecimal getValorComercial() {
-        return valorComercial;
+    public BigDecimal getValorComercialInm() {
+        return valorComercialInm;
     }
 
-    public void setValorComercial(BigDecimal valorComercial) {
-        this.valorComercial = valorComercial;
+    public void setValorComercialInm(BigDecimal valorComercialInml) {
+        this.valorComercialInm = valorComercialInm;
     }
 
     public BigDecimal getMetrosCuadrados() {
