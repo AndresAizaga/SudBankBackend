@@ -9,7 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "T6")
+@Table(name = "T235")
 @Getter
 @NoArgsConstructor
 public class T235Entity {
@@ -19,9 +19,9 @@ public class T235Entity {
 
     private String codigo;
     private String descripcion;
-    private char estado;
+    private String estado;
 
-    public T235Entity(String codigo, String descripcion, char estado) {
+    public T235Entity(String codigo, String descripcion, String estado) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.estado = estado;

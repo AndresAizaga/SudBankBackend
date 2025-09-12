@@ -12,7 +12,7 @@ import java.util.List;
 
 @Tag(name = "T235", description = "Endpoints for T235 management")
 @RestController
-@RequestMapping("/api/v1/catalogs/t235")
+@RequestMapping("/api/catalogs/t235")
 public class T235Controller {
     public T235UseCase useCase;
 

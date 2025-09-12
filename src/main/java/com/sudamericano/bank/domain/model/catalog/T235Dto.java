@@ -11,5 +11,5 @@ public class T235Dto {
     public int id;
     public String codigo;
     public String descripcion;
-    public char estado;
+    public String estado;
 }
