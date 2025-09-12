@@ -4,9 +4,11 @@ import com.sudamericano.bank.domain.model.catalog.T28Dto;
 import com.sudamericano.bank.domain.ports.outputs.catalog.T28Port;
 import com.sudamericano.bank.infrastructure.mapper.catalog.T28Mapper;
 import com.sudamericano.bank.infrastructure.persistence.jpa.catalog.T28Repository;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class T28RepositoryAdapter implements T28Port {
 
     private final T28Repository repository;
