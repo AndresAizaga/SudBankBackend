@@ -19,34 +19,34 @@ public class R04Dto {
     private BigDecimal tasaInteres;
     
     // Valores por vencer (9-13)
-    private BigDecimal valorPorVencer1a30;
-    private BigDecimal valorPorVencer31a90;
-    private BigDecimal valorPorVencer91a180;
-    private BigDecimal valorPorVencer181a360;
-    private BigDecimal valorPorVencerMas360;
+    private BigDecimal valorSaldoVencer1a30d;
+    private BigDecimal valorSaldoVencer31a90d;
+    private BigDecimal valorSaldoVencer91a180d;
+    private BigDecimal valorSaldoVencer181a360d;
+    private BigDecimal valorSaldoVencerMasde360d;
     
     // Valores que no devengan intereses (14-18)
-    private BigDecimal valorNoDevenga1a30;
-    private BigDecimal valorNoDevenga31a90;
-    private BigDecimal valorNoDevenga91a180;
-    private BigDecimal valorNoDevenga181a360;
-    private BigDecimal valorNoDevengaMas360;
+    private BigDecimal valorNoDevInteres1a30d;
+    private BigDecimal valorNoDevInteres31a90d;
+    private BigDecimal valorNoDevInteres91a180d;
+    private BigDecimal valorNoDevInteres181a360d;
+    private BigDecimal valorNoDevInteresMasde360d;
     
     // Valores vencidos (19-29)
-    private BigDecimal valorVencido1a30;
-    private BigDecimal valorVencido31a90;
-    private BigDecimal valorVencido91a180;
-    private BigDecimal valorVencido181a360;
-    private BigDecimal valorVencidoMas360;
-    private BigDecimal valorVencido181a270;
-    private BigDecimal valorVencidoMas270;
-    private BigDecimal valorVencido91a270;
-    private BigDecimal valorVencido271a360;
-    private BigDecimal valorVencido361a720;
-    private BigDecimal valorVencidoMas720;
+    private BigDecimal valorVencido1a30d;
+    private BigDecimal valorVencido31a90d;
+    private BigDecimal valorVencido91a180d;
+    private BigDecimal valorVencido181a360d;
+    private BigDecimal valorVencidoMasde360d;
+    private BigDecimal valorVencido181a270d;
+    private BigDecimal valorVencidoMasde270d;
+    private BigDecimal valorVencido91a270d;
+    private BigDecimal valorVencido271a360d;
+    private BigDecimal valorVencido361a720d;
+    private BigDecimal valorVencidoMasde720d;
     
     // Campos adicionales (30-37)
-    private BigDecimal gastosRecuperacion;
+    private BigDecimal gastosRecuperaCarteraVencida;
     private BigDecimal interesOrdinario;
     private BigDecimal interesSobreMora;
     private BigDecimal valorDemandaJudicial;
@@ -62,15 +62,15 @@ public class R04Dto {
     // Campos financieros (40-45)
     private BigDecimal primaDescuento;
     private BigDecimal cuotaCredito;
-    private BigDecimal valorInteresesCuota;
+    private BigDecimal valorInteresCuotaCredito;
     private BigDecimal valorSeguro;
     private BigDecimal saldoCuotaCapitalDiferida;
     private BigDecimal valorInteresCapitalDiferido;
     
     // Campos de fecha e intereses (46-48)
-    private LocalDate fechaTransferenciaCuentasVencidas;
-    private BigDecimal interesesAcumuladosPorCobrar;
-    private BigDecimal interesesReversados;
+    private LocalDate fechaTransferCuentasVencidas;
+    private BigDecimal interesesAcumuladosCobrar;
+    private BigDecimal interesesReservados;
     
     // Campos adicionales (49-50)
     private LocalDate fechaExigibilidadCuota;
@@ -144,183 +144,183 @@ public class R04Dto {
     }
 
     // Getters y Setters para valores por vencer (9-13)
-    public BigDecimal getValorPorVencer1a30() {
-        return valorPorVencer1a30;
+    public BigDecimal getValorSaldoVencer1a30d() {
+        return valorSaldoVencer1a30d;
     }
 
-    public void setValorPorVencer1a30(BigDecimal valorPorVencer1a30) {
-        this.valorPorVencer1a30 = valorPorVencer1a30;
+    public void setValorSaldoVencer1a30d(BigDecimal valorSaldoVencer1a30d) {
+        this.valorSaldoVencer1a30d = valorSaldoVencer1a30d;
     }
 
-    public BigDecimal getValorPorVencer31a90() {
-        return valorPorVencer31a90;
+    public BigDecimal getValorSaldoVencer31a90d() {
+        return valorSaldoVencer31a90d;
     }
 
-    public void setValorPorVencer31a90(BigDecimal valorPorVencer31a90) {
-        this.valorPorVencer31a90 = valorPorVencer31a90;
+    public void setValorSaldoVencer31a90d(BigDecimal valorSaldoVencer31a90d) {
+        this.valorSaldoVencer31a90d = valorSaldoVencer31a90d;
     }
 
-    public BigDecimal getValorPorVencer91a180() {
-        return valorPorVencer91a180;
+    public BigDecimal getValorSaldoVencer91a180d() {
+        return valorSaldoVencer91a180d;
     }
 
-    public void setValorPorVencer91a180(BigDecimal valorPorVencer91a180) {
-        this.valorPorVencer91a180 = valorPorVencer91a180;
+    public void setValorSaldoVencer91a180d(BigDecimal valorSaldoVencer91a180d) {
+        this.valorSaldoVencer91a180d = valorSaldoVencer91a180d;
     }
 
-    public BigDecimal getValorPorVencer181a360() {
-        return valorPorVencer181a360;
+    public BigDecimal getValorSaldoVencer181a360d() {
+        return valorSaldoVencer181a360d;
     }
 
-    public void setValorPorVencer181a360(BigDecimal valorPorVencer181a360) {
-        this.valorPorVencer181a360 = valorPorVencer181a360;
+    public void setValorSaldoVencer181a360d(BigDecimal valorSaldoVencer181a360d) {
+        this.valorSaldoVencer181a360d = valorSaldoVencer181a360d;
     }
 
-    public BigDecimal getValorPorVencerMas360() {
-        return valorPorVencerMas360;
+    public BigDecimal getValorSaldoVencerMasde360d() {
+        return valorSaldoVencerMasde360d;
     }
 
-    public void setValorPorVencerMas360(BigDecimal valorPorVencerMas360) {
-        this.valorPorVencerMas360 = valorPorVencerMas360;
+    public void setValorSaldoVencerMasde360d(BigDecimal valorSaldoVencerMasde360d) {
+        this.valorSaldoVencerMasde360d = valorSaldoVencerMasde360d;
     }
 
     // Getters y Setters para valores que no devengan intereses (14-18)
-    public BigDecimal getValorNoDevenga1a30() {
-        return valorNoDevenga1a30;
+    public BigDecimal getValorNoDevInteres1a30d() {
+        return valorNoDevInteres1a30d;
     }
 
-    public void setValorNoDevenga1a30(BigDecimal valorNoDevenga1a30) {
-        this.valorNoDevenga1a30 = valorNoDevenga1a30;
+    public void setValorNoDevInteres1a30d(BigDecimal valorNoDevInteres1a30d) {
+        this.valorNoDevInteres1a30d = valorNoDevInteres1a30d;
     }
 
-    public BigDecimal getValorNoDevenga31a90() {
-        return valorNoDevenga31a90;
+    public BigDecimal getValorNoDevInteres31a90d() {
+        return valorNoDevInteres31a90d;
     }
 
-    public void setValorNoDevenga31a90(BigDecimal valorNoDevenga31a90) {
-        this.valorNoDevenga31a90 = valorNoDevenga31a90;
+    public void setValorNoDevInteres31a90d(BigDecimal valorNoDevInteres31a90d) {
+        this.valorNoDevInteres31a90d = valorNoDevInteres31a90d;
     }
 
-    public BigDecimal getValorNoDevenga91a180() {
-        return valorNoDevenga91a180;
+    public BigDecimal getValorNoDevInteres91a180d() {
+        return valorNoDevInteres91a180d;
     }
 
-    public void setValorNoDevenga91a180(BigDecimal valorNoDevenga91a180) {
-        this.valorNoDevenga91a180 = valorNoDevenga91a180;
+    public void setValorNoDevInteres91a180d(BigDecimal valorNoDevInteres91a180d) {
+        this.valorNoDevInteres91a180d = valorNoDevInteres91a180d;
     }
 
-    public BigDecimal getValorNoDevenga181a360() {
-        return valorNoDevenga181a360;
+    public BigDecimal getValorNoDevInteres181a360d() {
+        return valorNoDevInteres181a360d;
     }
 
-    public void setValorNoDevenga181a360(BigDecimal valorNoDevenga181a360) {
-        this.valorNoDevenga181a360 = valorNoDevenga181a360;
+    public void setValorNoDevInteres181a360d(BigDecimal valorNoDevInteres181a360d) {
+        this.valorNoDevInteres181a360d = valorNoDevInteres181a360d;
     }
 
-    public BigDecimal getValorNoDevengaMas360() {
-        return valorNoDevengaMas360;
+    public BigDecimal getValorNoDevInteresMasde360d() {
+        return valorNoDevInteresMasde360d;
     }
 
-    public void setValorNoDevengaMas360(BigDecimal valorNoDevengaMas360) {
-        this.valorNoDevengaMas360 = valorNoDevengaMas360;
+    public void setValorNoDevInteresMasde360d(BigDecimal valorNoDevInteresMasde360d) {
+        this.valorNoDevInteresMasde360d = valorNoDevInteresMasde360d;
     }
 
     // Getters y Setters para valores vencidos (19-29)
-    public BigDecimal getValorVencido1a30() {
-        return valorVencido1a30;
+    public BigDecimal getValorVencido1a30d() {
+        return valorVencido1a30d;
     }
 
-    public void setValorVencido1a30(BigDecimal valorVencido1a30) {
-        this.valorVencido1a30 = valorVencido1a30;
+    public void setValorVencido1a30d(BigDecimal valorVencido1a30d) {
+        this.valorVencido1a30d = valorVencido1a30d;
     }
 
-    public BigDecimal getValorVencido31a90() {
-        return valorVencido31a90;
+    public BigDecimal getValorVencido31a90d() {
+        return valorVencido31a90d;
     }
 
-    public void setValorVencido31a90(BigDecimal valorVencido31a90) {
-        this.valorVencido31a90 = valorVencido31a90;
+    public void setValorVencido31a90d(BigDecimal valorVencido31a90d) {
+        this.valorVencido31a90d = valorVencido31a90d;
     }
 
-    public BigDecimal getValorVencido91a180() {
-        return valorVencido91a180;
+    public BigDecimal getValorVencido91a180d() {
+        return valorVencido91a180d;
     }
 
-    public void setValorVencido91a180(BigDecimal valorVencido91a180) {
-        this.valorVencido91a180 = valorVencido91a180;
+    public void setValorVencido91a180d(BigDecimal valorVencido91a180d) {
+        this.valorVencido91a180d = valorVencido91a180d;
     }
 
-    public BigDecimal getValorVencido181a360() {
-        return valorVencido181a360;
+    public BigDecimal getValorVencido181a360d() {
+        return valorVencido181a360d;
     }
 
-    public void setValorVencido181a360(BigDecimal valorVencido181a360) {
-        this.valorVencido181a360 = valorVencido181a360;
+    public void setValorVencido181a360d(BigDecimal valorVencido181a360d) {
+        this.valorVencido181a360d = valorVencido181a360d;
     }
 
-    public BigDecimal getValorVencidoMas360() {
-        return valorVencidoMas360;
+    public BigDecimal getValorVencidoMasde360d() {
+        return valorVencidoMasde360d;
     }
 
-    public void setValorVencidoMas360(BigDecimal valorVencidoMas360) {
-        this.valorVencidoMas360 = valorVencidoMas360;
+    public void setValorVencidoMasde360d(BigDecimal valorVencidoMasde360d) {
+        this.valorVencidoMasde360d = valorVencidoMasde360d;
     }
 
-    public BigDecimal getValorVencido181a270() {
-        return valorVencido181a270;
+    public BigDecimal getValorVencido181a270d() {
+        return valorVencido181a270d;
     }
 
-    public void setValorVencido181a270(BigDecimal valorVencido181a270) {
-        this.valorVencido181a270 = valorVencido181a270;
+    public void setValorVencido181a270d(BigDecimal valorVencido181a270d) {
+        this.valorVencido181a270d = valorVencido181a270d;
     }
 
-    public BigDecimal getValorVencidoMas270() {
-        return valorVencidoMas270;
+    public BigDecimal getValorVencidoMasde270d() {
+        return valorVencidoMasde270d;
     }
 
-    public void setValorVencidoMas270(BigDecimal valorVencidoMas270) {
-        this.valorVencidoMas270 = valorVencidoMas270;
+    public void setValorVencidoMasde270d(BigDecimal valorVencidoMasde270d) {
+        this.valorVencidoMasde270d = valorVencidoMasde270d;
     }
 
-    public BigDecimal getValorVencido91a270() {
-        return valorVencido91a270;
+    public BigDecimal getValorVencido91a270d() {
+        return valorVencido91a270d;
     }
 
-    public void setValorVencido91a270(BigDecimal valorVencido91a270) {
-        this.valorVencido91a270 = valorVencido91a270;
+    public void setValorVencido91a270d(BigDecimal valorVencido91a270d) {
+        this.valorVencido91a270d = valorVencido91a270d;
     }
 
-    public BigDecimal getValorVencido271a360() {
-        return valorVencido271a360;
+    public BigDecimal getValorVencido271a360d() {
+        return valorVencido271a360d;
     }
 
-    public void setValorVencido271a360(BigDecimal valorVencido271a360) {
-        this.valorVencido271a360 = valorVencido271a360;
+    public void setValorVencido271a360d(BigDecimal valorVencido271a360d) {
+        this.valorVencido271a360d = valorVencido271a360d;
     }
 
-    public BigDecimal getValorVencido361a720() {
-        return valorVencido361a720;
+    public BigDecimal getValorVencido361a720d() {
+        return valorVencido361a720d;
     }
 
-    public void setValorVencido361a720(BigDecimal valorVencido361a720) {
-        this.valorVencido361a720 = valorVencido361a720;
+    public void setValorVencido361a720d(BigDecimal valorVencido361a720d) {
+        this.valorVencido361a720d = valorVencido361a720d;
     }
 
-    public BigDecimal getValorVencidoMas720() {
-        return valorVencidoMas720;
+    public BigDecimal getValorVencidoMasde720d() {
+        return valorVencidoMasde720d;
     }
 
-    public void setValorVencidoMas720(BigDecimal valorVencidoMas720) {
-        this.valorVencidoMas720 = valorVencidoMas720;
+    public void setValorVencidoMasde720d(BigDecimal valorVencidoMasde720d) {
+        this.valorVencidoMasde720d = valorVencidoMasde720d;
     }
 
     // Getters y Setters para campos adicionales (30-37)
-    public BigDecimal getGastosRecuperacion() {
-        return gastosRecuperacion;
+    public BigDecimal getGastosRecuperaCarteraVencida() {
+        return gastosRecuperaCarteraVencida;
     }
 
-    public void setGastosRecuperacion(BigDecimal gastosRecuperacion) {
-        this.gastosRecuperacion = gastosRecuperacion;
+    public void setGastosRecuperaCarteraVencida(BigDecimal gastosRecuperaCarteraVencida) {
+        this.gastosRecuperaCarteraVencida = gastosRecuperaCarteraVencida;
     }
 
     public BigDecimal getInteresOrdinario() {
@@ -413,12 +413,12 @@ public class R04Dto {
         this.cuotaCredito = cuotaCredito;
     }
 
-    public BigDecimal getValorInteresesCuota() {
-        return valorInteresesCuota;
+    public BigDecimal getValorInteresCuotaCredito() {
+        return valorInteresCuotaCredito;
     }
 
-    public void setValorInteresesCuota(BigDecimal valorInteresesCuota) {
-        this.valorInteresesCuota = valorInteresesCuota;
+    public void setValorInteresCuotaCredito(BigDecimal valorInteresCuotaCredito) {
+        this.valorInteresCuotaCredito = valorInteresCuotaCredito;
     }
 
     public BigDecimal getValorSeguro() {
@@ -446,28 +446,28 @@ public class R04Dto {
     }
 
     // Getters y Setters para campos de fecha e intereses (46-48)
-    public LocalDate getFechaTransferenciaCuentasVencidas() {
-        return fechaTransferenciaCuentasVencidas;
+    public LocalDate getFechaTransferCuentasVencidas() {
+        return fechaTransferCuentasVencidas;
     }
 
-    public void setFechaTransferenciaCuentasVencidas(LocalDate fechaTransferenciaCuentasVencidas) {
-        this.fechaTransferenciaCuentasVencidas = fechaTransferenciaCuentasVencidas;
+    public void setFechaTransferCuentasVencidas(LocalDate fechaTransferCuentasVencidas) {
+        this.fechaTransferCuentasVencidas = fechaTransferCuentasVencidas;
     }
 
-    public BigDecimal getInteresesAcumuladosPorCobrar() {
-        return interesesAcumuladosPorCobrar;
+    public BigDecimal getInteresesAcumuladosCobrar() {
+        return interesesAcumuladosCobrar;
     }
 
-    public void setInteresesAcumuladosPorCobrar(BigDecimal interesesAcumuladosPorCobrar) {
-        this.interesesAcumuladosPorCobrar = interesesAcumuladosPorCobrar;
+    public void setInteresesAcumuladosCobrar(BigDecimal interesesAcumuladosCobrar) {
+        this.interesesAcumuladosCobrar = interesesAcumuladosCobrar;
     }
 
-    public BigDecimal getInteresesReversados() {
-        return interesesReversados;
+    public BigDecimal getInteresesReservados() {
+        return interesesReservados;
     }
 
-    public void setInteresesReversados(BigDecimal interesesReversados) {
-        this.interesesReversados = interesesReversados;
+    public void setInteresesReservados(BigDecimal interesesReservados) {
+        this.interesesReservados = interesesReservados;
     }
 
     // Getters y Setters para campos adicionales (49-50)
