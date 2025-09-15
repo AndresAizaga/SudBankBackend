@@ -116,7 +116,7 @@ public class R02Entity {
     private BigDecimal mantenerProduccionExportable;
 
     @Column(name = "INCREMENTO_PRODUCCION_EXPORTABLE", precision = 15, scale = 2)
-    private BigDecimal incrementoPRoduccionExportable;
+    private BigDecimal incrementoProduccionExportable;
 
     @Column(name = "CONTRIBUC_FBK", precision = 15, scale = 2)
     private BigDecimal contribucFbk;
@@ -127,7 +127,7 @@ public class R02Entity {
     @Column(name = "CONTRIBUCION-INT_CANCER", precision = 15, scale = 2)
     private BigDecimal contribucionIntCancer;
 
-    @Column(name = "DESTI_CRED_INMUEBLES")
+    @Column(name = "CODIGO_DESTINO_CREDITO_INMUEBLES")
     private String destiCredInmuebles;
 
     @Column(name = "VALOR_COMERCIAL_INM", precision = 15, scale = 2)
@@ -422,12 +422,12 @@ public class R02Entity {
         this.mantenerProduccionExportable = mantenerProduccionExportable;
     }
 
-    public BigDecimal getIncrementoPRoduccionExportable() {
-        return incrementoPRoduccionExportable;
+    public BigDecimal getIncrementoProduccionExportable() {
+        return incrementoProduccionExportable;
     }
 
-    public void setIncrementoPRoduccionExportable(BigDecimal incrementoPRoduccionExportable) {
-        this.incrementoPRoduccionExportable = incrementoPRoduccionExportable;
+    public void setIncrementoProduccionExportable(BigDecimal incrementoProduccionExportable) {
+        this.incrementoProduccionExportable = incrementoProduccionExportable;
     }
 
     public BigDecimal getContribucFbk() {
