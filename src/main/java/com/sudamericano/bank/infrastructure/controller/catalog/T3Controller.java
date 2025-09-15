@@ -3,8 +3,8 @@ package com.sudamericano.bank.infrastructure.controller.catalog;
 import com.sudamericano.bank.domain.model.catalog.T3Dto;
 import com.sudamericano.bank.domain.ports.inputs.catalog.T3UseCase;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,13 +22,8 @@ public class T3Controller {
     }
 
     @GetMapping
-    public List<T3Dto> getAll() {
-        return useCase.findAll();
-    }
+    public ResponseEntity<List<T3Dto>> getAll() {
+        return ResponseEntity.ok().body(useCase.findAll());
 
-    @GetMapping("/{id}")
-    public T3Dto getById(@PathVariable Integer id) {
-        return useCase.findById(id);
     }
-
 }

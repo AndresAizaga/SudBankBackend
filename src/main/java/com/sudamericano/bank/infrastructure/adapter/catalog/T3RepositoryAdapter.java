@@ -1,9 +1,9 @@
 package com.sudamericano.bank.infrastructure.adapter.catalog;
 
+
 import com.sudamericano.bank.domain.model.catalog.T3Dto;
 import com.sudamericano.bank.domain.ports.outputs.catalog.T3Port;
 import com.sudamericano.bank.infrastructure.mapper.catalog.T3Mapper;
-import com.sudamericano.bank.infrastructure.persistence.entity.catalog.T3Entity;
 import com.sudamericano.bank.infrastructure.persistence.jpa.catalog.T3Repository;
 import org.springframework.stereotype.Component;
 
@@ -22,13 +22,17 @@ public class T3RepositoryAdapter implements T3Port {
 
     @Override
     public List<T3Dto> findAll() {
-        return mapper.toDtoList(repository.findAll());
+        return repository.findAll()
+                .stream()
+                .map(mapper::toDto)
+                .toList();
     }
 
     @Override
     public T3Dto findById(Integer id) {
-        Optional<T3Entity> entity = repository.findById(id);
-        return entity.map(mapper::toDto).orElse(null);
+        return repository.findById(id)
+                .map(mapper::toDto)
+                .orElse(null);
     }
 
 }

@@ -1,14 +1,25 @@
 package com.sudamericano.bank.infrastructure.mapper.catalog;
 
+
 import com.sudamericano.bank.domain.model.catalog.T3Dto;
 import com.sudamericano.bank.infrastructure.persistence.entity.catalog.T3Entity;
-import org.mapstruct.Mapper;
+import org.springframework.stereotype.Component;
+
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
-public interface T3Mapper {
-    T3Dto toDto(T3Entity entity);
-    T3Entity toEntity(T3Dto dto);
-    List<T3Dto> toDtoList(List<T3Entity> entities);
+@Component
+public class T3Mapper {
+   public T3Dto toDto(T3Entity entity){
+       return new T3Dto(
+               entity.getId(),
+               entity.getCodigo(),
+               entity.getDescripcion(),
+               entity.getTipo(),
+               entity.getCodigoParrroquia(),
+               entity.getDireccion(),
+               entity.getTelefono(),
+               entity.getEstado()
+       );
+   }
 }

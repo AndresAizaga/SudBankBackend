@@ -20,6 +20,7 @@ public class T3Service implements T3UseCase {
         return port.findAll();
     }
 
+    @Override
     public T3Dto findById(Integer id) {
         return port.findById(id);
     }
