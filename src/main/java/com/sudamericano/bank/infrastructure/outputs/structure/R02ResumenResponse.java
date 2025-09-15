@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -14,5 +15,9 @@ public class R02ResumenResponse {
     private String identificacionSujeto;
     private String numeroOperacion;
     private BigDecimal valorOperacion;
+    private BigDecimal tasaInteresNominal;
+    private BigDecimal tea;
+    private Integer codigoMoneda;
+    private LocalDate fechaConcesion;
 
 }
