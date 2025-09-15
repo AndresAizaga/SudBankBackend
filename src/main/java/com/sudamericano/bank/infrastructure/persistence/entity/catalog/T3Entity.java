@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "T33")
+@Table(name = "T3")
 @Getter
 @NoArgsConstructor
 public class T3Entity {
@@ -16,7 +16,10 @@ public class T3Entity {
     private String codigo;
     private String descripcion;
     private String tipo;
+
+    @Column(name = "CODIGO_PARRROQUIA")
     private Integer codigoParrroquia;
+
     private String direccion;
     private String telefono;
     private Integer estado;
