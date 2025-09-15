@@ -9,14 +9,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class T3Dto {
 
-    public int id;
-    public String codigo;
-    public String descripcion;
-    public String tipo;
-    public Integer codigoParrroquia;
-    public String direccion;
-    public String telefono;
-    public Integer estado;
+    private int id;
+    private String codigo;
+    private String descripcion;
+    private String tipo;
+    private Integer codigoParrroquia;
+    private String direccion;
+    private String telefono;
+    private Integer estado;
 
 
 }

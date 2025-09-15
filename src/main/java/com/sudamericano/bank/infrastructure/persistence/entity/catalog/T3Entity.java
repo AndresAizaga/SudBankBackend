@@ -13,7 +13,7 @@ import lombok.Setter;
 public class T3Entity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "CODIGO")
     private String codigo;
