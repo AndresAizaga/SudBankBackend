@@ -35,6 +35,4 @@ public class R04Service implements R04UseCase {
     public void delete(Long id) {
         port.delete(id);
     }
-
-
 }

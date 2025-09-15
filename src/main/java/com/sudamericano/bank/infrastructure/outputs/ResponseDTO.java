@@ -6,10 +6,18 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ResponseDTO{
-    public Integer code;
-    public String description;
-    public ResponseDTO(Integer code, String description) {
-        this.code = code;
-        this.description = description;
+    public Integer id;
+    public String codigo;
+    public String descripcion;
+    public ResponseDTO(Integer id, String codigo, String descripcion) {
+        this.id = id;
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+    }
+    
+    public ResponseDTO(Integer id, String descripcion) {
+        this.id = id;
+        this.codigo = null;
+        this.descripcion = descripcion;
     }
 }
