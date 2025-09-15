@@ -38,7 +38,10 @@ public class R02Dto {
     private Integer numEmpleadosIncrement;
     private BigDecimal produccionActual;
     private BigDecimal incrementActualEspe;
+    private BigDecimal mantenerProduccionExportable;
+    private BigDecimal incrementoPRoduccionExportable;
     private BigDecimal contribucFbk;
+    private BigDecimal incremnetoInvFbk;
     private BigDecimal contribucionIntCancer;
     private String destiCredInmuebles;
     private BigDecimal valorComercial;
@@ -318,12 +321,36 @@ public class R02Dto {
         this.incrementActualEspe = incrementActualEspe;
     }
 
+    public BigDecimal getMantenerProduccionExportable() {
+        return mantenerProduccionExportable;
+    }
+
+    public void setMantenerProduccionExportable(BigDecimal mantenerProduccionExportable) {
+        this.mantenerProduccionExportable = mantenerProduccionExportable;
+    }
+
+    public BigDecimal getIncrementoPRoduccionExportable() {
+        return incrementoPRoduccionExportable;
+    }
+
+    public void setIncrementoPRoduccionExportable(BigDecimal incrementoPRoduccionExportable) {
+        this.incrementoPRoduccionExportable = incrementoPRoduccionExportable;
+    }
+
     public BigDecimal getContribucFbk() {
         return contribucFbk;
     }
 
     public void setContribucFbk(BigDecimal contribucFbk) {
         this.contribucFbk = contribucFbk;
+    }
+
+    public BigDecimal getIncremnetoInvFbk() {
+        return incremnetoInvFbk;
+    }
+
+    public void setIncremnetoInvFbk(BigDecimal incremnetoInvFbk) {
+        this.incremnetoInvFbk = incremnetoInvFbk;
     }
 
     public BigDecimal getContribucionIntCancer() {

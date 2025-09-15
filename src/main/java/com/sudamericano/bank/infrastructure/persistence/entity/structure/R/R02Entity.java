@@ -112,8 +112,17 @@ public class R02Entity {
     @Column(name = "INCREMENT_ACTUAL_ESPE", precision = 15, scale = 2)
     private BigDecimal incrementActualEspe;
 
+    @Column(name = "MANTENER_PRODUCCION_EXPORTABLE",   precision = 15, scale = 2)
+    private BigDecimal mantenerProduccionExportable;
+
+    @Column(name = "INCREMENTO_PRODUCCION_EXPORTABLE", precision = 15, scale = 2)
+    private BigDecimal incrementoPRoduccionExportable;
+
     @Column(name = "CONTRIBUC_FBK", precision = 15, scale = 2)
     private BigDecimal contribucFbk;
+
+    @Column(name = "INCREMENTO_INV_FBK", precision = 15, scale = 2)
+    private BigDecimal incremnetoInvFbk;
 
     @Column(name = "CONTRIBUCION-INT_CANCER", precision = 15, scale = 2)
     private BigDecimal contribucionIntCancer;
@@ -405,12 +414,36 @@ public class R02Entity {
         this.incrementActualEspe = incrementActualEspe;
     }
 
+    public BigDecimal getMantenerProduccionExportable() {
+        return mantenerProduccionExportable;
+    }
+
+    public void setMantenerProduccionExportable(BigDecimal mantenerProduccionExportable) {
+        this.mantenerProduccionExportable = mantenerProduccionExportable;
+    }
+
+    public BigDecimal getIncrementoPRoduccionExportable() {
+        return incrementoPRoduccionExportable;
+    }
+
+    public void setIncrementoPRoduccionExportable(BigDecimal incrementoPRoduccionExportable) {
+        this.incrementoPRoduccionExportable = incrementoPRoduccionExportable;
+    }
+
     public BigDecimal getContribucFbk() {
         return contribucFbk;
     }
 
     public void setContribucFbk(BigDecimal contribucFbk) {
         this.contribucFbk = contribucFbk;
+    }
+
+    public BigDecimal getIncremnetoInvFbk() {
+        return incremnetoInvFbk;
+    }
+
+    public void setIncremnetoInvFbk(BigDecimal incremnetoInvFbk) {
+        this.incremnetoInvFbk = incremnetoInvFbk;
     }
 
     public BigDecimal getContribucionIntCancer() {
