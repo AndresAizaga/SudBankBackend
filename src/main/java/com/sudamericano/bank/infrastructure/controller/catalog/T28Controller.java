@@ -12,7 +12,7 @@ import java.util.List;
 
 @Tag(name = "Catalog T28", description = "Endpoints para gestionar T28")
 @RestController
-@RequestMapping("/api/v1/catalogs/t28")
+@RequestMapping("/api/catalogs/t28")
 public class T28Controller {
 
     private final T28UseCase useCase;
