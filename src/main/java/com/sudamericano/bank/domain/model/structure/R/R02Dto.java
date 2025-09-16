@@ -43,7 +43,7 @@ public class R02Dto {
     private BigDecimal contribucFbk;
     private BigDecimal incremnetoInvFbk;
     private BigDecimal contribucionIntCancer;
-    private String destiCredInmuebles;
+    private Integer destiCredInmuebles;
     private BigDecimal valorComercial;
     private BigDecimal metrosCuadrados;
     private Integer numeroTotalPersonaAportan;
@@ -361,11 +361,11 @@ public class R02Dto {
         this.contribucionIntCancer = contribucionIntCancer;
     }
 
-    public String getDestiCredInmuebles() {
+    public Integer getDestiCredInmuebles() {
         return destiCredInmuebles;
     }
 
-    public void setDestiCredInmuebles(String destiCredInmuebles) {
+    public void setDestiCredInmuebles(Integer destiCredInmuebles) {
         this.destiCredInmuebles = destiCredInmuebles;
     }
 

@@ -128,7 +128,7 @@ public class R02Entity {
     private BigDecimal contribucionIntCancer;
 
     @Column(name = "CODIGO_DESTINO_CREDITO_INMUEBLES")
-    private String destiCredInmuebles;
+    private Integer destiCredInmuebles;
 
     @Column(name = "VALOR_COMERCIAL_INM", precision = 15, scale = 2)
     private BigDecimal valorComercialInm;
@@ -454,11 +454,11 @@ public class R02Entity {
         this.contribucionIntCancer = contribucionIntCancer;
     }
 
-    public String getDestiCredInmuebles() {
+    public Integer getDestiCredInmuebles() {
         return destiCredInmuebles;
     }
 
-    public void setDestiCredInmuebles(String destiCredInmuebles) {
+    public void setDestiCredInmuebles(Integer destiCredInmuebles) {
         this.destiCredInmuebles = destiCredInmuebles;
     }
 
