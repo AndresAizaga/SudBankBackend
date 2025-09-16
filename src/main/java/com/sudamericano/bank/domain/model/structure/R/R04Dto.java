@@ -4,35 +4,26 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class R04Dto {
-    // Campos básicos (1-4)
+    
+    private Long id;
     private Integer codigoTipoIdentificacion;
     private String identificacionSujeto;
     private String numeroOperacion;
     private Integer diasMorosidad;
-    
-    // Campos de calificación (5-7)
     private Integer codigoMetodologiaCalificacion;
     private Integer codigoCalificacionPropia;
     private Integer codigoCalificacionHomologada;
-    
-    // Campo de interés (8)
     private BigDecimal tasaInteres;
-    
-    // Valores por vencer (9-13)
     private BigDecimal valorSaldoVencer1a30d;
     private BigDecimal valorSaldoVencer31a90d;
     private BigDecimal valorSaldoVencer91a180d;
     private BigDecimal valorSaldoVencer181a360d;
     private BigDecimal valorSaldoVencerMasde360d;
-    
-    // Valores que no devengan intereses (14-18)
     private BigDecimal valorNoDevInteres1a30d;
     private BigDecimal valorNoDevInteres31a90d;
     private BigDecimal valorNoDevInteres91a180d;
     private BigDecimal valorNoDevInteres181a360d;
     private BigDecimal valorNoDevInteresMasde360d;
-    
-    // Valores vencidos (19-29)
     private BigDecimal valorVencido1a30d;
     private BigDecimal valorVencido31a90d;
     private BigDecimal valorVencido91a180d;
@@ -44,8 +35,6 @@ public class R04Dto {
     private BigDecimal valorVencido271a360d;
     private BigDecimal valorVencido361a720d;
     private BigDecimal valorVencidoMasde720d;
-    
-    // Campos adicionales (30-37)
     private BigDecimal gastosRecuperaCarteraVencida;
     private BigDecimal interesOrdinario;
     private BigDecimal interesSobreMora;
@@ -54,29 +43,28 @@ public class R04Dto {
     private BigDecimal provisionRequeridaOriginal;
     private BigDecimal provisionRequeridaReducida;
     private BigDecimal provisionConstituida;
-    
-    // Campos de operación (38-39)
     private Integer codigoTipoOperacion;
     private Integer codigoObjetoFideicomiso;
-    
-    // Campos financieros (40-45)
     private BigDecimal primaDescuento;
     private BigDecimal cuotaCredito;
     private BigDecimal valorInteresCuotaCredito;
     private BigDecimal valorSeguro;
     private BigDecimal saldoCuotaCapitalDiferida;
     private BigDecimal valorInteresCapitalDiferido;
-    
-    // Campos de fecha e intereses (46-48)
     private LocalDate fechaTransferCuentasVencidas;
     private BigDecimal interesesAcumuladosCobrar;
     private BigDecimal interesesReservados;
-    
-    // Campos adicionales (49-50)
     private LocalDate fechaExigibilidadCuota;
     private Integer codigoTipoSistemaAmortizacion;
 
-    // Getters y Setters para campos básicos (1-4)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Integer getCodigoTipoIdentificacion() {
         return codigoTipoIdentificacion;
     }
@@ -109,7 +97,6 @@ public class R04Dto {
         this.diasMorosidad = diasMorosidad;
     }
 
-    // Getters y Setters para campos de calificación (5-7)
     public Integer getCodigoMetodologiaCalificacion() {
         return codigoMetodologiaCalificacion;
     }
@@ -134,7 +121,6 @@ public class R04Dto {
         this.codigoCalificacionHomologada = codigoCalificacionHomologada;
     }
 
-    // Getters y Setters para campo de interés (8)
     public BigDecimal getTasaInteres() {
         return tasaInteres;
     }
@@ -143,7 +129,6 @@ public class R04Dto {
         this.tasaInteres = tasaInteres;
     }
 
-    // Getters y Setters para valores por vencer (9-13)
     public BigDecimal getValorSaldoVencer1a30d() {
         return valorSaldoVencer1a30d;
     }
@@ -184,7 +169,6 @@ public class R04Dto {
         this.valorSaldoVencerMasde360d = valorSaldoVencerMasde360d;
     }
 
-    // Getters y Setters para valores que no devengan intereses (14-18)
     public BigDecimal getValorNoDevInteres1a30d() {
         return valorNoDevInteres1a30d;
     }
@@ -225,7 +209,6 @@ public class R04Dto {
         this.valorNoDevInteresMasde360d = valorNoDevInteresMasde360d;
     }
 
-    // Getters y Setters para valores vencidos (19-29)
     public BigDecimal getValorVencido1a30d() {
         return valorVencido1a30d;
     }
@@ -379,7 +362,6 @@ public class R04Dto {
         this.provisionConstituida = provisionConstituida;
     }
 
-    // Getters y Setters para campos de operación (38-39)
     public Integer getCodigoTipoOperacion() {
         return codigoTipoOperacion;
     }
@@ -396,7 +378,6 @@ public class R04Dto {
         this.codigoObjetoFideicomiso = codigoObjetoFideicomiso;
     }
 
-    // Getters y Setters para campos financieros (40-45)
     public BigDecimal getPrimaDescuento() {
         return primaDescuento;
     }
@@ -445,7 +426,6 @@ public class R04Dto {
         this.valorInteresCapitalDiferido = valorInteresCapitalDiferido;
     }
 
-    // Getters y Setters para campos de fecha e intereses (46-48)
     public LocalDate getFechaTransferCuentasVencidas() {
         return fechaTransferCuentasVencidas;
     }
@@ -470,7 +450,6 @@ public class R04Dto {
         this.interesesReservados = interesesReservados;
     }
 
-    // Getters y Setters para campos adicionales (49-50)
     public LocalDate getFechaExigibilidadCuota() {
         return fechaExigibilidadCuota;
     }
