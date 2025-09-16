@@ -1,5 +1,6 @@
 package com.sudamericano.bank.infrastructure.controller.structure.R;
 
+import com.sudamericano.bank.domain.model.catalog.CatalogT4;
 import com.sudamericano.bank.domain.model.catalog.CatalogT29;
 import com.sudamericano.bank.domain.model.catalog.CatalogT35;
 import com.sudamericano.bank.domain.model.catalog.CatalogT55;
@@ -53,6 +54,14 @@ public class R04Controller {
     public List<R04ResumeResponse> getAllResume() {
         List<R04ResumeResponse> resumes = new java.util.ArrayList<>(List.of());
 
+        // Cache de catálogos para optimizar rendimiento
+        List<CatalogT4> catalogT4List = catalogT4UseCase.getAllCatalogT4();
+        List<CatalogT29> catalogT29List = catalogT29UseCase.getAllCatalogT29();
+        List<CatalogT35> catalogT35List = catalogT35UseCase.getAllCatalogT35();
+        List<CatalogT55> catalogT55List = catalogT55UseCase.getAllCatalogT55();
+        List<CatalogT218> catalogT218List = catalogT218UseCase.getAllCatalogT218();
+        List<CatalogT317> catalogT317List = catalogT317UseCase.getAllT317();
+
         for (R04Dto dto : useCase.findAll()) {
             R04ResumeResponse resume = new R04ResumeResponse();
             
@@ -101,53 +110,76 @@ public class R04Controller {
             resume.setInteresesReversados(dto.getInteresesReservados());
             resume.setFechaExigibilidadCuota(dto.getFechaExigibilidadCuota());
 
-            // Mapeo de catálogos
-            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
-                    .findFirst()
-                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
-                            new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
-                    ));
+            // Mapeo de catálogos - Usando listas cacheadas para optimizar rendimiento
+            // T4 - Tipo de identificación
+            if (dto.getCodigoTipoIdentificacion() != null) {
+                catalogT4List.stream()
+                        .filter(x -> x.getId() == dto.getCodigoTipoIdentificacion())
+                        .findFirst()
+                        .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
+                                new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
+                        ));
+            }
 
             // T218 - Metodología de calificación
-            catalogT218UseCase.getAllCatalogT218().stream().filter(x -> x.getId() == (dto.getCodigoMetodologiaCalificacion()))
-                    .findFirst()
-                    .ifPresent(metodologia -> resume.setMetodologiaCalificacion(
-                            new ResponseDTO(metodologia.getId(), metodologia.getDescripcion())
-                    ));
+            if (dto.getCodigoMetodologiaCalificacion() != null) {
+                catalogT218List.stream()
+                        .filter(x -> x.getId() == dto.getCodigoMetodologiaCalificacion())
+                        .findFirst()
+                        .ifPresent(metodologia -> resume.setMetodologiaCalificacion(
+                                new ResponseDTO(metodologia.getId(), metodologia.getDescripcion())
+                        ));
+            }
 
             // T29 - Calificación propia
-            catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionPropia()))
-                    .findFirst()
-                    .ifPresent(calificacionPropia -> resume.setCalificacionPropia(
-                            new ResponseDTO(calificacionPropia.getId(), calificacionPropia.getDescripcion())
-                    ));
+            if (dto.getCodigoCalificacionPropia() != null) {
+                catalogT29List.stream()
+                        .filter(x -> x.getId() == dto.getCodigoCalificacionPropia())
+                        .findFirst()
+                        .ifPresent(calificacionPropia -> resume.setCalificacionPropia(
+                                new ResponseDTO(calificacionPropia.getId(), calificacionPropia.getDescripcion())
+                        ));
+            }
 
             // T29 - Calificación homologada
-            catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionHomologada()))
-                    .findFirst()
-                    .ifPresent(calificacionHomologada -> resume.setCalificacionHomologada(
-                            new ResponseDTO(calificacionHomologada.getId(), calificacionHomologada.getDescripcion())
-                    ));
+            if (dto.getCodigoCalificacionHomologada() != null) {
+                catalogT29List.stream()
+                        .filter(x -> x.getId() == dto.getCodigoCalificacionHomologada())
+                        .findFirst()
+                        .ifPresent(calificacionHomologada -> resume.setCalificacionHomologada(
+                                new ResponseDTO(calificacionHomologada.getId(), calificacionHomologada.getDescripcion())
+                        ));
+            }
 
             // T35 - Tipo de operación
-            catalogT35UseCase.getAllCatalogT35().stream().filter(x -> x.getId() == (dto.getCodigoTipoOperacion()))
-                    .findFirst()
-                    .ifPresent(tipoOperacion -> resume.setTipoOperacion(
-                            new ResponseDTO(tipoOperacion.getId(), tipoOperacion.getDescripcion())
-                    ));
+            if (dto.getCodigoTipoOperacion() != null) {
+                catalogT35List.stream()
+                        .filter(x -> x.getId() == dto.getCodigoTipoOperacion())
+                        .findFirst()
+                        .ifPresent(tipoOperacion -> resume.setTipoOperacion(
+                                new ResponseDTO(tipoOperacion.getId(), tipoOperacion.getDescripcion())
+                        ));
+            }
 
             // T55 - Objeto del fideicomiso
-            catalogT55UseCase.getAllCatalogT55().stream().filter(x -> x.getId() == (dto.getCodigoObjetoFideicomiso()))
-                    .findFirst()
-                    .ifPresent(objetoFideicomiso -> resume.setObjetoFideicomiso(
-                            new ResponseDTO(objetoFideicomiso.getId(), objetoFideicomiso.getDescripcion())
-                    ));
+            if (dto.getCodigoObjetoFideicomiso() != null) {
+                catalogT55List.stream()
+                        .filter(x -> x.getId() == dto.getCodigoObjetoFideicomiso())
+                        .findFirst()
+                        .ifPresent(objetoFideicomiso -> resume.setObjetoFideicomiso(
+                                new ResponseDTO(objetoFideicomiso.getId(), objetoFideicomiso.getDescripcion())
+                        ));
+            }
 
-            catalogT317UseCase.getAllT317().stream().filter(x -> x.getId().equals(Long.valueOf(dto.getCodigoTipoSistemaAmortizacion())))
-                    .findFirst()
-                    .ifPresent(tipoSistemaAmortizacion -> resume.setTipoSistemaAmortizacion(
-                            new ResponseDTO(tipoSistemaAmortizacion.getId().intValue(), tipoSistemaAmortizacion.getDescripcion())
-                    ));
+            // T317 - Tipo de sistema de amortización
+            if (dto.getCodigoTipoSistemaAmortizacion() != null) {
+                catalogT317List.stream()
+                        .filter(x -> x.getId().equals(Long.valueOf(dto.getCodigoTipoSistemaAmortizacion())))
+                        .findFirst()
+                        .ifPresent(tipoSistemaAmortizacion -> resume.setTipoSistemaAmortizacion(
+                                new ResponseDTO(tipoSistemaAmortizacion.getId().intValue(), tipoSistemaAmortizacion.getDescripcion())
+                        ));
+            }
 
             resumes.add(resume);
         }
