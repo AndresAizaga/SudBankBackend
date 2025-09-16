@@ -1,16 +1,16 @@
 package com.sudamericano.bank.domain.model.catalog;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Data
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 public class CatalogT317 {
-    private Long id;
-    private String codigo;
-    private String descripcion;
+    public int id;
+    public String codigo;
+    public String descripcion;
 }

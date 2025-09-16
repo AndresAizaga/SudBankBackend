@@ -132,10 +132,10 @@ public class R04Controller {
             resume.setInteresesReversados(dto.getInteresesReservados());
             resume.setFechaExigibilidadCuota(dto.getFechaExigibilidadCuota());
 
-            catalogT317UseCase.getAllCatalogT317().stream().filter(x -> x.getId().equals(Long.valueOf(dto.getCodigoTipoSistemaAmortizacion())))
+            catalogT317UseCase.getAllCatalogT317().stream().filter(x -> x.getId() == dto.getCodigoTipoSistemaAmortizacion())
             .findFirst()
             .ifPresent(catalogT317 -> resume.setTipoSistemaAmortizacion(
-                    new ResponseDTO(catalogT317.getId().intValue(), catalogT317.getDescripcion())
+                    new ResponseDTO(catalogT317.getId(), catalogT317.getDescripcion())
             ));
 
             resumes.add(resume);
