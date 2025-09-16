@@ -127,7 +127,7 @@ public class R02Entity {
     @Column(name = "CONTRIBUCION-INT_CANCER", precision = 15, scale = 2)
     private BigDecimal contribucionIntCancer;
 
-    @Column(name = "CODIGO_DESTINO_CREDITO_INMUEBLES")
+    @Column(name = "DESTI_CRED_INMUEBLES")
     private Integer destiCredInmuebles;
 
     @Column(name = "VALOR_COMERCIAL_INMUEBLE", precision = 15, scale = 2)
