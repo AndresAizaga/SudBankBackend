@@ -14,7 +14,7 @@ public class CatalogT317Service implements CatalogT317UseCase {
     private final CatalogT317RepositoryPort catalogT317RepositoryPort;
 
     @Override
-    public List<CatalogT317> getAllT317() {
-        return catalogT317RepositoryPort.getAllT317();
+    public List<CatalogT317> getAllCatalogT317() {
+        return catalogT317RepositoryPort.getAllCatalogT317();
     }
 }
