@@ -130,7 +130,7 @@ public class R02Entity {
     @Column(name = "CODIGO_DESTINO_CREDITO_INMUEBLES")
     private Integer destiCredInmuebles;
 
-    @Column(name = "VALOR_COMERCIAL_INM", precision = 15, scale = 2)
+    @Column(name = "VALOR_COMERCIAL_INMUEBLE", precision = 15, scale = 2)
     private BigDecimal valorComercialInm;
 
     @Column(name = "METROS_CUADRADOS", precision = 15, scale = 2)
