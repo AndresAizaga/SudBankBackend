@@ -4,5 +4,5 @@ import com.sudamericano.bank.domain.model.catalog.CatalogT317;
 import java.util.List;
 
 public interface CatalogT317RepositoryPort {
-    List<CatalogT317> getAllT317();
+    List<CatalogT317> findAll();
 }
