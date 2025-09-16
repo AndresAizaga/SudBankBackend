@@ -39,12 +39,12 @@ public class R02Dto {
     private BigDecimal produccionActual;
     private BigDecimal incrementActualEspe;
     private BigDecimal mantenerProduccionExportable;
-    private BigDecimal incrementoPRoduccionExportable;
+    private BigDecimal incrementoProduccionExportable;
     private BigDecimal contribucFbk;
     private BigDecimal incremnetoInvFbk;
     private BigDecimal contribucionIntCancer;
-    private String destiCredInmuebles;
-    private BigDecimal valorComercial;
+    private Integer destiCredInmuebles;
+    private BigDecimal valorComercialInm;
     private BigDecimal metrosCuadrados;
     private Integer numeroTotalPersonaAportan;
 
@@ -329,12 +329,12 @@ public class R02Dto {
         this.mantenerProduccionExportable = mantenerProduccionExportable;
     }
 
-    public BigDecimal getIncrementoPRoduccionExportable() {
-        return incrementoPRoduccionExportable;
+    public BigDecimal getIncrementoProduccionExportable() {
+        return incrementoProduccionExportable;
     }
 
-    public void setIncrementoPRoduccionExportable(BigDecimal incrementoPRoduccionExportable) {
-        this.incrementoPRoduccionExportable = incrementoPRoduccionExportable;
+    public void setIncrementoProduccionExportable(BigDecimal incrementoProduccionExportable) {
+        this.incrementoProduccionExportable = incrementoProduccionExportable;
     }
 
     public BigDecimal getContribucFbk() {
@@ -361,20 +361,20 @@ public class R02Dto {
         this.contribucionIntCancer = contribucionIntCancer;
     }
 
-    public String getDestiCredInmuebles() {
+    public Integer getDestiCredInmuebles() {
         return destiCredInmuebles;
     }
 
-    public void setDestiCredInmuebles(String destiCredInmuebles) {
+    public void setDestiCredInmuebles(Integer destiCredInmuebles) {
         this.destiCredInmuebles = destiCredInmuebles;
     }
 
-    public BigDecimal getValorComercial() {
-        return valorComercial;
+    public BigDecimal getValorComercialInm() {
+        return valorComercialInm;
     }
 
-    public void setValorComercial(BigDecimal valorComercial) {
-        this.valorComercial = valorComercial;
+    public void setValorComercialInm(BigDecimal valorComercialInm) {
+        this.valorComercialInm = valorComercialInm;
     }
 
     public BigDecimal getMetrosCuadrados() {

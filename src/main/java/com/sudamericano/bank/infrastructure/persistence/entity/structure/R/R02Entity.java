@@ -112,10 +112,10 @@ public class R02Entity {
     @Column(name = "INCREMENT_ACTUAL_ESPE", precision = 15, scale = 2)
     private BigDecimal incrementActualEspe;
 
-    @Column(name = "MANTENER_PRODUCCION_EXPORTABLE",   precision = 15, scale = 2)
+    @Column(name = "PROD_ACTUAL_MANT",   precision = 15, scale = 2)
     private BigDecimal mantenerProduccionExportable;
 
-    @Column(name = "INCREMENTO_PRODUCCION_EXPORTABLE", precision = 15, scale = 2)
+    @Column(name = "INCREMENT_ESPE_PROD", precision = 15, scale = 2)
     private BigDecimal incrementoProduccionExportable;
 
     @Column(name = "CONTRIBUC_FBK", precision = 15, scale = 2)
@@ -127,8 +127,8 @@ public class R02Entity {
     @Column(name = "CONTRIBUCION-INT_CANCER", precision = 15, scale = 2)
     private BigDecimal contribucionIntCancer;
 
-    @Column(name = "CODIGO_DESTINO_CREDITO_INMUEBLES")
-    private String destiCredInmuebles;
+    @Column(name = "DESTI_CRED_INMUEBLES")
+    private Integer destiCredInmuebles;
 
     @Column(name = "VALOR_COMERCIAL_INM", precision = 15, scale = 2)
     private BigDecimal valorComercialInm;
@@ -454,11 +454,11 @@ public class R02Entity {
         this.contribucionIntCancer = contribucionIntCancer;
     }
 
-    public String getDestiCredInmuebles() {
+    public Integer getDestiCredInmuebles() {
         return destiCredInmuebles;
     }
 
-    public void setDestiCredInmuebles(String destiCredInmuebles) {
+    public void setDestiCredInmuebles(Integer destiCredInmuebles) {
         this.destiCredInmuebles = destiCredInmuebles;
     }
 
@@ -466,7 +466,7 @@ public class R02Entity {
         return valorComercialInm;
     }
 
-    public void setValorComercialInm(BigDecimal valorComercialInml) {
+    public void setValorComercialInm(BigDecimal valorComercialInm) {
         this.valorComercialInm = valorComercialInm;
     }
 
