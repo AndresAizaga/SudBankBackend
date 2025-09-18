@@ -4,6 +4,8 @@ import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 public class R05ResumeResponse {
@@ -12,7 +14,7 @@ public class R05ResumeResponse {
     private String identificacionSujeto;
     private String numeroOperacion;
     private ResponseDTO codigoTipoTransaccion;
-    private String fechaCancelacion;
+    private LocalDate fechaCancelacion;
     private ResponseDTO codigoFormaCancelacion;
     private ResponseDTO codigoCalificacion;
 
