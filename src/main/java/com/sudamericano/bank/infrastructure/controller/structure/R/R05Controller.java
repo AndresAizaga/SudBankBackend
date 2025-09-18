@@ -39,9 +39,11 @@ public class R05Controller {
         return useCase.findAll();
     }
 
-    @GetMapping("/resumen")
+    @GetMapping("/resume")
     public List<R05ResumeResponse> getAllResume(){
+
         List<R05ResumeResponse> resumes =  new java.util.ArrayList<>(List.of());
+
         for (R05Dto dto : useCase.findAll()) {
             R05ResumeResponse resume = new R05ResumeResponse();
             catalogUseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
@@ -55,7 +57,6 @@ public class R05Controller {
             if(transaccion != null){
                 resume.setCodigoTipoTransaccion(new ResponseDTO(transaccion.getId(), transaccion.getDescripcion()));
             }
-
 
             T39Dto cancelacion = t39UseCase.findById(dto.getCodigoFormaCancelacion());
             if(transaccion != null){
@@ -71,6 +72,7 @@ public class R05Controller {
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroOperacion(dto.getNumeroOperacion());
             resume.setFechaCancelacion(dto.getFechaCancelacion());
+            resumes.add(resume);
 
         }
         return resumes;
