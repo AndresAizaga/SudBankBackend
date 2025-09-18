@@ -2,6 +2,8 @@ package com.sudamericano.bank.infrastructure.persistence.entity.structure.R;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "NESR05")
 public class R05Entity {
@@ -22,7 +24,7 @@ public class R05Entity {
     private Integer codigoTipoTransaccion;
 
     @Column(name = "FECHA_CANCELACION")
-    private String fechaCancelacion;
+    private LocalDate fechaCancelacion;
 
     @Column(name = "CODIGO_FORMA_CANCELACION")
     private Integer codigoFormaCancelacion;
@@ -70,11 +72,11 @@ public class R05Entity {
         this.codigoTipoTransaccion = codigoTipoTransaccion;
     }
 
-    public String getFechaCancelacion() {
+    public LocalDate getFechaCancelacion() {
         return fechaCancelacion;
     }
 
-    public void setFechaCancelacion(String fechaCancelacion) {
+    public void setFechaCancelacion(LocalDate fechaCancelacion) {
         this.fechaCancelacion = fechaCancelacion;
     }
 
