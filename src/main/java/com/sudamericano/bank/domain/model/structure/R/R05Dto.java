@@ -1,12 +1,14 @@
 package com.sudamericano.bank.domain.model.structure.R;
 
+import java.time.LocalDate;
+
 public class R05Dto {
     private Integer id;
     private Integer codigoTipoIdentificacion;
     private String identificacionSujeto;
     private String numeroOperacion;
     private Integer codigoTipoTransaccion;
-    private String fechaCancelacion;
+    private LocalDate fechaCancelacion;
     private Integer codigoFormaCancelacion;
     private Integer codigoCalificacion;
 
@@ -50,11 +52,11 @@ public class R05Dto {
         this.codigoTipoTransaccion = codigoTipoTransaccion;
     }
 
-    public String getFechaCancelacion() {
+    public LocalDate getFechaCancelacion() {
         return fechaCancelacion;
     }
 
-    public void setFechaCancelacion(String fechaCancelacion) {
+    public void setFechaCancelacion(LocalDate fechaCancelacion) {
         this.fechaCancelacion = fechaCancelacion;
     }
 
