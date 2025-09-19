@@ -46,7 +46,7 @@ public class R02Controller {
 
             T33Dto moneda = t33UseCase.findById(dto.getCodigoMoneda());
             if (moneda != null) {
-                resume.setMoneda(new ResponseDTO(moneda.getId(), moneda.getDescripcion()));
+                resume.setCodigoMoneda(new ResponseDTO(moneda.getId(), moneda.getDescripcion()));
             }
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroOperacion(dto.getNumeroOperacion());
