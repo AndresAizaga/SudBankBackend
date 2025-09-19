@@ -1,8 +1,10 @@
 package com.sudamericano.bank.infrastructure.controller.structure.R;
 
 
+import com.sudamericano.bank.domain.model.catalog.T33Dto;
 import com.sudamericano.bank.domain.model.structure.R.R02Dto;
 import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT4UseCase;
+import com.sudamericano.bank.domain.ports.inputs.catalog.T33UseCase;
 import com.sudamericano.bank.domain.ports.inputs.structure.R.R02UseCase;
 import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
 import com.sudamericano.bank.infrastructure.outputs.structure.R02ResumenResponse;
@@ -17,10 +19,12 @@ import java.util.List;
 public class R02Controller {
     private final R02UseCase r02useCase;
     private final CatalogT4UseCase catalogT4UseCase;
+    private final T33UseCase t33UseCase;
 
-    public R02Controller(R02UseCase useCase, CatalogT4UseCase catalogT4UseCase) {
+    public R02Controller(R02UseCase useCase, CatalogT4UseCase catalogT4UseCase, T33UseCase t33UseCase) {
         this.r02useCase = useCase;
         this.catalogT4UseCase = catalogT4UseCase;
+        this.t33UseCase = t33UseCase;
     }
 
     @GetMapping
@@ -40,12 +44,15 @@ public class R02Controller {
                             new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
                     ));
 
+            T33Dto moneda = t33UseCase.findById(dto.getCodigoMoneda());
+            if (moneda != null) {
+                resume.setMoneda(new ResponseDTO(moneda.getId(), moneda.getDescripcion()));
+            }
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroOperacion(dto.getNumeroOperacion());
             resume.setValorOperacion(dto.getValorOperacion());
             resume.setTasaInteresNominal(dto.getTasaInteresNominal());
             resume.setTea(dto.getTea());
-            resume.setCodigoMoneda(dto.getCodigoMoneda());
             resume.setFechaConcesion(dto.getFechaConcesion());
             resumes.add(resume);
         }
