@@ -53,13 +53,13 @@ public class R05Controller {
                     ));
 
 
-            T208Dto transaccion = t208UseCase.findById(dto.getCodigoFormaCancelacion());
+            T208Dto transaccion = t208UseCase.findById(dto.getCodigoTipoTransaccion());
             if(transaccion != null){
                 resume.setCodigoTipoTransaccion(new ResponseDTO(transaccion.getId(), transaccion.getDescripcion()));
             }
 
             T39Dto cancelacion = t39UseCase.findById(dto.getCodigoFormaCancelacion());
-            if(transaccion != null){
+            if(cancelacion != null){
                 resume.setCodigoFormaCancelacion(new ResponseDTO(cancelacion.getId(), cancelacion.getDescripcion()));
             }
 
