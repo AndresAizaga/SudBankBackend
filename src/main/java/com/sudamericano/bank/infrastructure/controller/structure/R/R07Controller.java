@@ -2,7 +2,6 @@ package com.sudamericano.bank.infrastructure.controller.structure.R;
 
 import com.sudamericano.bank.domain.model.catalog.T42Dto;
 import com.sudamericano.bank.domain.model.catalog.T47Dto;
-import com.sudamericano.bank.domain.model.catalog.CatalogT4;
 import com.sudamericano.bank.domain.model.catalog.T5Dto;
 import com.sudamericano.bank.domain.model.catalog.T6Dto;
 import com.sudamericano.bank.domain.model.catalog.T7Dto;
@@ -60,45 +59,37 @@ public class R07Controller {
 
         for (R07Dto dto : useCase.findAll()) {
             R07ResumeResponse resume = new R07ResumeResponse();
-            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getTipoIdentificacionSujeto().charAt(0)))
+            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == dto.getCodigoTipoIdentificacion())
                     .findFirst()
-                    .ifPresent(catalogT4 -> resume.setTipoIdentificacionSujeto(
+                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
                             new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
                     ));
-            
+
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroOperacion(dto.getNumeroOperacion());
             resume.setNumeroGarantia(dto.getNumeroGarantia());
 
-            t42UseCase.findAll().stream()
-                    .filter(tipoGarantia -> String.valueOf(tipoGarantia.getId()).equals(dto.getTipoGarantia()))
-                    .findFirst()
-                    .ifPresent(tipoGarantia -> resume.setTipoGarantia(
-                            new ResponseDTO(tipoGarantia.getId(), tipoGarantia.getDescripcion())
-                    ));
-            
+            T42Dto tipoGarantia = t42UseCase.findById(Integer.parseInt(dto.getTipoGarantia()));
+            if (tipoGarantia != null) {
+                resume.setTipoGarantia(new ResponseDTO(tipoGarantia.getId(), tipoGarantia.getDescripcion()));
+            }
+
             resume.setDescripcionGarantia(dto.getDescripcionGarantia());
 
-            t5UseCase.findAll().stream()
-                    .filter(pais -> String.valueOf(pais.getId()).equals(dto.getUbicacionGarantiaPais()))
-                    .findFirst()
-                    .ifPresent(pais -> resume.setUbicacionGarantiaPais(
-                            new ResponseDTO(pais.getId(), pais.getDescripcion())
-                    ));
+            T5Dto pais = t5UseCase.findById(Integer.parseInt(dto.getUbicacionGarantiaPais()));
+            if (pais != null) {
+                resume.setUbicacionGarantiaPais(new ResponseDTO(pais.getId(), pais.getDescripcion()));
+            }
 
-            t6UseCase.findAll().stream()
-                    .filter(provincia -> String.valueOf(provincia.getId()).equals(dto.getUbicacionGarantiaProvincia()))
-                    .findFirst()
-                    .ifPresent(provincia -> resume.setUbicacionGarantiaProvincia(
-                            new ResponseDTO(provincia.getId(), provincia.getDescripcion())
-                    ));
+            T6Dto provincia = t6UseCase.findById(Integer.parseInt(dto.getUbicacionGarantiaProvincia()));
+            if (provincia != null) {
+                resume.setUbicacionGarantiaProvincia(new ResponseDTO(provincia.getId(), provincia.getDescripcion()));
+            }
 
-            t7UseCase.findAll().stream()
-                    .filter(canton -> String.valueOf(canton.getId()).equals(dto.getUbicacionGarantiaCanton()))
-                    .findFirst()
-                    .ifPresent(canton -> resume.setUbicacionGarantiaCanton(
-                            new ResponseDTO(canton.getId(), canton.getDescripcion())
-                    ));
+            T7Dto canton = t7UseCase.findById(Integer.parseInt(dto.getUbicacionGarantiaCanton()));
+            if (canton != null) {
+                resume.setUbicacionGarantiaCanton(new ResponseDTO(canton.getId(), canton.getDescripcion()));
+            }
 
             resume.setValorAvaluoTitulo(dto.getValorAvaluoTitulo());
             resume.setFechaAvaluo(dto.getFechaAvaluo());
@@ -106,12 +97,10 @@ public class R07Controller {
             resume.setFechaContabilizacionGarantia(dto.getFechaContabilizacionGarantia());
             resume.setPorcentajeCubreGarantia(dto.getPorcentajeCubreGarantia());
 
-            t47UseCase.findAll().stream()
-                    .filter(estadoRegistro -> String.valueOf(estadoRegistro.getId()).equals(dto.getEstadoRegistro()))
-                    .findFirst()
-                    .ifPresent(estadoRegistro -> resume.setEstadoRegistro(
-                            new ResponseDTO(estadoRegistro.getId(), estadoRegistro.getDescripcion())
-                    ));
+            T47Dto estadoRegistro = t47UseCase.findById(Integer.parseInt(dto.getEstadoRegistro()));
+            if (estadoRegistro != null) {
+                resume.setEstadoRegistro(new ResponseDTO(estadoRegistro.getId(), estadoRegistro.getDescripcion()));
+            }
 
             resumes.add(resume);
         }
@@ -138,4 +127,3 @@ public class R07Controller {
         useCase.delete(id);
     }
 }
-

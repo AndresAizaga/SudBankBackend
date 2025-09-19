@@ -26,4 +26,11 @@ public class T5RepositoryAdapter implements T5RepositoryPort {
                 .map(mapper::toDto)
                 .toList();
     }
+
+    @Override
+    public T5Dto findById(Integer id) {
+        return repository.findById(id)
+                .map(mapper::toDto)
+                .orElse(null);
+    }
 }

@@ -19,4 +19,9 @@ public class T5Service implements T5UseCase {
     public List<T5Dto> findAll() {
         return port.findAll();
     }
+
+    @Override
+    public T5Dto findById(Integer id) {
+        return port.findById(id);
+    }
 }
