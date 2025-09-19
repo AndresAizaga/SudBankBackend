@@ -16,7 +16,7 @@ public class R07Entity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "TIPO_IDENTIFICACION_SUJETO", length = 1, nullable = false)
+    @Column(name = "CODIGO_TIPO_IDENTIFICACION", length = 1, nullable = false)
     private String tipoIdentificacionSujeto; // Caracter (1) - Tabla 4
 
     @Column(name = "IDENTIFICACION_SUJETO", length = 13, nullable = false)
@@ -28,22 +28,22 @@ public class R07Entity {
     @Column(name = "NUMERO_GARANTIA", length = 32, nullable = false)
     private String numeroGarantia; // Caracter (32)
 
-    @Column(name = "TIPO_GARANTIA", length = 3, nullable = false)
+    @Column(name = "CODIGO_TIPO_GARANTIA", length = 3, nullable = false)
     private String tipoGarantia; // Caracter (3) - Tabla 42
 
     @Column(name = "DESCRIPCION_GARANTIA", length = 120, nullable = false)
     private String descripcionGarantia; // Caracter (120)
 
-    @Column(name = "UBICACION_GARANTIA_PAIS", length = 2, nullable = false)
+    @Column(name = "CODIGO_PAIS", length = 2, nullable = false)
     private String ubicacionGarantiaPais; // Caracter (2) - Tabla 5
 
-    @Column(name = "UBICACION_GARANTIA_PROVINCIA", length = 2)
+    @Column(name = "CODIGO_PROVINCIA", length = 2)
     private String ubicacionGarantiaProvincia; // Caracter (2) - Tabla 6
 
-    @Column(name = "UBICACION_GARANTIA_CANTON", length = 2)
+    @Column(name = "CODIGO_CANTON", length = 2)
     private String ubicacionGarantiaCanton; // Caracter (2) - Tabla 7
 
-    @Column(name = "VALOR_AVALUO_TITULO", precision = 15, scale = 2, nullable = false)
+    @Column(name = "VALOR_AVALUO", precision = 15, scale = 2, nullable = false)
     private BigDecimal valorAvaluoTitulo; // Numérico (15,2)
 
     @Column(name = "FECHA_AVALUO", nullable = false)
@@ -55,9 +55,9 @@ public class R07Entity {
     @Column(name = "FECHA_CONTABILIZACION_GARANTIA", nullable = false)
     private LocalDate fechaContabilizacionGarantia; // Fecha (dd/mm/aaaa)
 
-    @Column(name = "PORCENTAJE_CUBRE_GARANTIA", precision = 5, scale = 2, nullable = false)
+    @Column(name = "PORCENTAJE_GARANTIA", precision = 5, scale = 2, nullable = false)
     private BigDecimal porcentajeCubreGarantia; // Numérico (5,2)
 
-    @Column(name = "ESTADO_REGISTRO", length = 1, nullable = false)
+    @Column(name = "CODIGO_ESTADO_REGISTRO", length = 1, nullable = false)
     private String estadoRegistro; // Caracter (1) - Tabla 47
 }
