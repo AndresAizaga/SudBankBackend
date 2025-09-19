@@ -17,7 +17,7 @@ public class R02ResumenResponse {
     private BigDecimal valorOperacion;
     private BigDecimal tasaInteresNominal;
     private BigDecimal tea;
-    private Integer codigoMoneda;
+    private ResponseDTO codigoMoneda;
     private LocalDate fechaConcesion;
 
 }
