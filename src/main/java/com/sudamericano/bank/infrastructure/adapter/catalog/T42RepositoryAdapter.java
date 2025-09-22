@@ -26,4 +26,11 @@ public class T42RepositoryAdapter implements T42Port {
                 .map(mapper::toDomain)
                 .toList();
     }
+
+    @Override
+    public T42Dto findById(Integer id) {
+        return repository.findById(id)
+                .map(mapper::toDomain)
+                .orElse(null);
+    }
 }

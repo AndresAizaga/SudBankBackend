@@ -20,4 +20,9 @@ public class T42Service implements T42UseCase {
     public List<T42Dto> findAll() {
         return port.findAll();
     }
+
+    @Override
+    public T42Dto findById(Integer id) {
+        return port.findById(id);
+    }
 }

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class R07ResumeResponse {
-    public ResponseDTO tipoIdentificacionSujeto;
+    public ResponseDTO tipoIdentificacion;
     public String identificacionSujeto;
     public String numeroOperacion;
     public String numeroGarantia;

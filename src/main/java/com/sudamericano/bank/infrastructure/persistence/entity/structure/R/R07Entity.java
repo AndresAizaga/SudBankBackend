@@ -16,8 +16,8 @@ public class R07Entity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "CODIGO_TIPO_IDENTIFICACION", length = 1, nullable = false)
-    private String tipoIdentificacionSujeto; // Caracter (1) - Tabla 4
+    @Column(name = "CODIGO_TIPO_IDENTIFICACION", nullable = false)
+    private Integer codigoTipoIdentificacion; // Integer - Tabla 4
 
     @Column(name = "IDENTIFICACION_SUJETO", length = 13, nullable = false)
     private String identificacionSujeto; // Caracter (13)
