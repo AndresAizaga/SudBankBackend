@@ -20,4 +20,9 @@ public class CatalogT35Service implements CatalogT35UseCase {
     public List<CatalogT35> getAllCatalogT35() {
         return catalogT35RepositoryPort.findAll();
     }
+
+    @Override
+    public CatalogT35 findById(Integer id) {
+        return catalogT35RepositoryPort.findById(id);
+    }
 }

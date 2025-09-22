@@ -28,4 +28,11 @@ public class SqlCatalogT218RepositoryAdapter implements CatalogT218RepositoryPor
                 .map(mapper::toDomain)
                 .toList();
     }
+
+    @Override
+    public CatalogT218 findById(Integer id) {
+        return springDataCatalogT218Repository.findById(id)
+                .map(mapper::toDomain)
+                .orElse(null);
+    }
 }

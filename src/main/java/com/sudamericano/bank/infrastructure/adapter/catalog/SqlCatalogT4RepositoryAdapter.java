@@ -28,4 +28,11 @@ public class SqlCatalogT4RepositoryAdapter implements CatalogT4RepositoryPort {
                 .map(mapper::toDomain)
                 .toList();
     }
+
+    @Override
+    public CatalogT4 findById(Integer id) {
+        return springDataCatalogT4Repository.findById(id)
+                .map(mapper::toDomain)
+                .orElse(null);
+    }
 }

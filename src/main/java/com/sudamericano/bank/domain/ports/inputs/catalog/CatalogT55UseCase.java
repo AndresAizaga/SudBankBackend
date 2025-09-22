@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CatalogT55UseCase {
     List<CatalogT55> getAllCatalogT55();
+    CatalogT55 findById(Integer id);
 }
