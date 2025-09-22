@@ -79,35 +79,28 @@ public class R07RepositoryAdapter implements R07Port {
 
     private R07Dto mapEntityToDtoResolvingIds(R07Entity e) {
         R07Dto d = mapper.toDto(e);
-        // Resolver códigos a IDs numéricos para que el controller use findById como L02
-        d.setCodigoTipoIdentificacion(resolveIdSafe(() -> catalogT4UseCase.getAllCatalogT4().stream()
-                .filter(x -> x.getCodigo() != null && x.getCodigo().equals(e.getCodigoTipoIdentificacion()))
-                .map(x -> x.getId()).findFirst().orElse(null)));
+        // Los FKs ya son IDs numéricos en la tabla, setear directamente
+        d.setCodigoTipoIdentificacion(e.getCodigoTipoIdentificacion());
+        d.setTipoGarantia(e.getTipoGarantia());
+        d.setUbicacionGarantiaPais(e.getUbicacionGarantiaPais());
+        d.setUbicacionGarantiaProvincia(e.getUbicacionGarantiaProvincia());
+        d.setUbicacionGarantiaCanton(e.getUbicacionGarantiaCanton());
+        d.setEstadoRegistro(e.getEstadoRegistro());
 
-        d.setTipoGarantia(resolveIdSafe(() -> t42UseCase.findAll().stream()
-                .filter(x -> x.getCodigo() != null && x.getCodigo().equals(e.getTipoGarantia()))
-                .map(x -> x.getId()).findFirst().orElse(null)));
-
-        d.setUbicacionGarantiaPais(resolveIdSafe(() -> t5UseCase.findAll().stream()
-                .filter(x -> x.getCodigo() != null && x.getCodigo().equals(e.getUbicacionGarantiaPais()))
-                .map(x -> x.getId()).findFirst().orElse(null)));
-
-        d.setUbicacionGarantiaProvincia(resolveIdSafe(() -> t6UseCase.findAll().stream()
-                .filter(x -> x.getCodigo() != null && x.getCodigo().equals(e.getUbicacionGarantiaProvincia()))
-                .map(x -> x.getId()).findFirst().orElse(null)));
-
-        d.setUbicacionGarantiaCanton(resolveIdSafe(() -> t7UseCase.findAll().stream()
-                .filter(x -> x.getCodigo() != null && x.getCodigo().equals(e.getUbicacionGarantiaCanton()))
-                .map(x -> x.getId()).findFirst().orElse(null)));
-
-        d.setEstadoRegistro(resolveIdSafe(() -> t47UseCase.findAll().stream()
-                .filter(x -> x.getCodigo() != null && x.getCodigo().equals(e.getEstadoRegistro()))
-                .map(x -> x.getId()).findFirst().orElse(null)));
+        // Convertir fechas varchar(10) dd/MM/yyyy a LocalDate en el DTO
+        d.setFechaAvaluo(parseLocalDate(e.getFechaAvaluo()));
+        d.setFechaContabilizacionGarantia(parseLocalDate(e.getFechaContabilizacionGarantia()));
 
         return d;
     }
 
-    private Integer resolveIdSafe(java.util.concurrent.Callable<Integer> callable) {
-        try { return callable.call(); } catch (Exception ex) { return null; }
+    private java.time.LocalDate parseLocalDate(String dateStr) {
+        if (dateStr == null || dateStr.isBlank()) return null;
+        try {
+            java.time.format.DateTimeFormatter fmt = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            return java.time.LocalDate.parse(dateStr, fmt);
+        } catch (Exception ex) {
+            return null;
+        }
     }
 }
