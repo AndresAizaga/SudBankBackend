@@ -10,17 +10,17 @@ public class R07Dto {
     private String identificacionSujeto;
     private String numeroOperacion;
     private String numeroGarantia;
-    private String tipoGarantia;
+    private Integer tipoGarantia;
     private String descripcionGarantia;
-    private String ubicacionGarantiaPais;
-    private String ubicacionGarantiaProvincia;
-    private String ubicacionGarantiaCanton;
+    private Integer ubicacionGarantiaPais;
+    private Integer ubicacionGarantiaProvincia;
+    private Integer ubicacionGarantiaCanton;
     private BigDecimal valorAvaluoTitulo;
     private LocalDate fechaAvaluo;
     private String numeroRegistroGarantia;
     private LocalDate fechaContabilizacionGarantia;
     private BigDecimal porcentajeCubreGarantia;
-    private String estadoRegistro;
+    private Integer estadoRegistro;
 
     public Long getId() {
         return id;
@@ -62,11 +62,11 @@ public class R07Dto {
         this.numeroGarantia = numeroGarantia;
     }
 
-    public String getTipoGarantia() {
+    public Integer getTipoGarantia() {
         return tipoGarantia;
     }
 
-    public void setTipoGarantia(String tipoGarantia) {
+    public void setTipoGarantia(Integer tipoGarantia) {
         this.tipoGarantia = tipoGarantia;
     }
 
@@ -78,27 +78,27 @@ public class R07Dto {
         this.descripcionGarantia = descripcionGarantia;
     }
 
-    public String getUbicacionGarantiaPais() {
+    public Integer getUbicacionGarantiaPais() {
         return ubicacionGarantiaPais;
     }
 
-    public void setUbicacionGarantiaPais(String ubicacionGarantiaPais) {
+    public void setUbicacionGarantiaPais(Integer ubicacionGarantiaPais) {
         this.ubicacionGarantiaPais = ubicacionGarantiaPais;
     }
 
-    public String getUbicacionGarantiaProvincia() {
+    public Integer getUbicacionGarantiaProvincia() {
         return ubicacionGarantiaProvincia;
     }
 
-    public void setUbicacionGarantiaProvincia(String ubicacionGarantiaProvincia) {
+    public void setUbicacionGarantiaProvincia(Integer ubicacionGarantiaProvincia) {
         this.ubicacionGarantiaProvincia = ubicacionGarantiaProvincia;
     }
 
-    public String getUbicacionGarantiaCanton() {
+    public Integer getUbicacionGarantiaCanton() {
         return ubicacionGarantiaCanton;
     }
 
-    public void setUbicacionGarantiaCanton(String ubicacionGarantiaCanton) {
+    public void setUbicacionGarantiaCanton(Integer ubicacionGarantiaCanton) {
         this.ubicacionGarantiaCanton = ubicacionGarantiaCanton;
     }
 
@@ -142,11 +142,11 @@ public class R07Dto {
         this.porcentajeCubreGarantia = porcentajeCubreGarantia;
     }
 
-    public String getEstadoRegistro() {
+    public Integer getEstadoRegistro() {
         return estadoRegistro;
     }
 
-    public void setEstadoRegistro(String estadoRegistro) {
+    public void setEstadoRegistro(Integer estadoRegistro) {
         this.estadoRegistro = estadoRegistro;
     }
 }

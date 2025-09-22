@@ -17,7 +17,7 @@ public class R07Entity {
     private Long id;
 
     @Column(name = "CODIGO_TIPO_IDENTIFICACION", nullable = false)
-    private Integer codigoTipoIdentificacion; // Integer - Tabla 4
+    private String codigoTipoIdentificacion; // Caracter (1) - Tabla 4
 
     @Column(name = "IDENTIFICACION_SUJETO", length = 13, nullable = false)
     private String identificacionSujeto; // Caracter (13)

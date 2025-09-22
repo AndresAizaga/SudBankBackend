@@ -64,29 +64,29 @@ public class R07Controller {
                     .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
                             new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
                     ));
-
+            
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroOperacion(dto.getNumeroOperacion());
             resume.setNumeroGarantia(dto.getNumeroGarantia());
 
-            T42Dto tipoGarantia = t42UseCase.findById(Integer.parseInt(dto.getTipoGarantia()));
+            T42Dto tipoGarantia = t42UseCase.findById(dto.getTipoGarantia());
             if (tipoGarantia != null) {
                 resume.setTipoGarantia(new ResponseDTO(tipoGarantia.getId(), tipoGarantia.getDescripcion()));
             }
-
+            
             resume.setDescripcionGarantia(dto.getDescripcionGarantia());
 
-            T5Dto pais = t5UseCase.findById(Integer.parseInt(dto.getUbicacionGarantiaPais()));
+            T5Dto pais = t5UseCase.findById(dto.getUbicacionGarantiaPais());
             if (pais != null) {
                 resume.setUbicacionGarantiaPais(new ResponseDTO(pais.getId(), pais.getDescripcion()));
             }
 
-            T6Dto provincia = t6UseCase.findById(Integer.parseInt(dto.getUbicacionGarantiaProvincia()));
+            T6Dto provincia = t6UseCase.findById(dto.getUbicacionGarantiaProvincia());
             if (provincia != null) {
                 resume.setUbicacionGarantiaProvincia(new ResponseDTO(provincia.getId(), provincia.getDescripcion()));
             }
 
-            T7Dto canton = t7UseCase.findById(Integer.parseInt(dto.getUbicacionGarantiaCanton()));
+            T7Dto canton = t7UseCase.findById(dto.getUbicacionGarantiaCanton());
             if (canton != null) {
                 resume.setUbicacionGarantiaCanton(new ResponseDTO(canton.getId(), canton.getDescripcion()));
             }
@@ -97,7 +97,7 @@ public class R07Controller {
             resume.setFechaContabilizacionGarantia(dto.getFechaContabilizacionGarantia());
             resume.setPorcentajeCubreGarantia(dto.getPorcentajeCubreGarantia());
 
-            T47Dto estadoRegistro = t47UseCase.findById(Integer.parseInt(dto.getEstadoRegistro()));
+            T47Dto estadoRegistro = t47UseCase.findById(dto.getEstadoRegistro());
             if (estadoRegistro != null) {
                 resume.setEstadoRegistro(new ResponseDTO(estadoRegistro.getId(), estadoRegistro.getDescripcion()));
             }
