@@ -20,9 +20,9 @@ public class R07ResumeResponse {
     public ResponseDTO ubicacionGarantiaProvincia;
     public ResponseDTO ubicacionGarantiaCanton;
     public BigDecimal valorAvaluoTitulo;
-    public LocalDate fechaAvaluo;
+    public String fechaAvaluo;
     public String numeroRegistroGarantia;
-    public LocalDate fechaContabilizacionGarantia;
+    public String fechaContabilizacionGarantia;
     public BigDecimal porcentajeCubreGarantia;
     public ResponseDTO estadoRegistro;
 }

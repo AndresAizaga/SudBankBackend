@@ -59,11 +59,12 @@ public class R07Controller {
 
         for (R07Dto dto : useCase.findAll()) {
             R07ResumeResponse resume = new R07ResumeResponse();
-            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> dto.getCodigoTipoIdentificacion() != null && x.getId() == dto.getCodigoTipoIdentificacion())
-                    .findFirst()
-                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
-                            new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
-                    ));
+            if (dto.getCodigoTipoIdentificacion() != null) {
+                var catalogT4 = catalogT4UseCase.findById(dto.getCodigoTipoIdentificacion());
+                if (catalogT4 != null) {
+                    resume.setTipoIdentificacion(new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion()));
+                }
+            }
             
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroOperacion(dto.getNumeroOperacion());
