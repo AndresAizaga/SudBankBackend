@@ -35,9 +35,9 @@ public class R12Controller {
         List<R12ResumeResponse> resumes = new java.util.ArrayList<>(List.of());
         for (R12Dto dto : r12useCase.findAll()) {
             R12ResumeResponse resume = new R12ResumeResponse();
-            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getTipoIdentificacion()))
+            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
                     .findFirst()
-                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
+                    .ifPresent(catalogT4 -> resume.setCodigoTipoIdentificacion(
                             new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
                     ));
             resume.setNombreGrupoEconomico(dto.getNombreGrupoEconomico());

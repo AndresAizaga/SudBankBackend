@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class R12ResumeResponse{
-    private ResponseDTO tipoIdentificacion;
+    private ResponseDTO codigoTipoIdentificacion;
     private String nombreGrupoEconomico;
     private String identificacionIntegrante;
 }

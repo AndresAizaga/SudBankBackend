@@ -2,7 +2,7 @@ package com.sudamericano.bank.domain.model.structure.R;
 
 public class R12Dto{
     private Integer id;
-    private Integer tipoIdentificacion;
+    private Integer codigoTipoIdentificacion;
     private String nombreGrupoEconomico;
     private String identificacionIntegrante;
 
@@ -22,12 +22,12 @@ public class R12Dto{
         this.nombreGrupoEconomico = nombreGrupoEconomico;
     }
 
-    public Integer getTipoIdentificacion() {
-        return tipoIdentificacion;
+    public Integer getCodigoTipoIdentificacion() {
+        return codigoTipoIdentificacion;
     }
 
-    public void setTipoIdentificacion(Integer tipoIdentificacion) {
-        this.tipoIdentificacion = tipoIdentificacion;
+    public void setCodigoTipoIdentificacion(Integer codigoTipoIdentificacion) {
+        this.codigoTipoIdentificacion = codigoTipoIdentificacion;
     }
 
     public String getIdentificacionIntegrante() {

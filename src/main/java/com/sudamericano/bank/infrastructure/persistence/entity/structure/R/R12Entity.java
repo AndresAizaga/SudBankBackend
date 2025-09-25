@@ -11,7 +11,7 @@ public class R12Entity{
     private Long id;
 
     @Column(name = "CODIGO_TIPO_IDENTIFICACION")
-    private Integer tipoIdentificacion;
+    private Integer codigoTipoIdentificacion;
 
     @Column(name = "NOMBRE_GRUPO_ECONOMICO")
     private String nombreGrupoEconomico;
@@ -36,12 +36,12 @@ public class R12Entity{
         this.nombreGrupoEconomico = nombreGrupoEconomico;
     }
 
-    public Integer getTipoIdentificacion() {
-        return tipoIdentificacion;
+    public Integer getCodigoTipoIdentificacion() {
+        return codigoTipoIdentificacion;
     }
 
-    public void setTipoIdentificacion(Integer tipoIdentificacion) {
-        this.tipoIdentificacion = tipoIdentificacion;
+    public void setCodigoTipoIdentificacion(Integer codigoTipoIdentificacion) {
+        this.codigoTipoIdentificacion = codigoTipoIdentificacion;
     }
 
     public String getIdentificacionIntegrante() {
