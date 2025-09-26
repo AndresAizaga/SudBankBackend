@@ -23,18 +23,7 @@ public class R07RepositoryAdapter implements R07Port {
 
     @Override
     public List<R07Dto> findAll() {
-        List<R07Entity> entities = repository.findAll();
-        System.out.println("🔍 DEBUG R07 - Total entities: " + entities.size());
-        if (!entities.isEmpty()) {
-            R07Entity first = entities.get(0);
-            System.out.println("🔍 DEBUG R07 - First entity:");
-            System.out.println("  - ID: " + first.getId());
-            System.out.println("  - IdentificacionSujeto: '" + first.getIdentificacionSujeto() + "'");
-            System.out.println("  - NumeroOperacion: '" + first.getNumeroOperacion() + "'");
-            System.out.println("  - DescripcionGarantia: '" + first.getDescripcionGarantia() + "'");
-            System.out.println("  - ValorAvaluoTitulo: " + first.getValorAvaluoTitulo());
-        }
-        return mapper.toDtoList(entities);
+        return mapper.toDtoList(repository.findAll());
     }
 
     @Override
