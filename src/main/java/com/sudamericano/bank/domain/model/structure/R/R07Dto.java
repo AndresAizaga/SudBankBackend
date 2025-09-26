@@ -124,6 +124,10 @@ public class R07Dto {
         return numeroRegistroGarantia;
     }
     
+    public void setNumeroRegistroGarantia(String numeroRegistroGarantia) {
+        this.numeroRegistroGarantia = numeroRegistroGarantia;
+    }
+    
     public String getFechaContabilizacionGarantia() {
         return fechaContabilizacionGarantia;
     }
