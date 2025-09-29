@@ -58,6 +58,7 @@ public class R20Controller {
                 resume.setClaseTarjeta(new ResponseDTO(clase.getId(), clase.getDescripcion()));
             }
 
+            resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroTarjeta(dto.getNumeroTarjeta());
             resume.setFechaEmision(dto.getFechaEmision());
             resume.setFechaVencimiento(dto.getFechaVencimiento());
