@@ -50,33 +50,38 @@ public class R04Controller {
 
         for (R04Dto dto : useCase.findAll()) {
             R04ResumeResponse resume = new R04ResumeResponse();
-            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
-                    .findFirst()
-                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
-                            new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
-                    ));
+            
+            if (dto.getCodigoTipoIdentificacion() != null) {
+                var catalogT4 = catalogT4UseCase.findById(dto.getCodigoTipoIdentificacion());
+                if (catalogT4 != null) {
+                    resume.setTipoIdentificacion(new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion()));
+                }
+            }
 
             resume.setNumeroOperacion(dto.getNumeroOperacion());
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setDiasMorosidad(dto.getDiasMorosidad());
 
-            catalogT218UseCase.getAllCatalogT218().stream().filter(x -> x.getId() == (dto.getCodigoMetodologiaCalificacion()))
-            .findFirst()
-            .ifPresent(catalogT218 -> resume.setMetodologiaCalificacion(
-                    new ResponseDTO(catalogT218.getId(), catalogT218.getDescripcion())
-            ));
+            if (dto.getCodigoMetodologiaCalificacion() != null) {
+                var catalogT218 = catalogT218UseCase.findById(dto.getCodigoMetodologiaCalificacion());
+                if (catalogT218 != null) {
+                    resume.setMetodologiaCalificacion(new ResponseDTO(catalogT218.getId(), catalogT218.getDescripcion()));
+                }
+            }
 
-            catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionPropia()))
-            .findFirst()
-            .ifPresent(catalogT29 -> resume.setCalificacionPropia(
-                    new ResponseDTO(catalogT29.getId(), catalogT29.getDescripcion())
-            ));
+            if (dto.getCodigoCalificacionPropia() != null) {
+                var catalogT29 = catalogT29UseCase.findById(dto.getCodigoCalificacionPropia());
+                if (catalogT29 != null) {
+                    resume.setCalificacionPropia(new ResponseDTO(catalogT29.getId(), catalogT29.getDescripcion()));
+                }
+            }
 
-            catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCodigoCalificacionHomologada()))
-            .findFirst()
-            .ifPresent(catalogT29 -> resume.setCalificacionHomologada(
-                    new ResponseDTO(catalogT29.getId(), catalogT29.getDescripcion())
-            ));
+            if (dto.getCodigoCalificacionHomologada() != null) {
+                var catalogT29 = catalogT29UseCase.findById(dto.getCodigoCalificacionHomologada());
+                if (catalogT29 != null) {
+                    resume.setCalificacionHomologada(new ResponseDTO(catalogT29.getId(), catalogT29.getDescripcion()));
+                }
+            }
 
             resume.setTasaInteres(dto.getTasaInteres());
             resume.setValorPorVencer1a30(dto.getValorSaldoVencer1a30d());
@@ -109,17 +114,19 @@ public class R04Controller {
             resume.setProvisionRequeridaReducida(dto.getProvisionRequeridaReducida());
             resume.setProvisionConstituida(dto.getProvisionConstituida());
 
-            catalogT35UseCase.getAllCatalogT35().stream().filter(x -> x.getId() == (dto.getCodigoTipoOperacion()))
-            .findFirst()
-            .ifPresent(catalogT35 -> resume.setTipoOperacion(
-                    new ResponseDTO(catalogT35.getId(), catalogT35.getDescripcion())
-            ));
+            if (dto.getCodigoTipoOperacion() != null) {
+                var catalogT35 = catalogT35UseCase.findById(dto.getCodigoTipoOperacion());
+                if (catalogT35 != null) {
+                    resume.setTipoOperacion(new ResponseDTO(catalogT35.getId(), catalogT35.getDescripcion()));
+                }
+            }
 
-            catalogT55UseCase.getAllCatalogT55().stream().filter(x -> x.getId() == (dto.getCodigoObjetoFideicomiso()))
-            .findFirst()
-            .ifPresent(catalogT55 -> resume.setObjetoFideicomiso(
-                    new ResponseDTO(catalogT55.getId(), catalogT55.getDescripcion())
-            ));
+            if (dto.getCodigoObjetoFideicomiso() != null) {
+                var catalogT55 = catalogT55UseCase.findById(dto.getCodigoObjetoFideicomiso());
+                if (catalogT55 != null) {
+                    resume.setObjetoFideicomiso(new ResponseDTO(catalogT55.getId(), catalogT55.getDescripcion()));
+                }
+            }
 
             resume.setPrimaDescuento(dto.getPrimaDescuento());
             resume.setCuotaCredito(dto.getCuotaCredito());
@@ -132,11 +139,12 @@ public class R04Controller {
             resume.setInteresesReversados(dto.getInteresesReservados());
             resume.setFechaExigibilidadCuota(dto.getFechaExigibilidadCuota());
 
-            catalogT317UseCase.getAllCatalogT317().stream().filter(x -> x.getId() == dto.getCodigoTipoSistemaAmortizacion())
-            .findFirst()
-            .ifPresent(catalogT317 -> resume.setTipoSistemaAmortizacion(
-                    new ResponseDTO(catalogT317.getId(), catalogT317.getDescripcion())
-            ));
+            if (dto.getCodigoTipoSistemaAmortizacion() != null) {
+                var catalogT317 = catalogT317UseCase.findById(dto.getCodigoTipoSistemaAmortizacion());
+                if (catalogT317 != null) {
+                    resume.setTipoSistemaAmortizacion(new ResponseDTO(catalogT317.getId(), catalogT317.getDescripcion()));
+                }
+            }
 
             resumes.add(resume);
         }

@@ -1,5 +1,7 @@
 package com.sudamericano.bank.domain.model.structure.R;
 
+import lombok.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -10,16 +12,16 @@ public class R07Dto {
     private String identificacionSujeto;
     private String numeroOperacion;
     private String numeroGarantia;
-    private Integer tipoGarantia;
+    private Integer codigoTipoGarantia;
     private String descripcionGarantia;
-    private Integer ubicacionGarantiaPais;
-    private Integer ubicacionGarantiaProvincia;
-    private Integer ubicacionGarantiaCanton;
-    private BigDecimal valorAvaluoTitulo;
-    private LocalDate fechaAvaluo;
+    private Integer codigoPais;
+    private Integer codigoProvincia;
+    private Integer codigoCanton;
+    private BigDecimal valorAvaluo;
+    private String fechaAvaluo;
     private String numeroRegistroGarantia;
-    private LocalDate fechaContabilizacionGarantia;
-    private BigDecimal porcentajeCubreGarantia;
+    private String fechaContabilizacionGarantia;
+    private BigDecimal porcentajeGarantia;
     private Integer estadoRegistro;
 
     public Long getId() {
@@ -29,7 +31,7 @@ public class R07Dto {
     public void setId(Long id) {
         this.id = id;
     }
-
+    
     public Integer getCodigoTipoIdentificacion() {
         return codigoTipoIdentificacion;
     }
@@ -37,7 +39,7 @@ public class R07Dto {
     public void setCodigoTipoIdentificacion(Integer codigoTipoIdentificacion) {
         this.codigoTipoIdentificacion = codigoTipoIdentificacion;
     }
-
+    
     public String getIdentificacionSujeto() {
         return identificacionSujeto;
     }
@@ -45,7 +47,7 @@ public class R07Dto {
     public void setIdentificacionSujeto(String identificacionSujeto) {
         this.identificacionSujeto = identificacionSujeto;
     }
-
+    
     public String getNumeroOperacion() {
         return numeroOperacion;
     }
@@ -53,99 +55,99 @@ public class R07Dto {
     public void setNumeroOperacion(String numeroOperacion) {
         this.numeroOperacion = numeroOperacion;
     }
-
+    
     public String getNumeroGarantia() {
         return numeroGarantia;
     }
-
+    
     public void setNumeroGarantia(String numeroGarantia) {
         this.numeroGarantia = numeroGarantia;
     }
-
-    public Integer getTipoGarantia() {
-        return tipoGarantia;
+    
+    public Integer getCodigoTipoGarantia() {
+        return codigoTipoGarantia;
     }
-
-    public void setTipoGarantia(Integer tipoGarantia) {
-        this.tipoGarantia = tipoGarantia;
+    
+    public void setCodigoTipoGarantia(Integer codigoTipoGarantia) {
+        this.codigoTipoGarantia = codigoTipoGarantia;
     }
-
+    
     public String getDescripcionGarantia() {
         return descripcionGarantia;
     }
-
+    
     public void setDescripcionGarantia(String descripcionGarantia) {
         this.descripcionGarantia = descripcionGarantia;
     }
-
-    public Integer getUbicacionGarantiaPais() {
-        return ubicacionGarantiaPais;
+    
+    public Integer getCodigoPais() {
+        return codigoPais;
     }
-
-    public void setUbicacionGarantiaPais(Integer ubicacionGarantiaPais) {
-        this.ubicacionGarantiaPais = ubicacionGarantiaPais;
+    
+    public void setCodigoPais(Integer codigoPais) {
+        this.codigoPais = codigoPais;
     }
-
-    public Integer getUbicacionGarantiaProvincia() {
-        return ubicacionGarantiaProvincia;
+    
+    public Integer getCodigoProvincia() {
+        return codigoProvincia;
     }
-
-    public void setUbicacionGarantiaProvincia(Integer ubicacionGarantiaProvincia) {
-        this.ubicacionGarantiaProvincia = ubicacionGarantiaProvincia;
+    
+    public void setCodigoProvincia(Integer codigoProvincia) {
+        this.codigoProvincia = codigoProvincia;
     }
-
-    public Integer getUbicacionGarantiaCanton() {
-        return ubicacionGarantiaCanton;
+    
+    public Integer getCodigoCanton() {
+        return codigoCanton;
     }
-
-    public void setUbicacionGarantiaCanton(Integer ubicacionGarantiaCanton) {
-        this.ubicacionGarantiaCanton = ubicacionGarantiaCanton;
+    
+    public void setCodigoCanton(Integer codigoCanton) {
+        this.codigoCanton = codigoCanton;
     }
-
-    public BigDecimal getValorAvaluoTitulo() {
-        return valorAvaluoTitulo;
+    
+    public BigDecimal getValorAvaluo() {
+        return valorAvaluo;
     }
-
-    public void setValorAvaluoTitulo(BigDecimal valorAvaluoTitulo) {
-        this.valorAvaluoTitulo = valorAvaluoTitulo;
+    
+    public void setValorAvaluo(BigDecimal valorAvaluo) {
+        this.valorAvaluo = valorAvaluo;
     }
-
-    public LocalDate getFechaAvaluo() {
+    
+    public String getFechaAvaluo() {
         return fechaAvaluo;
     }
-
-    public void setFechaAvaluo(LocalDate fechaAvaluo) {
+    
+    public void setFechaAvaluo(String fechaAvaluo) {
         this.fechaAvaluo = fechaAvaluo;
     }
-
+    
     public String getNumeroRegistroGarantia() {
         return numeroRegistroGarantia;
     }
-
+    
     public void setNumeroRegistroGarantia(String numeroRegistroGarantia) {
         this.numeroRegistroGarantia = numeroRegistroGarantia;
     }
-
-    public LocalDate getFechaContabilizacionGarantia() {
+    
+    public String getFechaContabilizacionGarantia() {
         return fechaContabilizacionGarantia;
     }
-
-    public void setFechaContabilizacionGarantia(LocalDate fechaContabilizacionGarantia) {
+    
+    public void setFechaContabilizacionGarantia(String fechaContabilizacionGarantia) {
         this.fechaContabilizacionGarantia = fechaContabilizacionGarantia;
     }
-
-    public BigDecimal getPorcentajeCubreGarantia() {
-        return porcentajeCubreGarantia;
+    
+    public BigDecimal getPorcentajeGarantia() {
+        return porcentajeGarantia;
     }
-
-    public void setPorcentajeCubreGarantia(BigDecimal porcentajeCubreGarantia) {
-        this.porcentajeCubreGarantia = porcentajeCubreGarantia;
+    
+    public void setPorcentajeGarantia(BigDecimal porcentajeGarantia) {
+        this.porcentajeGarantia = porcentajeGarantia;
     }
-
+    
     public Integer getEstadoRegistro() {
         return estadoRegistro;
     }
-
+    
     public void setEstadoRegistro(Integer estadoRegistro) {
         this.estadoRegistro = estadoRegistro;
     }

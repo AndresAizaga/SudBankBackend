@@ -20,4 +20,9 @@ public class CatalogT218Service implements CatalogT218UseCase {
     public List<CatalogT218> getAllCatalogT218() {
         return catalogT218RepositoryPort.findAll();
     }
+
+    @Override
+    public CatalogT218 findById(Integer id) {
+        return catalogT218RepositoryPort.findById(id);
+    }
 }

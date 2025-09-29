@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface CatalogT317RepositoryPort {
     List<CatalogT317> findAll();
+    CatalogT317 findById(Integer id);
 }

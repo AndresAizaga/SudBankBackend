@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CatalogT55RepositoryPort {
     List<CatalogT55> findAll();
+    CatalogT55 findById(Integer id);
 }

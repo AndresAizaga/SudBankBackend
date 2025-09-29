@@ -59,45 +59,45 @@ public class R07Controller {
 
         for (R07Dto dto : useCase.findAll()) {
             R07ResumeResponse resume = new R07ResumeResponse();
-            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> dto.getCodigoTipoIdentificacion() != null && x.getId() == dto.getCodigoTipoIdentificacion())
+            catalogT4UseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
                     .findFirst()
                     .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
                             new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
                     ));
-            
+
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
             resume.setNumeroOperacion(dto.getNumeroOperacion());
             resume.setNumeroGarantia(dto.getNumeroGarantia());
 
-            T42Dto tipoGarantia = dto.getTipoGarantia() != null ? t42UseCase.findById(dto.getTipoGarantia()) : null;
+            T42Dto tipoGarantia = t42UseCase.findById(dto.getCodigoTipoGarantia());
             if (tipoGarantia != null) {
-                resume.setTipoGarantia(new ResponseDTO(tipoGarantia.getId(), tipoGarantia.getDescripcion()));
+                resume.setCodigoTipoGarantia(new ResponseDTO(tipoGarantia.getId(), tipoGarantia.getDescripcion()));
             }
             
             resume.setDescripcionGarantia(dto.getDescripcionGarantia());
 
-            T5Dto pais = dto.getUbicacionGarantiaPais() != null ? t5UseCase.findById(dto.getUbicacionGarantiaPais()) : null;
+            T5Dto pais = t5UseCase.findById(dto.getCodigoPais());
             if (pais != null) {
-                resume.setUbicacionGarantiaPais(new ResponseDTO(pais.getId(), pais.getDescripcion()));
+                resume.setCodigoPais(new ResponseDTO(pais.getId(), pais.getDescripcion()));
             }
 
-            T6Dto provincia = dto.getUbicacionGarantiaProvincia() != null ? t6UseCase.findById(dto.getUbicacionGarantiaProvincia()) : null;
+            T6Dto provincia = t6UseCase.findById(dto.getCodigoProvincia());
             if (provincia != null) {
-                resume.setUbicacionGarantiaProvincia(new ResponseDTO(provincia.getId(), provincia.getDescripcion()));
+                resume.setCodigoProvincia(new ResponseDTO(provincia.getId(), provincia.getDescripcion()));
             }
 
-            T7Dto canton = dto.getUbicacionGarantiaCanton() != null ? t7UseCase.findById(dto.getUbicacionGarantiaCanton()) : null;
+            T7Dto canton = t7UseCase.findById(dto.getCodigoCanton());
             if (canton != null) {
-                resume.setUbicacionGarantiaCanton(new ResponseDTO(canton.getId(), canton.getDescripcion()));
+                resume.setCodigoCanton(new ResponseDTO(canton.getId(), canton.getDescripcion()));
             }
 
-            resume.setValorAvaluoTitulo(dto.getValorAvaluoTitulo());
+            resume.setValorAvaluo(dto.getValorAvaluo());
             resume.setFechaAvaluo(dto.getFechaAvaluo());
             resume.setNumeroRegistroGarantia(dto.getNumeroRegistroGarantia());
             resume.setFechaContabilizacionGarantia(dto.getFechaContabilizacionGarantia());
-            resume.setPorcentajeCubreGarantia(dto.getPorcentajeCubreGarantia());
+            resume.setPorcentajeGarantia(dto.getPorcentajeGarantia());
 
-            T47Dto estadoRegistro = dto.getEstadoRegistro() != null ? t47UseCase.findById(dto.getEstadoRegistro()) : null;
+            T47Dto estadoRegistro = t47UseCase.findById(dto.getEstadoRegistro());
             if (estadoRegistro != null) {
                 resume.setEstadoRegistro(new ResponseDTO(estadoRegistro.getId(), estadoRegistro.getDescripcion()));
             }

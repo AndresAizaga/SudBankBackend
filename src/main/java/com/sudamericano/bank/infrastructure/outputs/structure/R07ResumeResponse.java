@@ -10,19 +10,20 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class R07ResumeResponse {
-    public ResponseDTO tipoIdentificacion;
-    public String identificacionSujeto;
-    public String numeroOperacion;
-    public String numeroGarantia;
-    public ResponseDTO tipoGarantia;
-    public String descripcionGarantia;
-    public ResponseDTO ubicacionGarantiaPais;
-    public ResponseDTO ubicacionGarantiaProvincia;
-    public ResponseDTO ubicacionGarantiaCanton;
-    public BigDecimal valorAvaluoTitulo;
-    public LocalDate fechaAvaluo;
-    public String numeroRegistroGarantia;
-    public LocalDate fechaContabilizacionGarantia;
-    public BigDecimal porcentajeCubreGarantia;
-    public ResponseDTO estadoRegistro;
+    private ResponseDTO tipoIdentificacion;
+    private String identificacionSujeto;
+    private String numeroOperacion;
+    private String numeroGarantia;
+    private ResponseDTO codigoTipoGarantia;
+    private String descripcionGarantia;
+    private ResponseDTO codigoPais;
+    private ResponseDTO codigoProvincia;
+    private ResponseDTO codigoCanton;
+    private BigDecimal valorAvaluo;
+    private String fechaAvaluo;
+    private String numeroRegistroGarantia;
+    private String fechaContabilizacionGarantia;
+    private BigDecimal porcentajeGarantia;
+    private ResponseDTO estadoRegistro;
+
 }

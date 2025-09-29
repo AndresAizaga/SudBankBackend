@@ -28,4 +28,11 @@ public class SqlCatalogT29RepositoryAdapter implements CatalogT29RepositoryPort 
                 .map(mapper::toDomain)
                 .toList();
     }
+
+    @Override
+    public CatalogT29 findById(Integer id) {
+        return springDataCatalogT29Repository.findById(id)
+                .map(mapper::toDomain)
+                .orElse(null);
+    }
 }

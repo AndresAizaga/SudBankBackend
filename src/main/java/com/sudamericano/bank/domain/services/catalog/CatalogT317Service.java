@@ -20,4 +20,9 @@ public class CatalogT317Service implements CatalogT317UseCase {
     public List<CatalogT317> getAllCatalogT317() {
         return catalogT317RepositoryPort.findAll();
     }
+
+    @Override
+    public CatalogT317 findById(Integer id) {
+        return catalogT317RepositoryPort.findById(id);
+    }
 }

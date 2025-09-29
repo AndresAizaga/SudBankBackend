@@ -20,4 +20,9 @@ public class CatalogT29Service implements CatalogT29UseCase {
     public List<CatalogT29> getAllCatalogT29() {
         return catalogT29RepositoryPort.findAll();
     }
+
+    @Override
+    public CatalogT29 findById(Integer id) {
+        return catalogT29RepositoryPort.findById(id);
+    }
 }

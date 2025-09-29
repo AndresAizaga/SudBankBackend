@@ -11,5 +11,4 @@ public interface R07Mapper {
     R07Dto toDto(R07Entity entity);
     R07Entity toEntity(R07Dto dto);
     List<R07Dto> toDtoList(List<R07Entity> entities);
-
 }

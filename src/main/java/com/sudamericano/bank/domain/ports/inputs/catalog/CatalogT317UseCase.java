@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface CatalogT317UseCase {
     List<CatalogT317> getAllCatalogT317();
+    CatalogT317 findById(Integer id);
 }
