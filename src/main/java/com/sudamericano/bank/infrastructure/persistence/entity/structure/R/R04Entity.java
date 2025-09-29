@@ -36,7 +36,7 @@ public class R04Entity {
     private Integer codigoCalificacionHomologada;
     
     // Campo de interés (8)
-    @Column(name = "TASA_INTERES", precision = 10, scale = 4)
+    @Column(name = "TASA_INTERES", precision = 4, scale = 2)
     private BigDecimal tasaInteres;
     
     // Valores por vencer (9-13)

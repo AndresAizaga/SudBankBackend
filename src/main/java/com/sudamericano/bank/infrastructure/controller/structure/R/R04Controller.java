@@ -1,7 +1,12 @@
 package com.sudamericano.bank.infrastructure.controller.structure.R;
 
 import com.sudamericano.bank.domain.model.structure.R.R04Dto;
-import com.sudamericano.bank.domain.ports.inputs.catalog.*;
+import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT4UseCase;
+import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT29UseCase;
+import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT35UseCase;
+import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT55UseCase;
+import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT218UseCase;
+import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT317UseCase;
 import com.sudamericano.bank.domain.ports.inputs.structure.R.R04UseCase;
 import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
 import com.sudamericano.bank.infrastructure.outputs.structure.R04ResumeResponse;
@@ -50,13 +55,12 @@ public class R04Controller {
 
         for (R04Dto dto : useCase.findAll()) {
             R04ResumeResponse resume = new R04ResumeResponse();
-            
-            if (dto.getCodigoTipoIdentificacion() != null) {
-                var catalogT4 = catalogT4UseCase.findById(dto.getCodigoTipoIdentificacion());
-                if (catalogT4 != null) {
-                    resume.setTipoIdentificacion(new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion()));
-                }
-            }
+            catalogT4UseCase.getAllCatalogT4().stream()
+                    .filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
+                    .findFirst()
+                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
+                            new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
+                    ));
 
             resume.setNumeroOperacion(dto.getNumeroOperacion());
             resume.setIdentificacionSujeto(dto.getIdentificacionSujeto());
