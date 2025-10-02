@@ -38,7 +38,7 @@ public class R22Controller {
             R22ResumenResponse resume = new R22ResumenResponse();
             catalogUseCase.getAllCatalogT4().stream().filter(x -> x.getId() == (dto.getCodigoTipoIdentificacion()))
                     .findFirst()
-                    .ifPresent(catalogT4 -> resume.setCodigoTipoIdentificado(
+                    .ifPresent(catalogT4 -> resume.setTipoIdentificacion(
                             new ResponseDTO(catalogT4.getId(), catalogT4.getDescripcion())
                     ));
             catalogT29UseCase.getAllCatalogT29().stream().filter(x -> x.getId() == (dto.getCalificacionPropia()))

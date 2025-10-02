@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class R22ResumenResponse {
-    private ResponseDTO codigoTipoIdentificado;
+    private ResponseDTO tipoIdentificacion;
     private String identificacionSujeto;
     private String numeroTarjeta;
     private Integer diasMorasidad;
