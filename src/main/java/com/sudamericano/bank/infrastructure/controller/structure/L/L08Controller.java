@@ -5,7 +5,9 @@ import com.sudamericano.bank.domain.model.catalog.T62Dto;
 import com.sudamericano.bank.domain.model.structure.L.L08Dto;
 import com.sudamericano.bank.domain.ports.inputs.catalog.*;
 import com.sudamericano.bank.domain.ports.inputs.structure.L.L08UseCase;
+import com.sudamericano.bank.infrastructure.outputs.ReportDto;
 import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
+import com.sudamericano.bank.infrastructure.outputs.structure.L08ReporteResponse;
 import com.sudamericano.bank.infrastructure.outputs.structure.L08ResumeResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
@@ -79,6 +81,67 @@ public class L08Controller {
         }
         return resumes;
     }
+
+    @GetMapping("/report")
+    public List<L08ReporteResponse> getReport(){
+        List<L08ReporteResponse> reports = new java.util.ArrayList<>(List.of());
+
+        for (L08Dto dto : useCase.findAll()) {
+            L08ReporteResponse report = new L08ReporteResponse();
+
+            // Código de Liquidez
+            T59Dto liquidez = t59UseCase.findById(dto.getCodigoLiquidez());
+            if (liquidez != null) {
+                report.setCodigoLiquidez(new ReportDto(liquidez.getId(), liquidez.getCodigo(), liquidez.getDescripcion()));
+            }
+
+            // Tipo de Identificación Entidad
+            catalogT4UseCase.getAllCatalogT4().stream()
+                    .filter(x -> x.getId() == (dto.getTipoIdentificacionEntidad()))
+                    .findFirst()
+                    .ifPresent(catalogT4 ->
+                            report.setTipoIdentificacionEntidad(new ReportDto(catalogT4.getId(), catalogT4.getCodigo(), catalogT4.getDescripcion()))
+                    );
+
+            // Identificación de la Entidad
+            report.setIdentificacionEntidad(dto.getIdentificacionEntidad());
+
+            // Tipo de Instrumento
+            T62Dto instrumento = t62UseCase.findById(dto.getTipoInstrumento());
+            if (instrumento != null) {
+                report.setTipoInstrumento(new ReportDto(instrumento.getId(), instrumento.getCodigo(), instrumento.getDescripcion()));
+            }
+
+            // Calificación de la Entidad
+            t65UseCase.findAll().stream()
+                    .filter(x -> x.getId() == (dto.getCalificacionEntidad()))
+                    .findFirst()
+                    .ifPresent(t65 ->
+                            report.setCalificacionEntidad(new ReportDto(t65.getId(), t65.getCodigo(), t65.getDescripcion()))
+                    );
+
+            // Calificadora de Riesgo
+            t66UseCase.findAll().stream()
+                    .filter(x -> x.getId() == (dto.getCalificadoraRiesgo()))
+                    .findFirst()
+                    .ifPresent(t66 ->
+                            report.setCalificadoraRiesgo(new ReportDto(t66.getId(), t66.getCodigo(), t66.getDescripcion()))
+                    );
+
+            // Valores de lunes a viernes
+            report.setLunes(dto.getLunes());
+            report.setMartes(dto.getMartes());
+            report.setMiercoles(dto.getMiercoles());
+            report.setJueves(dto.getJueves());
+            report.setViernes(dto.getViernes());
+
+            reports.add(report);
+        }
+
+        return reports;
+    }
+
+
 
     @GetMapping("/{id}")
     public L08Dto getById(@PathVariable Long id) {
