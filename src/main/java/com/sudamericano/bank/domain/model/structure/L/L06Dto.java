@@ -7,10 +7,10 @@ import java.time.LocalDate;
 public class L06Dto {
 
     private Long id;
-    private String codigoTipoIdentificacionEmisor;
-    private String codigoIdentificacionEmisor;
-    private String numeroTitulo;
-    private String numeroOperacion;
+    private Integer codigoTipoIdentificacionEmisor;
+    private Integer codigoIdentificacionEmisor;
+    private Integer numeroTitulo;
+    private Integer numeroOperacion;
     private LocalDate fechaEmision;
     private LocalDate fechaCompra;
     private Integer codigoEstadoOperacion;
@@ -40,35 +40,35 @@ public class L06Dto {
         this.id = id;
     }
 
-    public String getCodigoTipoIdentificacionEmisor() {
+    public Integer getCodigoTipoIdentificacionEmisor() {
         return codigoTipoIdentificacionEmisor;
     }
 
-    public void setCodigoTipoIdentificacionEmisor(String codigoTipoIdentificacionEmisor) {
+    public void setCodigoTipoIdentificacionEmisor(Integer codigoTipoIdentificacionEmisor) {
         this.codigoTipoIdentificacionEmisor = codigoTipoIdentificacionEmisor;
     }
 
-    public String getCodigoIdentificacionEmisor() {
+    public Integer getCodigoIdentificacionEmisor() {
         return codigoIdentificacionEmisor;
     }
 
-    public void setCodigoIdentificacionEmisor(String codigoIdentificacionEmisor) {
+    public void setCodigoIdentificacionEmisor(Integer codigoIdentificacionEmisor) {
         this.codigoIdentificacionEmisor = codigoIdentificacionEmisor;
     }
 
-    public String getNumeroTitulo() {
+    public Integer getNumeroTitulo() {
         return numeroTitulo;
     }
 
-    public void setNumeroTitulo(String numeroTitulo) {
+    public void setNumeroTitulo(Integer numeroTitulo) {
         this.numeroTitulo = numeroTitulo;
     }
 
-    public String getNumeroOperacion() {
+    public Integer getNumeroOperacion() {
         return numeroOperacion;
     }
 
-    public void setNumeroOperacion(String numeroOperacion) {
+    public void setNumeroOperacion(Integer numeroOperacion) {
         this.numeroOperacion = numeroOperacion;
     }
 
@@ -127,7 +127,7 @@ public class L06Dto {
     public Integer getCodigoIdentificacionContraparteOperacion(){
         return codigoIdentificacionContraparteOperacion;
     }
-    public void setCodigoIdentificacionContraparteOperacio(Integer codigoIdentificacionContraparteOperacion){
+    public void setCodigoIdentificacionContraparteOperacion(Integer codigoIdentificacionContraparteOperacion){
         this.codigoIdentificacionContraparteOperacion = codigoIdentificacionContraparteOperacion;
     }
     public Integer getCodigoMonedaDenominacion(){

@@ -14,19 +14,19 @@ public class L06Entity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "CODIGO_TIPO_IDENTIFICACION_EMISOR")
-    private String codigoTipoIdentificacionEmisor;
+    private Integer codigoTipoIdentificacionEmisor;
 
     @Column(name = "CODIGO_IDENTIFICACION_EMISOR")
-    private String codigoIdentificacionEmisor;
+    private Integer codigoIdentificacionEmisor;
 
     @Column(name = "NUMERO_TITULO")
-    private String numeroTitulo;
+    private Integer numeroTitulo;
 
     @Column(name = "NUMERO_OPERACION")
-    private String numeroOperacion;
+    private Integer numeroOperacion;
 
     @Column(name = "FECHA_EMISION")
     private LocalDate fechaEmision;
@@ -85,38 +85,38 @@ public class L06Entity {
     @Column(name = "CODIGO_IDENTIFICACION_CUSTODIO")
     private String codigoIdentificacionCustodio;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getCodigoTipoIdentificacionEmisor() {
+    public Integer getCodigoTipoIdentificacionEmisor() {
         return codigoTipoIdentificacionEmisor;
     }
-    public void setCodigoTipoIdentificacionEmisor(String codigoTipoIdentificacionEmisor) {
+    public void setCodigoTipoIdentificacionEmisor(Integer codigoTipoIdentificacionEmisor) {
         this.codigoTipoIdentificacionEmisor = codigoTipoIdentificacionEmisor;
     }
 
-    public String getCodigoIdentificacionEmisor() {
+    public Integer getCodigoIdentificacionEmisor() {
         return codigoIdentificacionEmisor;
     }
-    public void setCodigoIdentificacionEmisor(String codigoIdentificacionEmisor){
+    public void setCodigoIdentificacionEmisor(Integer codigoIdentificacionEmisor){
         this.codigoIdentificacionEmisor = codigoIdentificacionEmisor;
     }
 
-    public String getNumeroTitulo(){
+    public Integer getNumeroTitulo(){
         return numeroTitulo;
     }
-    public void setNumeroTitulo(String numeroTitulo){
+    public void setNumeroTitulo(Integer numeroTitulo){
         this.numeroTitulo = numeroTitulo;
     }
 
-    public String getNumeroOperacion(){
+    public Integer getNumeroOperacion(){
         return numeroOperacion;
     }
-    public void setNumeroOperacion(String numeroOperacion){
+    public void setNumeroOperacion(Integer numeroOperacion){
         this.numeroOperacion = numeroOperacion;
     }
 
