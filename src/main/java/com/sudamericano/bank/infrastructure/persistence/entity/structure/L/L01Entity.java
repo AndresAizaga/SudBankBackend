@@ -2,6 +2,8 @@ package com.sudamericano.bank.infrastructure.persistence.entity.structure.L;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "NESL01")
 public class L01Entity {
@@ -21,6 +23,12 @@ public class L01Entity {
 
     @Column(name = "CODIGO_TIPO_EMISOR")
     private Integer codigoTipoEmisor;
+
+	@Column(name = "FECHA_EMISION")
+	private LocalDate fechaEmision;
+
+	@Column(name = "FECHA_VENCIMIENTO")
+	private LocalDate fechaVencimiento;
 
 
 	public Integer getId() {
@@ -62,5 +70,12 @@ public class L01Entity {
 	public void setCodigoTipoEmisor(Integer codigoTipoEmisor) {
 		this.codigoTipoEmisor = codigoTipoEmisor;
 	}
+
+	public LocalDate getFechaEmision() { return fechaEmision; }
+	public void setFechaEmision(LocalDate fechaEmision) { this.fechaEmision = fechaEmision; }
+
+	public LocalDate getFechaVencimiento() { return fechaVencimiento; }
+	public void setFechaVencimiento(LocalDate fechaVencimiento) { this.fechaVencimiento = fechaVencimiento; }
+
 
 }

@@ -3,8 +3,10 @@ package com.sudamericano.bank.infrastructure.controller.structure.L;
 import com.sudamericano.bank.domain.model.structure.L.StructureL01Dto;
 import com.sudamericano.bank.domain.ports.inputs.structure.L.L01UseCase;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Tag(name = "Structure L01", description = "Structure L01 management endpoints")
@@ -46,4 +48,13 @@ public class L01Controller {
     public void delete(@PathVariable Integer id) {
         l01UseCase.delete(id);
     }
+
+    @GetMapping("/search-by-date")
+    public List<StructureL01Dto> searchByDate(
+            @RequestParam LocalDate from,
+            @RequestParam LocalDate to
+    ) {
+        return l01UseCase.findByFechaEmisionBetween(from, to);
+    }
+
 }

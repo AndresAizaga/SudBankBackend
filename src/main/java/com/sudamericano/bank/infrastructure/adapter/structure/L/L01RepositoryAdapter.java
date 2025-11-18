@@ -7,6 +7,7 @@ import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L01En
 import com.sudamericano.bank.infrastructure.persistence.jpa.structure.L.SpringDataStructureL01Repository;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,4 +59,11 @@ public class L01RepositoryAdapter implements L01Port {
     public void delete(Integer id) {
         repository.deleteById(id);
     }
+
+    @Override
+    public List<StructureL01Dto> findByFechaEmisionBetween(LocalDate from, LocalDate to) {
+        List<L01Entity> entities = repository.findByFechaEmisionBetween(from, to);
+        return mapper.toDtoList(entities);
+    }
+
 }

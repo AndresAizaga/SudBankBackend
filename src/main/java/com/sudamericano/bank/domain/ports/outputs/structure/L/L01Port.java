@@ -2,6 +2,7 @@ package com.sudamericano.bank.domain.ports.outputs.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.StructureL01Dto;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface L01Port {
@@ -11,4 +12,5 @@ public interface L01Port {
     StructureL01Dto create(StructureL01Dto dto);
     StructureL01Dto update(Integer id, StructureL01Dto dto);
     void delete(Integer id);
+    List<StructureL01Dto> findByFechaEmisionBetween(LocalDate from, LocalDate to);
 }

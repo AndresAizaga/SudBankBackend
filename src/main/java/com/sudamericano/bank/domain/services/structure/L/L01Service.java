@@ -5,6 +5,7 @@ import com.sudamericano.bank.domain.ports.inputs.structure.L.L01UseCase;
 import com.sudamericano.bank.domain.ports.outputs.structure.L.L01Port;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -38,5 +39,10 @@ public class L01Service implements L01UseCase {
 
     public void delete(Integer id) {
         port.delete(id);
+    }
+
+    @Override
+    public List<StructureL01Dto> findByFechaEmisionBetween(LocalDate from, LocalDate to) {
+        return port.findByFechaEmisionBetween(from, to);
     }
 }
