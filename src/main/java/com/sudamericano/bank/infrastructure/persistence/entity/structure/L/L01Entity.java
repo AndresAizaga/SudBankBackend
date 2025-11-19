@@ -24,11 +24,8 @@ public class L01Entity {
     @Column(name = "CODIGO_TIPO_EMISOR")
     private Integer codigoTipoEmisor;
 
-	@Column(name = "FECHA_EMISION")
-	private LocalDate fechaEmision;
-
-	@Column(name = "FECHA_VENCIMIENTO")
-	private LocalDate fechaVencimiento;
+    @Column(name = "FECHA_CORTE")
+    private LocalDate fechaCorte;
 
 
 	public Integer getId() {
@@ -71,11 +68,17 @@ public class L01Entity {
 		this.codigoTipoEmisor = codigoTipoEmisor;
 	}
 
-	public LocalDate getFechaEmision() { return fechaEmision; }
-	public void setFechaEmision(LocalDate fechaEmision) { this.fechaEmision = fechaEmision; }
+    public LocalDate getFechaCorte() {
+        return fechaCorte;
+    }
 
-	public LocalDate getFechaVencimiento() { return fechaVencimiento; }
-	public void setFechaVencimiento(LocalDate fechaVencimiento) { this.fechaVencimiento = fechaVencimiento; }
-
-
+    public void setFechaCorte(LocalDate fechaCorte) {
+        this.fechaCorte = fechaCorte;
+    }
+    @PrePersist
+    public void prePersist() {
+        if (fechaCorte == null) {
+            fechaCorte = LocalDate.now();
+        }
+    }
 }

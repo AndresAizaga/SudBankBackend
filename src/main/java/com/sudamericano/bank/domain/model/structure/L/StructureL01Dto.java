@@ -8,8 +8,8 @@ public class StructureL01Dto {
     private Integer codigoEmisor;
     private Integer codigoClasificacionEmisor;
     private Integer codigoTipoEmisor;
-	private LocalDate fechaEmision;
-	private LocalDate fechaVencimiento;
+    private LocalDate fechaCorte;
+
 
 	public Integer getId() {
 		return id;
@@ -41,10 +41,11 @@ public class StructureL01Dto {
 	public void setCodigoTipoEmisor(Integer codigoTipoEmisor) {
 		this.codigoTipoEmisor = codigoTipoEmisor;
 	}
+	public LocalDate getFechaCorte() {
+		return fechaCorte;
+	}
+	public void setFechaCorte(LocalDate fechaCorte) {
+		this.fechaCorte = fechaCorte;
+	}
 
-	public LocalDate getFechaEmision() { return fechaEmision; }
-	public void setFechaEmision(LocalDate fechaEmision) { this.fechaEmision = fechaEmision; }
-
-	public LocalDate getFechaVencimiento() { return fechaVencimiento; }
-	public void setFechaVencimiento(LocalDate fechaVencimiento) { this.fechaVencimiento = fechaVencimiento; }
 }

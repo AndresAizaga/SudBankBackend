@@ -5,13 +5,16 @@ import com.sudamericano.bank.domain.model.catalog.T165Dto;
 import com.sudamericano.bank.domain.model.catalog.T166Dto;
 import com.sudamericano.bank.domain.model.catalog.T62ADto;
 import com.sudamericano.bank.domain.model.structure.L.L02Dto;
+import com.sudamericano.bank.domain.model.structure.L.StructureL01Dto;
 import com.sudamericano.bank.domain.ports.inputs.catalog.*;
 import com.sudamericano.bank.domain.ports.inputs.structure.L.L02UseCase;
 import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
 import com.sudamericano.bank.infrastructure.outputs.structure.L02ResumeResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Tag(name = "Structure L02", description = "Structure L02 management endpoints")
@@ -24,19 +27,21 @@ public class L02Controller {
     private final T165UseCase t165UseCase;
     private final T166UseCase t166UseCase;
     private final T62AUseCase t62AUseCase;
+    private final L02UseCase l02UseCase;
 
     public L02Controller(L02UseCase useCase,
                          CatalogT4UseCase catalogT4UseCase,
                          T164UseCase t164UseCase,
                          T165UseCase t165UseCase,
                          T166UseCase t166UseCase,
-                         T62AUseCase t62AUseCase) {
+                         T62AUseCase t62AUseCase, L02UseCase l02UseCase) {
         this.useCase = useCase;
         this.catalogT4UseCase = catalogT4UseCase;
         this.t164UseCase = t164UseCase;
         this.t165UseCase = t165UseCase;
         this.t166UseCase = t166UseCase;
         this.t62AUseCase = t62AUseCase;
+        this.l02UseCase = l02UseCase;
     }
 
     @GetMapping
@@ -104,4 +109,14 @@ public class L02Controller {
     public void delete(@PathVariable Long id) {
         useCase.delete(id);
     }
+
+    @GetMapping("/search-by-date")
+    public List<L02Dto> searchByDate(
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate from,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate to
+    ) {
+        return l02UseCase.findByFechaEmisionBetween(from, to);
+    }
+
+
 }

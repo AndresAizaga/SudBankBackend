@@ -75,7 +75,7 @@ public class L06Controller {
     public L06Dto getById(Integer id) {
         return useCase.findById(id);
     }
-    @PostMapping("/{id}")
+    @PostMapping
     public L06Dto create(@RequestBody L06Dto dto) {
         return useCase.create(dto);
     }

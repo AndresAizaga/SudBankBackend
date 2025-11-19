@@ -49,12 +49,4 @@ public class L01Controller {
         l01UseCase.delete(id);
     }
 
-    @GetMapping("/search-by-date")
-    public List<StructureL01Dto> searchByDate(
-            @RequestParam LocalDate from,
-            @RequestParam LocalDate to
-    ) {
-        return l01UseCase.findByFechaEmisionBetween(from, to);
-    }
-
 }

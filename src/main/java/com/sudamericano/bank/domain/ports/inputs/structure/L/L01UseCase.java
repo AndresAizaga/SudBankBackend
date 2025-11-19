@@ -12,5 +12,4 @@ public interface L01UseCase {
     StructureL01Dto create(StructureL01Dto dto);
     StructureL01Dto update(Integer id, StructureL01Dto dto);
     void delete(Integer id);
-    List<StructureL01Dto> findByFechaEmisionBetween(LocalDate from, LocalDate to);
 }

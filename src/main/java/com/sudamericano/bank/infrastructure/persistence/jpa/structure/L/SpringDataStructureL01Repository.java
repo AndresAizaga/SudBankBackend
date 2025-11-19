@@ -22,6 +22,6 @@ public interface SpringDataStructureL01Repository extends JpaRepository<L01Entit
             @Param("codigoClasificacionEmisor") Integer codigoClasificacionEmisor,
             @Param("codigoTipoEmisor") Integer codigoTipoEmisor
     );
-    List<L01Entity> findByFechaEmisionBetween(LocalDate from, LocalDate to);
+
 
 }

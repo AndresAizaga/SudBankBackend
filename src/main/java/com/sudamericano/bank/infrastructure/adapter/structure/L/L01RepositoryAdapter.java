@@ -41,7 +41,9 @@ public class L01RepositoryAdapter implements L01Port {
 
     @Override
     public StructureL01Dto create(StructureL01Dto dto) {
-        L01Entity saved = repository.save(mapper.toEntity(dto));
+        L01Entity newL01 = mapper.toEntity(dto);
+        newL01.setFechaCorte(LocalDate.now());
+        L01Entity saved = repository.save(newL01);
         return mapper.toDto(saved);
     }
 
@@ -52,6 +54,9 @@ public class L01RepositoryAdapter implements L01Port {
         }
         L01Entity entity = mapper.toEntity(dto);
         entity.setId(id);
+        if (entity.getFechaCorte() == null) {
+            entity.setFechaCorte(LocalDate.now());
+        }
         return mapper.toDto(repository.save(entity));
     }
 
@@ -59,11 +64,4 @@ public class L01RepositoryAdapter implements L01Port {
     public void delete(Integer id) {
         repository.deleteById(id);
     }
-
-    @Override
-    public List<StructureL01Dto> findByFechaEmisionBetween(LocalDate from, LocalDate to) {
-        List<L01Entity> entities = repository.findByFechaEmisionBetween(from, to);
-        return mapper.toDtoList(entities);
-    }
-
 }
