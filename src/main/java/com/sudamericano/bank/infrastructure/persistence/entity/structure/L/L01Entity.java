@@ -24,7 +24,7 @@ public class L01Entity {
     @Column(name = "CODIGO_TIPO_EMISOR")
     private Integer codigoTipoEmisor;
 
-    @Column(name = "FECHA_CORTE")
+    @Column(name = "FECHA_CORTE", nullable = false, updatable = false)
     private LocalDate fechaCorte;
 
 

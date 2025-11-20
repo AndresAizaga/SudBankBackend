@@ -49,4 +49,16 @@ public class L01Controller {
         l01UseCase.delete(id);
     }
 
+    @GetMapping("/by-date")
+    public List<StructureL01Dto> getByFechaCorteBetween(
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate startDate,
+            @RequestParam
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+            LocalDate endDate
+    ) {
+        return l01UseCase.findByFechaCorteBetween(startDate, endDate);
+    }
+
 }

@@ -36,9 +36,9 @@ public class L01Service implements L01UseCase {
         return port.findById(id);
     }
 
-/*    public StructureL01Dto create(StructureL01Dto dto) {
+    public StructureL01Dto create(StructureL01Dto dto) {
         return port.create(dto);
-    }*/
+    }
 
     public StructureL01Dto update(Integer id, StructureL01Dto dto) {
         return port.update(id, dto);
@@ -48,12 +48,13 @@ public class L01Service implements L01UseCase {
         port.delete(id);
     }
 
-    @Override
-    public StructureL01Dto create(StructureL01Dto dto) {
-        L01Entity newL01 = mapper.toEntity(dto);
-        newL01.setFechaCorte(LocalDate.now());
-        L01Entity saved = repository.save(newL01);
-        return mapper.toDto(saved);
+    public List<StructureL01Dto> findByFechaCorteBetween(LocalDate startDate, LocalDate endDate) {
+        List<L01Entity> entities = repository.findByFechaCorteBetween(startDate, endDate);
+        return mapper.toDtoList(entities);
     }
+
+
+
+
 
 }

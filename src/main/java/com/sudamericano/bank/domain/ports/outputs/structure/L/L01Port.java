@@ -12,4 +12,6 @@ public interface L01Port {
     StructureL01Dto create(StructureL01Dto dto);
     StructureL01Dto update(Integer id, StructureL01Dto dto);
     void delete(Integer id);
+
+    List<StructureL01Dto> findByFechaCorteBetween(LocalDate startDate, LocalDate endDate);
 }

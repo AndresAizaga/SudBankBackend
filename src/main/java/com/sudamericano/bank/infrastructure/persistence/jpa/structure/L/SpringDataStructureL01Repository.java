@@ -23,5 +23,12 @@ public interface SpringDataStructureL01Repository extends JpaRepository<L01Entit
             @Param("codigoTipoEmisor") Integer codigoTipoEmisor
     );
 
-
+    @Query("""
+                SELECT e FROM L01Entity e
+                WHERE e.fechaCorte BETWEEN :startDate AND :endDate
+           """)
+    List<L01Entity> findByFechaCorteBetween(
+            @Param("startDate") LocalDate startDate,
+            @Param("endDate") LocalDate endDate
+    );
 }
