@@ -1,7 +1,9 @@
 package com.sudamericano.bank.infrastructure.controller.structure.L;
 
 import com.sudamericano.bank.domain.model.catalog.T164Dto;
+import com.sudamericano.bank.domain.model.structure.L.L03ViewDto;
 import com.sudamericano.bank.domain.model.structure.L.L06Dto;
+import com.sudamericano.bank.domain.model.structure.L.L06ViewDto;
 import com.sudamericano.bank.domain.ports.inputs.catalog.*;
 import com.sudamericano.bank.domain.ports.inputs.structure.L.L06UseCase;
 import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
@@ -43,6 +45,10 @@ public class L06Controller {
         return useCase.findAll();
     }
 
+    @GetMapping("/details")
+    public List<L06ViewDto> getAllWithDetails() {
+        return useCase.findAllResumenDatosL06();
+    }
 
     @GetMapping("/resume")
     public List<L06ResumeResponse> getAllResume() {
