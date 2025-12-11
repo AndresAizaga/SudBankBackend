@@ -7,8 +7,8 @@ import com.sudamericano.bank.domain.ports.inputs.catalog.*;
 import com.sudamericano.bank.domain.ports.inputs.structure.L.L08UseCase;
 import com.sudamericano.bank.infrastructure.outputs.ReportDto;
 import com.sudamericano.bank.infrastructure.outputs.ResponseDTO;
-import com.sudamericano.bank.infrastructure.outputs.structure.L08ReporteResponse;
-import com.sudamericano.bank.infrastructure.outputs.structure.L08ResumeResponse;
+import com.sudamericano.bank.infrastructure.outputs.structure.L.report.L08ReporteResponse;
+import com.sudamericano.bank.infrastructure.outputs.structure.L.resume.L08ResumeResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 

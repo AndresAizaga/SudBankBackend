@@ -1,4 +1,4 @@
-package com.sudamericano.bank.infrastructure.outputs.structure;
+package com.sudamericano.bank.infrastructure.outputs.structure.L.report;
 
 import com.sudamericano.bank.infrastructure.outputs.ReportDto;
 import lombok.Getter;
