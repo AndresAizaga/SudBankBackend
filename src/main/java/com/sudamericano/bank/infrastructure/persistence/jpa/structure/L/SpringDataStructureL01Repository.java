@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Repository
@@ -20,5 +21,14 @@ public interface SpringDataStructureL01Repository extends JpaRepository<L01Entit
             @Param("codigoTipoIdentificacion") Integer codigoTipoIdentificacion,
             @Param("codigoClasificacionEmisor") Integer codigoClasificacionEmisor,
             @Param("codigoTipoEmisor") Integer codigoTipoEmisor
+    );
+
+    @Query("""
+                SELECT e FROM L01Entity e
+                WHERE e.fechaCorte BETWEEN :startDate AND :endDate
+           """)
+    List<L01Entity> findByFechaCorteBetween(
+            @Param("startDate") LocalDate startDate,
+            @Param("endDate") LocalDate endDate
     );
 }

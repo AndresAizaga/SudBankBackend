@@ -1,12 +1,15 @@
 package com.sudamericano.bank.infrastructure.adapter.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.L02Dto;
+import com.sudamericano.bank.domain.model.structure.L.StructureL01Dto;
 import com.sudamericano.bank.domain.ports.outputs.structure.L.L02Port;
 import com.sudamericano.bank.infrastructure.mapper.structure.L.L02Mapper;
+import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L01Entity;
 import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L02Entity;
 import com.sudamericano.bank.infrastructure.persistence.jpa.structure.L.L02Repository;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,5 +54,11 @@ public class L02RepositoryAdapter implements L02Port {
     @Override
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public List<L02Dto> findByFechaEmisionBetween(LocalDate from, LocalDate to) {
+        List<L02Entity> entities = repository.findByFechaEmisionBetween(from, to);
+        return mapper.toDtoList(entities);
     }
 }

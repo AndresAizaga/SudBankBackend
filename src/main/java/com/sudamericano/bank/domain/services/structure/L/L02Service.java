@@ -5,8 +5,10 @@ import com.sudamericano.bank.domain.ports.inputs.catalog.CatalogT4UseCase;
 import com.sudamericano.bank.domain.ports.inputs.structure.L.L02UseCase;
 import com.sudamericano.bank.domain.ports.outputs.structure.L.L02Port;
 import com.sudamericano.bank.infrastructure.outputs.structure.L02ResumeResponse;
+import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L02Entity;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -36,6 +38,11 @@ public class L02Service implements L02UseCase {
 
     public void delete(Long id) {
         port.delete(id);
+    }
+
+    @Override
+    public List<L02Dto> findByFechaEmisionBetween(LocalDate from, LocalDate to) {
+        return port.findByFechaEmisionBetween(from, to);
     }
 
 }

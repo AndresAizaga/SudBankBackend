@@ -7,6 +7,7 @@ import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L01En
 import com.sudamericano.bank.infrastructure.persistence.jpa.structure.L.SpringDataStructureL01Repository;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,7 +41,9 @@ public class L01RepositoryAdapter implements L01Port {
 
     @Override
     public StructureL01Dto create(StructureL01Dto dto) {
-        L01Entity saved = repository.save(mapper.toEntity(dto));
+        L01Entity newL01 = mapper.toEntity(dto);
+        newL01.setFechaCorte(LocalDate.now());
+        L01Entity saved = repository.save(newL01);
         return mapper.toDto(saved);
     }
 
@@ -49,13 +52,22 @@ public class L01RepositoryAdapter implements L01Port {
         if (!repository.existsById(id)) {
             return null;
         }
+
         L01Entity entity = mapper.toEntity(dto);
         entity.setId(id);
-        return mapper.toDto(repository.save(entity));
+
+        L01Entity saved = repository.save(entity);
+        return mapper.toDto(saved);
     }
 
     @Override
     public void delete(Integer id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public List<StructureL01Dto> findByFechaCorteBetween(LocalDate startDate, LocalDate endDate) {
+        List<L01Entity> entities = repository.findByFechaCorteBetween(startDate, endDate);
+        return mapper.toDtoList(entities);
     }
 }

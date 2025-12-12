@@ -1,13 +1,16 @@
 package com.sudamericano.bank.domain.model.structure.L;
 
+import java.time.LocalDate;
+
 public class StructureL01Dto {
     private Integer id;
     private Integer codigoTipoIdentificacion;
     private Integer codigoEmisor;
     private Integer codigoClasificacionEmisor;
     private Integer codigoTipoEmisor;
+    private LocalDate fechaCorte;
 
-	public Integer getId() {
+    public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
@@ -38,4 +41,11 @@ public class StructureL01Dto {
 		this.codigoTipoEmisor = codigoTipoEmisor;
 	}
 
+    public LocalDate getFechaCorte() {
+        return fechaCorte;
+    }
+
+    public void setFechaCorte(LocalDate fechaCorte) {
+        this.fechaCorte = fechaCorte;
+    }
 }

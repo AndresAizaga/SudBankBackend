@@ -1,6 +1,7 @@
 package com.sudamericano.bank.infrastructure.adapter.structure.L;
 
 import com.sudamericano.bank.domain.model.structure.L.L06Dto;
+import com.sudamericano.bank.domain.model.structure.L.L06ViewDto;
 import com.sudamericano.bank.domain.ports.outputs.structure.L.L06Port;
 import com.sudamericano.bank.infrastructure.mapper.structure.L.L06Mapper;
 import com.sudamericano.bank.infrastructure.persistence.entity.structure.L.L06Entity;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class L06RepositoryAdapter implements L06Port {
@@ -28,12 +30,12 @@ public class L06RepositoryAdapter implements L06Port {
 
     @Override
     public L06Dto findById(Integer id) {
-      Optional<L06Entity> entity = repository.findById(id);
-      return entity.map(mapper::toDto).orElse(null);
+        Optional<L06Entity> entity = repository.findById(id);
+        return entity.map(mapper::toDto).orElse(null);
     }
 
     @Override
-    public L06Dto create(L06Dto dto){
+    public L06Dto create(L06Dto dto) {
         L06Entity saved = repository.save(mapper.toEntity(dto));
         return mapper.toDto(saved);
     }
@@ -47,8 +49,16 @@ public class L06RepositoryAdapter implements L06Port {
         entity.setId(id);
         return mapper.toDto(repository.save(entity));
     }
+
     @Override
     public void delete(Integer id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public List<L06ViewDto> findAllResumenDatosL06() {
+        return repository.findAllResumenDatosL06().stream()
+                .map(mapper::mapToDto)
+                .collect(Collectors.toList());
     }
 }

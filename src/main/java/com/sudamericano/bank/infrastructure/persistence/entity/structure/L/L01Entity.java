@@ -2,6 +2,8 @@ package com.sudamericano.bank.infrastructure.persistence.entity.structure.L;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "NESL01")
 public class L01Entity {
@@ -21,6 +23,9 @@ public class L01Entity {
 
     @Column(name = "CODIGO_TIPO_EMISOR")
     private Integer codigoTipoEmisor;
+
+    @Column(name = "FECHA_CORTE", nullable = false, updatable = false)
+    private LocalDate fechaCorte;
 
 
 	public Integer getId() {
@@ -63,4 +68,17 @@ public class L01Entity {
 		this.codigoTipoEmisor = codigoTipoEmisor;
 	}
 
+    public LocalDate getFechaCorte() {
+        return fechaCorte;
+    }
+
+    public void setFechaCorte(LocalDate fechaCorte) {
+        this.fechaCorte = fechaCorte;
+    }
+    @PrePersist
+    public void prePersist() {
+        if (fechaCorte == null) {
+            fechaCorte = LocalDate.now();
+        }
+    }
 }
